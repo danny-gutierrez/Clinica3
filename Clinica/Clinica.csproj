@@ -127,6 +127,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Administrador\AdministradorAreaRegistration.cs" />
+    <Compile Include="Areas\Administrador\Controllers\BoletasController.cs" />
+    <Compile Include="Areas\Administrador\Controllers\CitasController.cs" />
+    <Compile Include="Areas\Administrador\Controllers\ContactoController.cs" />
+    <Compile Include="Areas\Administrador\Controllers\Home1Controller.cs" />
+    <Compile Include="Areas\Administrador\Controllers\OdontologosController.cs" />
+    <Compile Include="Areas\Administrador\Controllers\PacientesController.cs" />
+    <Compile Include="Areas\Administrador\Controllers\RemuneracionesController.cs" />
+    <Compile Include="Areas\Administrador\Controllers\RolesController.cs" />
+    <Compile Include="Areas\Administrador\Controllers\TratamientosController.cs" />
     <Compile Include="Controllers\BoletasController.cs" />
     <Compile Include="Controllers\ContactoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2001,6 +2011,39 @@
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\vendor\jquery\jquery.min.map" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Areas\Administrador\Views\web.config" />
+    <Content Include="Areas\Administrador\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Administrador\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Administrador\Views\Boletas\Create.cshtml" />
+    <Content Include="Areas\Administrador\Views\Boletas\Edit.cshtml" />
+    <Content Include="Areas\Administrador\Views\Boletas\Index.cshtml" />
+    <Content Include="Areas\Administrador\Views\Boletas\View.cshtml" />
+    <Content Include="Areas\Administrador\Views\Citas\Create.cshtml" />
+    <Content Include="Areas\Administrador\Views\Citas\Edit.cshtml" />
+    <Content Include="Areas\Administrador\Views\Citas\Index.cshtml" />
+    <Content Include="Areas\Administrador\Views\Citas\View.cshtml" />
+    <Content Include="Areas\Administrador\Views\Contacto\Index.cshtml" />
+    <Content Include="Areas\Administrador\Views\Home1\About.cshtml" />
+    <Content Include="Areas\Administrador\Views\Home1\Contact.cshtml" />
+    <Content Include="Areas\Administrador\Views\Home1\Index.cshtml" />
+    <Content Include="Areas\Administrador\Views\Odontologos\Create.cshtml" />
+    <Content Include="Areas\Administrador\Views\Odontologos\Edit.cshtml" />
+    <Content Include="Areas\Administrador\Views\Odontologos\Index.cshtml" />
+    <Content Include="Areas\Administrador\Views\Odontologos\View.cshtml" />
+    <Content Include="Areas\Administrador\Views\Pacientes\Create.cshtml" />
+    <Content Include="Areas\Administrador\Views\Pacientes\Edit.cshtml" />
+    <Content Include="Areas\Administrador\Views\Pacientes\Index.cshtml" />
+    <Content Include="Areas\Administrador\Views\Pacientes\View.cshtml" />
+    <Content Include="Areas\Administrador\Views\Remuneraciones\Create.cshtml" />
+    <Content Include="Areas\Administrador\Views\Remuneraciones\Edit.cshtml" />
+    <Content Include="Areas\Administrador\Views\Remuneraciones\Index.cshtml" />
+    <Content Include="Areas\Administrador\Views\Remuneraciones\View.cshtml" />
+    <Content Include="Areas\Administrador\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\Administrador\Views\Tratamientos\Create.cshtml" />
+    <Content Include="Areas\Administrador\Views\Tratamientos\Edit.cshtml" />
+    <Content Include="Areas\Administrador\Views\Tratamientos\Index.cshtml" />
+    <Content Include="Areas\Administrador\Views\Tratamientos\View.cshtml" />
+    <Content Include="Areas\Administrador\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2055,6 +2098,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administrador\Data\" />
     <Folder Include="Content\Pages\" />
   </ItemGroup>
   <ItemGroup>
