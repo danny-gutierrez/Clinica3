@@ -5,6 +5,7 @@
 
 <head>
 
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,73 +23,111 @@
 
 </head>
 
-<body class="bg-gradient-primary">
 
+
+<body class="bg-gradient-primary">
     <center>
+
 
         <div class="container">
 
             <div class="">
                 <div class="">
                     <!-- Nested Row within Card Body -->
+
+
                     <div class="row">
-                        <div class="col-lg-5 d-none "></div>
+                        <div class="col-lg-5 d-none  bg-light"> </div>
                         <div class="col-lg-10">
                             <div class="p-5">
                                 <div class="text-center">
-
                                     <div class="card-body">
 
                                         <div class="card shadow mb-4">
                                             <div class="card-header py-3">
 
-                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
-
-
-                                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                    <h1 class="h4 text-gray-900 mb-4">Editar Tratamientos!</h1>
+                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                    <h1 class="h4 text-gray-900 mb-4">Editar Tratamiento!</h1>
                                                     <hr />
+                                            </div>
+                                            <!--@Html.ValidationSummary() -->
 
-
-
-                                            <form form method="POST" action="" @Url.Action("Edit", "Tratamientos") " class="user">
-
-
-
-
+                                            <form method="POST" action="" @Url.Action("View", "Tratamientos") " class="user">
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" name="Nombres" value="@Model.Nombres" placeholder="Nombre">
+                                                        <label>Nombre Tratamiento</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Nombre Tratamiento"
+                                                               name="Nombres" value="@Model.Nombres">
                                                         @Html.ValidationMessageFor(Model => Model.Nombres, null, new { @class = "text-danger" })
                                                     </div>
 
+
                                                     <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" name="Valor" value="@Model.Valor" placeholder="Valor">
+                                                        <label>Valor Tratamiento</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Valor Tratamiento"
+                                                               name="Valor" value="@Model.Valor">
                                                         @Html.ValidationMessageFor(Model => Model.Valor, null, new { @class = "text-danger" })
                                                     </div>
+
                                                 </div>
-                                                <hr />
+
                                                 <div class="form-group">
                                                     <center>
-                                                        <label for="sel1" style="color:#212F3D" >Seleccione Especialista :</label>
+
+                                                        <label for="sel1" style="color:#212F3D">Seleccione Especialista :</label>
                                                     </center>
-                                                    <select class="form-control" name="Especialistas" value="@Model.Especialistas" placeholder="Selecciona">
+                                                    <select class="form-control" name="Especialistas" value="@Model.Especialistas">
                                                         <option>Claudio Quezada</option>
                                                         <option>Danny Gutierrez</option>
                                                         <option>Fabian Zenteno</option>
                                                         <option>Otro</option>
                                                     </select>
-
-                                                    @Html.ValidationMessageFor(Model => Model.Especialistas)
-                                                    <hr />
+                                                    @Html.ValidationMessageFor(Model => Model.Especialistas)<br />
                                                     <div class="form-group row">
 
 
+                                                        <div class="col-sm-6">
+                                                            <label>Codigo Tratamiento</label>
+                                                            <input type="text" class="form-control form-control-user" placeholder="Ingrese Codigo De Tratamiento"
+                                                                   name="Codigos" value="@Model.Codigos">
+                                                            @Html.ValidationMessageFor(Model => Model.Codigos, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <label>Descripcion Tratamiento</label>
+                                                            <input type="text" class="form-control form-control-user" placeholder="Breve Descripcion"
+                                                                   name="Descripcion" value="@Model.Descripcion">
+                                                            @Html.ValidationMessageFor(Model => Model.Descripcion, null, new { @class = "text-danger" })
+                                                        </div>
+
+
+                                                        <div class="col-sm-6">
+                                                            <br /><br />
+                                                            <label>Horario</label>
+                                                            <input type="datetime-local" class="form-control form-control-user" placeholder=""
+                                                                   name="Horarios" value="@Model.Horarios">
+                                                            @Html.ValidationMessageFor(Model => Model.Horarios, null, new { @class = "text-danger" })
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <br /><br />
+                                                            <label>Fecha Creacion</label>
+                                                            <input type="datetime-local" class="form-control form-control-user" placeholder=""
+                                                                   name="FechaCreacion" value="@Model.FechaCreacion">
+                                                            @Html.ValidationMessageFor(Model => Model.FechaCreacion, null, new { @class = "text-danger" })
+                                                        </div>
                                                     </div>
+
+                                                    <hr />
+
+
+
+                                                    <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
                                                     <center>
                                                         <button type="submit" class="btn btn-primary">Grabar</button>
                                                     </center>
                                                     </a>
+
+
 
 
                                             </form>
@@ -102,9 +141,10 @@
                     </div>
                 </div>
                 </table>
+
+
             </div>
         </div>
-
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

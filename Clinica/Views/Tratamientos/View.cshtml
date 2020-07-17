@@ -21,71 +21,116 @@
 
 </head>
 
-<body class="bg-gradient-primary">
 
+<body class="bg-gradient-primary">
     <center>
+
 
         <div class="container">
 
             <div class="">
                 <div class="">
                     <!-- Nested Row within Card Body -->
+
+
                     <div class="row">
-                        <div class="col-lg-5 d-none "></div>
+                        <div class="col-lg-5 d-none  bg-light"> </div>
                         <div class="col-lg-10">
                             <div class="p-5">
                                 <div class="text-center">
-
                                     <div class="card-body">
 
                                         <div class="card shadow mb-4">
                                             <div class="card-header py-3">
 
                                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                    <h1 class="h4 text-gray-900 mb-4">Ver Tratamientos!</h1>
+                                                    <h1 class="h4 text-gray-900 mb-4">Ver Tratamiento!</h1>
                                                     <hr />
-
                                             </div>
+                                          
 
-
-
-                                            <form form method="POST" action="@Url.Action("Index", "Tratamientos")"class="user">
-
-
-
-
+                                            <form method="POST" action="" @Url.Action("Index", "Tratamientos") " class="user">
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" name="Nombres" value="@Model.Nombres" disabled>
-
+                                                        <label>Nombre Tratamiento</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Nombre Tratamiento"
+                                                               name="Nombres" value="@Model.Nombres" disabled>
+                                                       
                                                     </div>
+
 
                                                     <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" name="Valor" value="@Model.Valor" disabled>
+                                                        <label>Valor Tratamiento</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Valor Tratamiento"
+                                                               name="Valor" value="@Model.Valor" disabled>
 
                                                     </div>
+
                                                 </div>
-                                                <hr />
+
                                                 <div class="form-group">
                                                     <center>
-                                                        <div class="col-sm-6">
-                                                            <input type="text" class="form-control form-control-user" name="Especialistas" value="@Model.Especialistas" disabled>
 
-                                                        </div>
+                                                        <label for="sel1" style="color:#212F3D"> Especialista :</label>
                                                     </center>
+                                                    <select class="form-control" name="Especialistas" value="@Model.Especialistas" disabled>
+                                                        <option>Claudio Quezada</option>
+                                                  
+                                                    </select>
 
                                                     <div class="form-group row">
 
+                                                       
+                                                        <div class="col-sm-6">
+                                                            <br />
+                                                            <br />
+                                                            <label>Codigo de  Tratamiento</label>
+                                                            <input type="text" class="form-control form-control-user" placeholder="Ingrese Codigo De Tratamiento"
+                                                                   name="Codigos" value="@Model.Codigos" disabled>
 
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <br />
+                                                            <br />
+                                                            <label>Descripcion Tratamiento</label>
+                                                            <input type="text" class="form-control form-control-user" placeholder="Breve Descripcion"
+                                                                   name="Descripcion" value="@Model.Descripcion" disabled>
+
+                                                        </div>
+
+
+                                                        <div class="col-sm-6">
+                                                            <br /><br />
+                                                            <label>Horario</label>
+
+                                                            <input type="text" class="form-control form-control-user" placeholder=""
+                                                                   name="Horarios" value="L a V 10:00 AM - 20:00 AM" disabled>
+
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <br /><br />
+                                                            <label>Fecha Creacion</label>
+                                                            <input type="text" class="form-control form-control-user" placeholder=""
+                                                                   name="FechaCreacion" value="16-07-2020" disabled>
+
+                                                        </div>
                                                     </div>
 
-                                                    </a>
+                                                    <hr />
 
-                                                    <br />
+
+
+                                                    <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
                                                     <center>
-                                                        <button type="submit" class="btn btn-primary">Volver</button>
+
+                                                        <a href="@Url.Action("Index", "Tratamientos")"><input type="button" value="Volver" class="btn btn-primary"></a>
                                                     </center>
                                                     </a>
+
+
+
+
 </form>
 
                                         </div>
@@ -97,9 +142,10 @@
                     </div>
                 </div>
                 </table>
+
+
             </div>
         </div>
-
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
