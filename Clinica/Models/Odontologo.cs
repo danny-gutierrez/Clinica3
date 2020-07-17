@@ -37,5 +37,27 @@ namespace Clinica.Models
         [StringLength(25, MinimumLength = 5)]
 
         public String Correos { get; set; }
+
+
+        [Required]
+        [StringLength(25, MinimumLength = 5)]
+
+        public String Rut { get; set; }
+
+        [Required]
+        [StringLength(25, MinimumLength = 5)]
+
+        public String FechaIngreso { get; set; }
+
+        [Required]
+        [StringLength(25, MinimumLength = 5)]
+
+        public String Especialidad { get; set; }
+
+        [Required]
+        [StringLength(25, MinimumLength = 2)]
+
+        public String Edad { get; set; }
+
     }
 }
