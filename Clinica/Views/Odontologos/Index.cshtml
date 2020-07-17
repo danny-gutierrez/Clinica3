@@ -3,12 +3,26 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Listar Odontologo</h1>
+        <h1 class="h3 mb-2 text-gray-800"><center>Listar Odontologo</center></h1>
         <p class="mb-4"> <a target="_blank" href=""></a>.</p>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
+
+                <center>
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar Odontologo..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </center>
                 <h6 class="m-0 font-weight-bold text-primary"></h6>
             </div>
             <div class="card-body">
@@ -19,11 +33,10 @@
                                 <th>#</th>
                                 <th>Nombres </th>
                                 <th>Apellido</th>
-                                <th>Telefono</th>
-                                <th>Direccion</th>
+                               
                                 <th>Email</th>
 
-                                <th>Opciones</th>
+                                <th><center>Opciones</center></th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -37,13 +50,14 @@
                                     <td>@o.Id</td>
                                     <td>@o.Nombres</td>
                                     <td>@o.Apellidos</td>
-                                    <td>@o.Telefonos</td>
-                                    <td>@o.Direcciones</td>
+                               
                                     <td>@o.Correos</td>
                                     <td>
-                                        <a href="@Url.Action("View", "Odontologos", new { id = o.Id })">Ver</a>
-                                        <a href="@Url.Action("Edit", "Odontologos", new { id = o.Id})">Editar</a>
-                                    </td>
+                                        <center>
+                                            <a href="@Url.Action("View", "Odontologos", new { id = o.Id })"><input type="button" value="Ver" class="btn btn-primary"></a>
+                                            <a href="@Url.Action("Edit", "Odontologos", new { id = o.Id })"><input type="button" value="Editar" class="btn btn-primary"></a>
+                                        </center>
+                                            </td>
                                 </tr>
 
                             }
