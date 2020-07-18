@@ -137,6 +137,17 @@
     <Compile Include="Areas\Administrador\Controllers\RemuneracionesController.cs" />
     <Compile Include="Areas\Administrador\Controllers\RolesController.cs" />
     <Compile Include="Areas\Administrador\Controllers\TratamientosController.cs" />
+    <Compile Include="Areas\Doctor\Controllers\CitasController.cs" />
+    <Compile Include="Areas\Doctor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Doctor\Controllers\OdontologosController.cs" />
+    <Compile Include="Areas\Doctor\Controllers\PacientesController.cs" />
+    <Compile Include="Areas\Doctor\Controllers\TratamientosController.cs" />
+    <Compile Include="Areas\Recepcionista\Controllers\BoletasController.cs" />
+    <Compile Include="Areas\Recepcionista\Controllers\CitasController.cs" />
+    <Compile Include="Areas\Recepcionista\Controllers\OdontologosController.cs" />
+    <Compile Include="Areas\Recepcionista\Controllers\PacientesController.cs" />
+    <Compile Include="Areas\Recepcionista\Controllers\TratamientosController.cs" />
+    <Compile Include="Areas\Recepcionista\RecepcionistaAreaRegistration.cs" />
     <Compile Include="Controllers\BoletasController.cs" />
     <Compile Include="Controllers\ContactoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -164,6 +175,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Doctor\Controllers\a.html" />
+    <Content Include="Areas\Doctor\hola.html" />
+    <Content Include="Areas\Doctor\Views\a.html" />
+    <Content Include="Areas\Doctor\Views\Citas\a.html" />
+    <Content Include="Areas\Doctor\Views\Home\a.html" />
+    <Content Include="Areas\Doctor\Views\Odontologos\a.html" />
+    <Content Include="Areas\Doctor\Views\Pacientes\a.html" />
+    <Content Include="Areas\Doctor\Views\Tratamientos\a.html" />
     <Content Include="Content\contact.jpg" />
     <Content Include="Content\css\sb-admin-2.css" />
     <Content Include="Content\css\sb-admin-2.min.css" />
@@ -2044,6 +2063,43 @@
     <Content Include="Areas\Administrador\Views\Tratamientos\Index.cshtml" />
     <Content Include="Areas\Administrador\Views\Tratamientos\View.cshtml" />
     <Content Include="Areas\Administrador\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Doctor\Views\Citas\Create.cshtml" />
+    <Content Include="Areas\Doctor\Views\Citas\Edit.cshtml" />
+    <Content Include="Areas\Doctor\Views\Citas\Index.cshtml" />
+    <Content Include="Areas\Doctor\Views\Citas\View.cshtml" />
+    <Content Include="Areas\Doctor\Views\Odontologos\Create.cshtml" />
+    <Content Include="Areas\Doctor\Views\Odontologos\Edit.cshtml" />
+    <Content Include="Areas\Doctor\Views\Odontologos\Index.cshtml" />
+    <Content Include="Areas\Doctor\Views\Odontologos\View.cshtml" />
+    <Content Include="Areas\Doctor\Views\Pacientes\Create.cshtml" />
+    <Content Include="Areas\Doctor\Views\Pacientes\Edit.cshtml" />
+    <Content Include="Areas\Doctor\Views\Pacientes\Index.cshtml" />
+    <Content Include="Areas\Doctor\Views\Pacientes\View.cshtml" />
+    <Content Include="Areas\Doctor\Views\Tratamientos\Create.cshtml" />
+    <Content Include="Areas\Doctor\Views\Tratamientos\Edit.cshtml" />
+    <Content Include="Areas\Doctor\Views\Tratamientos\Index.cshtml" />
+    <Content Include="Areas\Doctor\Views\Tratamientos\View.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Boletas\Create.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Boletas\Index.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Boletas\View.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Citas\Create.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Citas\Edit.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Citas\Index.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Citas\View.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Odontologos\Create.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Odontologos\Index.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Odontologos\View.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Pacientes\Create.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Pacientes\Edit.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Pacientes\Index.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Pacientes\View.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Tratamientos\Create.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Tratamientos\Index.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Tratamientos\View.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\web.config" />
+    <Content Include="Areas\Recepcionista\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2099,6 +2155,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrador\Data\" />
+    <Folder Include="Areas\Recepcionista\Data\" />
     <Folder Include="Content\Pages\" />
   </ItemGroup>
   <ItemGroup>
