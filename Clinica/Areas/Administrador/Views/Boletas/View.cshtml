@@ -46,47 +46,61 @@
                                                     <hr />
                                             </div>
                                             <form form method="POST" action="@Url.Action("Index", "Boletas")" class="user">
+
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>N° de Boleta</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="N° Boleta" value="@Model.NB" disabled>
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <label>Odontologo</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@Model.Odontologo" disabled>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Nombre</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="Nombre" value="@Model.Nombre" disabled>
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <label>Apellido</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="Apellido" value="@Model.Apellido" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Fono</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="Fono" value="@Model.Fono" disabled>
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <label>Fecha</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="Fecha" value="@Model.Fecha" disabled>
+                                                    </div>
+                                                </div>
+                                              
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="N° Boleta" value="@Model.NB" disabled>
+                                                    <label>Valor</label>
+                                                    <input type="text" class="form-control form-control-user" placeholder="Valor" value="@Model.Valor" disabled>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nombre" value="@Model.Nombre" disabled>
-                                                    </div>
-
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Apellido" value="@Model.Apellido" disabled>
-                                                    </div>
+                                                <div class="form-group">
+                                                    <label>Detalle</label>
+                                                    <input type="text" class="form-control form-control-user" placeholder="Detalle" value="@Model.Detalle" disabled>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label for="sel1" class="form-control form-control-user"> Especialista:</label>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Odontologo" value="@Model.Odontologo" disabled>
-                                                    </div>
-                                                </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Fono" value="@Model.Fono" disabled>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Fecha" value="@Model.Fecha" disabled>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Valor" value="@Model.Valor" disabled>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Detalle" value="@Model.Detalle" disabled>
-                                                    </div>
 
 
-                                                    <br />
-                                                    <center>
-                                                        <button type="submit" class="btn btn-primary">Volver</button>
-                                                    </center>
-                                                    </a>
+                                                <br />
+                                                <center>
+                                                    <button type="submit" class="btn btn-primary">Volver</button>
+                                                </center>
+                                                </a>
 
-</form>
+                                            </form>
 
 
 

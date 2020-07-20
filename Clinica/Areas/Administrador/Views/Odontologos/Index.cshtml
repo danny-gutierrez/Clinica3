@@ -36,10 +36,11 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Rut </th>
                                 <th>Nombres </th>
                                 <th>Apellido</th>
                                 <th>Telefono</th>
-                                <th>Direccion</th>
+
                                 <th>Email</th>
 
                                 <th>Opciones</th>
@@ -52,18 +53,20 @@
                         <tbody>
                             @foreach (var o in Model)
                             {
-                                <tr>
-                                    <td>@o.Id</td>
-                                    <td>@o.Nombres</td>
-                                    <td>@o.Apellidos</td>
-                                    <td>@o.Telefonos</td>
-                                    <td>@o.Direcciones</td>
-                                    <td>@o.Correos</td>
-                                    <td>
-                                        <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Odontologos", new { id = o.Id })">Ver</a>
-                                        <a  type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Odontologos", new { id = o.Id})">Editar</a>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>@o.Id</td>
+                                <td>@o.Rut</td>
+
+                                <td>@o.Nombres</td>
+                                <td>@o.Apellidos</td>
+                                <td>@o.Telefonos</td>
+
+                                <td>@o.Correos</td>
+                                <td>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Odontologos", new { id = o.Id })">Ver</a>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Odontologos", new { id = o.Id})">Editar</a>
+                                </td>
+                            </tr>
 
                             }
                          

@@ -55,14 +55,14 @@
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
 
-                                                        <input type="text" class="form-control form-control-user" placeholder="Nombre"
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Nombre Odontologo"
                                                                name="Nombres" value="@Model.Nombres">
                                                         @Html.ValidationMessageFor(Model => Model.Nombres, null, new { @class = "text-danger" })
                                                     </div>
 
 
                                                     <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" placeholder="Apellidos"
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Apellido Odontologo"
                                                                name="Apellidos" value="@Model.Apellidos">
                                                         @Html.ValidationMessageFor(Model => Model.Apellidos, null, new { @class = "text-danger" })
                                                     </div>
@@ -72,13 +72,30 @@
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
 
-                                                        <input type="text" class="form-control form-control-user" placeholder="Telefono"
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese el Rut"
+                                                               name="Rut" value="@Model.Rut">
+                                                        @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
+                                                    </div>
+
+
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese la Edad"
+                                                               name="Edad" value="@Model.Edad">
+                                                        @Html.ValidationMessageFor(Model => Model.Apellidos, null, new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Telefono"
                                                                name="Telefonos" value="@Model.Telefonos">
                                                         @Html.ValidationMessageFor(Model => Model.Telefonos, null, new { @class = "text-danger" })
                                                     </div>
 
                                                     <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" placeholder="Direccion"
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Direccion"
                                                                name="Direcciones" value="@Model.Direcciones">
                                                         @Html.ValidationMessageFor(Model => Model.Direcciones, null, new { @class = "text-danger" })
                                                     </div>
@@ -89,7 +106,23 @@
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
 
-                                                        <input type="email" class="form-control form-control-user" placeholder="Correo"
+                                                        <input type="text" class="form-control form-control-user" placeholder="Fecha de Ingreso"
+                                                               name="FechaIngreso" value="@Model.FechaIngreso">
+                                                        @Html.ValidationMessageFor(Model => Model.FechaIngreso, null, new { @class = "text-danger" })
+                                                    </div>
+
+
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Especialidad"
+                                                               name="Especialidad" value="@Model.Especialidad">
+                                                        @Html.ValidationMessageFor(Model => Model.Especialidad, null, new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+
+                                                        <input type="email" class="form-control form-control-user" placeholder="Ingrese Correo"
                                                                name="Correos" value="@Model.Correos">
                                                         @Html.ValidationMessageFor(Model => Model.Correos, null, new { @class = "text-danger" })
                                                     </div>

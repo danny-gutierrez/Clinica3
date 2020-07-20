@@ -51,47 +51,97 @@
 
 
 
-                                            <form form method="POST" action="" @Url.Action("Edit", "Tratamientos") " class="user">
+                                                    <form from method="POST" action="@Url.Action("Edit", "Tratamientos")" class="user">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                <label>Nombre Tratamiento</label>
+                                                                <input type="text" class="form-control form-control-user" placeholder="Ingrese Nombre Tratamiento"
+                                                                       name="Nombres" value="@Model.Nombres">
+                                                                @Html.ValidationMessageFor(Model => Model.Nombres, null, new { @class = "text-danger" })
+
+                                                            </div>
+
+
+                                                            <div class="col-sm-6">
+                                                                <label>Valor Tratamiento</label>
+                                                                <input type="text" class="form-control form-control-user" placeholder="Ingrese Valor Tratamiento"
+                                                                       name="Valor" value="@Model.Valor">
+                                                                @Html.ValidationMessageFor(Model => Model.Valor, null, new { @class = "text-danger" })
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <center>
+
+                                                                <label for="sel1" style="color:#212F3D"> Especialista :</label>
+                                                            </center>
+                                                            <select class="form-control" name="Especialistas" value="@Model.Especialistas">
+
+                                                                <option>Claudio Quezada</option>
+                                                                <option>Danny Gutierrez</option>
+
+                                                            </select>
+
+                                                            <div class="form-group row">
+
+
+                                                                <div class="col-sm-6">
+                                                                    <br />
+                                                                    <br />
+                                                                    <label>Codigo de  Tratamiento</label>
+                                                                    <input type="text" class="form-control form-control-user" placeholder="Ingrese Codigo De Tratamiento"
+                                                                           name="Codigos" value="@Model.Codigos">
+                                                                    @Html.ValidationMessageFor(Model => Model.Codigos, null, new { @class = "text-danger" })
+
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <br />
+                                                                    <br />
+                                                                    <label>Descripcion Tratamiento</label>
+                                                                    <input type="text" class="form-control form-control-user" placeholder="Breve Descripcion"
+                                                                           name="Descripcion" value="@Model.Descripcion">
+                                                                    @Html.ValidationMessageFor(Model => Model.Descripcion, null, new { @class = "text-danger" })
+
+                                                                </div>
+
+
+                                                                <div class="col-sm-6">
+                                                                    <br /><br />
+                                                                    <label>Horario</label>
+
+                                                                    <input type="text" class="form-control form-control-user" placeholder=""
+                                                                           name="Horarios" value="@Model.Horarios">
+                                                                    @Html.ValidationMessageFor(Model => Model.Horarios, null, new { @class = "text-danger" })
+
+                                                                </div>
+
+                                                                <div class="col-sm-6">
+                                                                    <br /><br />
+                                                                    <label>Fecha Creacion</label>
+                                                                    <input type="text" class="form-control form-control-user" placeholder=""
+                                                                           name="FechaCreacion" value="@Model.FechaCreacion">
+                                                                    @Html.ValidationMessageFor(Model => Model.FechaCreacion, null, new { @class = "text-danger" })
+
+                                                                </div>
+                                                            </div>
+
+                                                        
+
+
+
+                                                            <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
+                                                            <center>
+
+                                                                <button type="submit" class="btn btn-primary">Editar</button>
+                                                            </center>
+                                                            </a>
 
 
 
 
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" name="Nombres" value="@Model.Nombres" placeholder="Nombre">
-                                                        @Html.ValidationMessageFor(Model => Model.Nombres, null, new { @class = "text-danger" })
-                                                    </div>
-
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" name="Valor" value="@Model.Valor" placeholder="Valor">
-                                                        @Html.ValidationMessageFor(Model => Model.Valor, null, new { @class = "text-danger" })
-                                                    </div>
-                                                </div>
-                                                <hr />
-                                                <div class="form-group">
-                                                    <center>
-                                                        <label for="sel1" style="color:#212F3D" >Seleccione Especialista :</label>
-                                                    </center>
-                                                    <select class="form-control" name="Especialistas" value="@Model.Especialistas" placeholder="Selecciona">
-                                                        <option>Claudio Quezada</option>
-                                                        <option>Danny Gutierrez</option>
-                                                        <option>Fabian Zenteno</option>
-                                                        <option>Otro</option>
-                                                    </select>
-
-                                                    @Html.ValidationMessageFor(Model => Model.Especialistas)
-                                                    <hr />
-                                                    <div class="form-group row">
-
-
-                                                    </div>
-                                                    <center>
-                                                        <button type="submit" class="btn btn-primary">Grabar</button>
-                                                    </center>
-                                                    </a>
-
-
-                                            </form>
+                                                    </form>
 
                                         </div>
                                     </div>

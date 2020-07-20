@@ -142,8 +142,10 @@
     <Compile Include="Areas\Doctor\Controllers\OdontologosController.cs" />
     <Compile Include="Areas\Doctor\Controllers\PacientesController.cs" />
     <Compile Include="Areas\Doctor\Controllers\TratamientosController.cs" />
+    <Compile Include="Areas\Doctor\DoctorAreaRegistration.cs" />
     <Compile Include="Areas\Recepcionista\Controllers\BoletasController.cs" />
     <Compile Include="Areas\Recepcionista\Controllers\CitasController.cs" />
+    <Compile Include="Areas\Recepcionista\Controllers\Home2Controller.cs" />
     <Compile Include="Areas\Recepcionista\Controllers\OdontologosController.cs" />
     <Compile Include="Areas\Recepcionista\Controllers\PacientesController.cs" />
     <Compile Include="Areas\Recepcionista\Controllers\TratamientosController.cs" />
@@ -175,14 +177,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Doctor\Controllers\a.html" />
-    <Content Include="Areas\Doctor\hola.html" />
-    <Content Include="Areas\Doctor\Views\a.html" />
-    <Content Include="Areas\Doctor\Views\Citas\a.html" />
-    <Content Include="Areas\Doctor\Views\Home\a.html" />
-    <Content Include="Areas\Doctor\Views\Odontologos\a.html" />
-    <Content Include="Areas\Doctor\Views\Pacientes\a.html" />
-    <Content Include="Areas\Doctor\Views\Tratamientos\a.html" />
     <Content Include="Content\contact.jpg" />
     <Content Include="Content\css\sb-admin-2.css" />
     <Content Include="Content\css\sb-admin-2.min.css" />
@@ -2100,6 +2094,16 @@
     <Content Include="Areas\Recepcionista\Views\Tratamientos\View.cshtml" />
     <Content Include="Areas\Recepcionista\Views\web.config" />
     <Content Include="Areas\Recepcionista\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Home2\About.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Home2\Contact.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Home2\Index.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Doctor\Views\web.config" />
+    <Content Include="Areas\Doctor\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Doctor\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Doctor\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\About.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\Contact.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

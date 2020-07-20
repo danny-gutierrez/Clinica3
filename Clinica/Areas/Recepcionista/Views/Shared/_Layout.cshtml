@@ -33,7 +33,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="@Url.Action("Index","home")">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="@Url.Action("Index","home2")">
 
 
                 <div class="sidebar-brand-icon rotate-n-15">
@@ -48,7 +48,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="@Url.Action("Index","home")">
+                <a class="nav-link" href="@Url.Action("Index","home2")">
                     <i class="fas fa-fw fa-tooth"></i>
                     <span>Inicio</span>
                 </a>
@@ -149,37 +149,7 @@
                 Intranet
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-people-carry"></i>
-                    <span>Acceso Funcionarios</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="@Url.Action("Index","Roles")">Entrar a Sistema</a>
-                        <a class="collapse-item" href="~/Content/register.html">Crear una Cuenta</a>
-                        <a class="collapse-item" href="~/Content/forgot-password.html">Olvido su Password</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Action("Index","Contacto")">
-                    <i class="fas fa-fw fa-mail-bulk"></i>
-                    <span>Contactanos</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Tables  
-                   <li class="nav-item">
-                   <a class="nav-link" href="~/Content/tables.html">
-                   <i class="fas fa-fw fa-table"></i>
-                   <span>Tablas</span>
-                   </a>
-                    </li>-->
+           
 
 
             <!-- Divider -->
@@ -358,22 +328,22 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="https://localhost:44341/Administrador/home1#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
+                                    Administrador
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Opciones
+                                <a class="dropdown-item" href="https://localhost:44341/Recepcionista/home2">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Recepcionista
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Actividad
+                                <a class="dropdown-item" href="https://localhost:44341/Doctor/home">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Odontologo
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Cerrar Sesion
+                                <a class="dropdown-item" href="https://localhost:44341/Home/Index">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Cerrar Seccion
                                 </a>
                             </div>
                         </li>
@@ -385,11 +355,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading boton de crear que enciava a crar pacientes
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800"></h1>
-            <a href="@Url.Action("Create","Pacientes")" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Crearssss</a>
-        </div>-->
+                   
 
 
 
