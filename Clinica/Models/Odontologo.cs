@@ -55,7 +55,7 @@ namespace Clinica.Models
         public String Especialidad { get; set; }
 
         [Required]
-        [StringLength(25, MinimumLength = 2)]
+        [StringLength(2, MinimumLength = 1)]
 
         public String Edad { get; set; }
 

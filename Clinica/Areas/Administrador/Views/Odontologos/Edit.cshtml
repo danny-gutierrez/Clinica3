@@ -46,7 +46,7 @@
                                             <div class="card-header py-3">
 
                                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                    <h1 class="h4 text-gray-900 mb-4">Editar Odontologo!</h1>
+                                                    <h1 class="h4 text-gray-900 mb-4">Editar Odontologo</h1>
                                                     <hr />
                                             </div>
 
@@ -54,14 +54,16 @@
                                             <form method="POST" action="" @Url.Action("Edit", "Odontologos") " class="user">
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Nombres</label>
 
                                                         <input type="text" class="form-control form-control-user" placeholder="Ingrese Nombre Odontologo"
-                                                               name="Nombres" value="@Model.Nombres">
+                                                               name="Nombres" value="@Model.Nombres" >
                                                         @Html.ValidationMessageFor(Model => Model.Nombres, null, new { @class = "text-danger" })
                                                     </div>
 
 
                                                     <div class="col-sm-6">
+                                                        <label>Apellidos</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Ingrese Apellido Odontologo"
                                                                name="Apellidos" value="@Model.Apellidos">
                                                         @Html.ValidationMessageFor(Model => Model.Apellidos, null, new { @class = "text-danger" })
@@ -71,30 +73,32 @@
 
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-
+                                                        <label>Rut</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Ingrese el Rut"
-                                                               name="Rut" value="@Model.Rut">
+                                                               name="Rut" value="@Model.Rut" >
                                                         @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
                                                     </div>
 
 
                                                     <div class="col-sm-6">
+                                                        <label>Edad</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Ingrese la Edad"
-                                                               name="Edad" value="@Model.Edad">
-                                                        @Html.ValidationMessageFor(Model => Model.Apellidos, null, new { @class = "text-danger" })
+                                                               name="Edad" value="@Model.Edad" >
+                                                        @Html.ValidationMessageFor(Model => Model.Edad, null, new { @class = "text-danger" })
                                                     </div>
 
                                                 </div>
 
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-
+                                                        <label>Telefonos</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Ingrese Telefono"
-                                                               name="Telefonos" value="@Model.Telefonos">
+                                                               name="Telefonos" value="@Model.Telefonos" >
                                                         @Html.ValidationMessageFor(Model => Model.Telefonos, null, new { @class = "text-danger" })
                                                     </div>
 
                                                     <div class="col-sm-6">
+                                                        <label>Direcciones</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Ingrese Direccion"
                                                                name="Direcciones" value="@Model.Direcciones">
                                                         @Html.ValidationMessageFor(Model => Model.Direcciones, null, new { @class = "text-danger" })
@@ -105,7 +109,7 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-
+                                                        <label>Fecha de Ingreso</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Fecha de Ingreso"
                                                                name="FechaIngreso" value="@Model.FechaIngreso">
                                                         @Html.ValidationMessageFor(Model => Model.FechaIngreso, null, new { @class = "text-danger" })
@@ -113,17 +117,18 @@
 
 
                                                     <div class="col-sm-6">
+                                                        <label>Especialidad</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Ingrese Especialidad"
-                                                               name="Especialidad" value="@Model.Especialidad">
+                                                               name="Especialidad" value="@Model.Especialidad" >
                                                         @Html.ValidationMessageFor(Model => Model.Especialidad, null, new { @class = "text-danger" })
                                                     </div>
 
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-
+                                                        <label>Correo</label>
                                                         <input type="email" class="form-control form-control-user" placeholder="Ingrese Correo"
-                                                               name="Correos" value="@Model.Correos">
+                                                               name="Correos" value="@Model.Correos" >
                                                         @Html.ValidationMessageFor(Model => Model.Correos, null, new { @class = "text-danger" })
                                                     </div>
 

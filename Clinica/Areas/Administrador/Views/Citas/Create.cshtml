@@ -52,6 +52,16 @@
                                             <form method="POST" action="@Url.Action("Create", "Citas")" class="user">
 
                                                 <div class="form-group row">
+
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <input type="text" class="form-control form-control-user" value="@Model.Rut" name="Rut" placeholder="Rut">
+                                                        @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
+                                                    </div>
+
+                                                    
+                                                </div>
+                                                <div class="form-group row">
+                                                   
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                                         <input type="text" class="form-control form-control-user" value="@Model.Nombre" name="Nombre" placeholder="Nombre">
                                                         @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "text-danger" })
@@ -91,7 +101,8 @@
                                                     <input type="text" class="form-control form-control-user" value="@Model.Motivo" name="Motivo" placeholder="Motivo">
                                                     @Html.ValidationMessageFor(Model => Model.Motivo, null, new { @class = "text-danger" })
                                                 </div>
-                                                <br />
+                                                
+                                                <hr />
                                                 <center>
                                                     <button type="submit" class="btn btn-primary">Grabar</button>
                                                 </center>

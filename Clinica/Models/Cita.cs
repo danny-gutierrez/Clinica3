@@ -11,7 +11,7 @@ namespace Clinica.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(15, MinimumLength = 10)]
+        [StringLength(15, MinimumLength = 9)]
         public String Rut { get; set; }
 
         [Required]
