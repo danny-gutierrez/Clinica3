@@ -196,8 +196,8 @@
                 Cargo = "Odontologo",
                 Monto = "800.000",
             };
-            context.Boletas.Add(b1);
-            context.Boletas.Add(b2);
+            context.Remuneraciones.Add(r1);
+            context.Remuneraciones.Add(r2);
             context.SaveChanges();
    
         }

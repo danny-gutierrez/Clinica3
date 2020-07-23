@@ -162,10 +162,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007130151386_PRUEBA.cs" />
-    <Compile Include="Migrations\202007130151386_PRUEBA.designer.cs">
-      <DependentUpon>202007130151386_PRUEBA.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Boleta.cs" />
     <Compile Include="Models\Cita.cs" />
@@ -2172,11 +2168,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007130151386_PRUEBA.resx">
-      <DependentUpon>202007130151386_PRUEBA.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
