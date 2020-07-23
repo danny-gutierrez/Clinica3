@@ -19,7 +19,7 @@
             // Odontologos
             Odontologo o1  = new Odontologo() 
             
-            { Nombres = "Andres" ,
+            { Nombres = "Dr.Torres",
             Apellidos="Garcia",
             Telefonos="569123456789",
             Direcciones="Chiguayanate",
@@ -34,7 +34,7 @@
             Odontologo o2 =new Odontologo()
 
             {
-                Nombres = "Guillermo",
+                Nombres = "Dra. Jazmin",
                 Apellidos = "Ramirez",
                 Telefonos = "569123456789",
                 Direcciones = "Santiago",

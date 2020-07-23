@@ -27,28 +27,7 @@ namespace Clinica.Areas.Administrador.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-                //List<OdontologosViewModels> lst=null;
-                //
-                //{
-                // lst=(from d in _db.Odontologos
-                // select new OdontologosViewModels
-                //   {
-                //    Id = d.Id,
-                //    Nombres = d.Nombres
-                //  }).ToList();
-                //}
-
-                //List<SelectListItem> items = lst.ConvertAll(d =>
-                //{
-                //   return new SelectListItem()
-                //  {
-                //      Text = d.Nombres.ToString(),
-                //    Value = d.Id.ToString(),
-                //  Selected = false
-                //};
-                //});
-
-                //  ViewBag.items = items;
+               
 
 
                 Cita cita = new Cita();
@@ -63,16 +42,19 @@ namespace Clinica.Areas.Administrador.Controllers
         public ActionResult Create(Cita cita)
 
         {
-                if (ModelState.IsValid)
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
+            if (ModelState.IsValid)
            {
                 //Guardo en base de datos
                 //O mando Request a REST API
               return RedirectToAction("Index", "Citas", new { id = 1 });
            }
-             List<Odontologo> odontologos = _db.Odontologos.ToList();
-            ViewBag.odontologos = odontologos;
 
-            return RedirectToAction("Index", "Citas", new { id = 1 });
+            return View(cita);
+
+
+
         }
         public ActionResult View(int id)
         {

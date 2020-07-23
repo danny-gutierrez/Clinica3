@@ -9,9 +9,9 @@ namespace Clinica.Areas.Administrador.Controllers
 {
     public class BoletasController : Controller
     {
-        private ClinicaContext _db = null;
+        private ClinicaContext _db = new ClinicaContext();
         // GET: boletas
-        
+
         public ActionResult Index()
 
         {
@@ -26,12 +26,16 @@ namespace Clinica.Areas.Administrador.Controllers
         public ActionResult Create()
         {
             Boleta boleta = new Boleta();
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
             return View(boleta);
         }
 
         [HttpPost]
         public ActionResult Create(Boleta boleta)
         {
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
             if (ModelState.IsValid)
             {
                 return RedirectToAction("Index", "Boletas", new { id = 1 });
@@ -45,6 +49,8 @@ namespace Clinica.Areas.Administrador.Controllers
             using(_db=new ClinicaContext())
             {
                 b = _db.Boletas.Find(id);
+                List<Odontologo> odontologos = _db.Odontologos.ToList();
+                ViewBag.odontologos = odontologos;
             }
             return View(b);
         }
@@ -56,6 +62,8 @@ namespace Clinica.Areas.Administrador.Controllers
             using (_db = new ClinicaContext())
             {
                 b = _db.Boletas.Find(id);
+                List<Odontologo> odontologos = _db.Odontologos.ToList();
+                ViewBag.odontologos = odontologos;
             }
             return View(b);
         }
@@ -67,7 +75,7 @@ namespace Clinica.Areas.Administrador.Controllers
             {
                 return RedirectToAction("View", "Boletas", new { id = 1 });
             }
-            return View(boleta);
+            return RedirectToAction("View", "Boletas", new { id = 1 });
         }
     }
 }

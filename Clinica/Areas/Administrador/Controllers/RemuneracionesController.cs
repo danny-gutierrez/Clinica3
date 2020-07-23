@@ -34,16 +34,18 @@ namespace Clinica.Areas.Administrador.Controllers
         [HttpPost]
         public ActionResult Create(Remuneracion remuneracion)
         {
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
             if (ModelState.IsValid)
             {
                 //Guardo en base de datos
                 //O mando Request a REST API
                 return RedirectToAction("Index", "Remuneraciones", new { id = 1 });
             }
-            List<Odontologo> odontologos = _db.Odontologos.ToList();
-            ViewBag.odontologos = odontologos;
+            return View(remuneracion);
 
-            return RedirectToAction("Index", "Remuneraciones", new { id = 1 });
+
+
         }
 
 
