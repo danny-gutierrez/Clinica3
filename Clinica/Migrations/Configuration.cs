@@ -166,9 +166,9 @@
             };
             Cita c2 = new Cita()
             {
-                Rut = "001",
-                Nombre = "Ndodoncia",
-                Apellido = "80.000",
+                Rut = "12.345.678-1",
+                Nombre = "peters",
+                Apellido = "parras",
                 Fecha = "22-07-2020",
                 Odontologo = "Dra. Jazmin",
                 Telefono = "966585422",
