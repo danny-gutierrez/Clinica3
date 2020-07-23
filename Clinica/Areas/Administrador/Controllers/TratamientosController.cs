@@ -37,17 +37,25 @@ namespace Clinica.Areas.Administrador.Controllers
         [HttpPost]
         public ActionResult Create(Tratamiento tratamiento)
         {
+
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
             if (ModelState.IsValid)
             {
                 
                 //guarda en bd
                 return RedirectToAction("Index", "Tratamientos", new { id = 1 });
+                
+                
             }
 
-            List<Odontologo> odontologos = _db.Odontologos.ToList();
-            ViewBag.odontologos = odontologos;
-             return RedirectToAction("Index", "Tratamientos", new { id = 1 });
+            
+            return View(tratamiento);
+
+            
            
+           
+
         }
 
 
