@@ -46,8 +46,40 @@
 
             };
 
+            Odontologo o3 = new Odontologo()
+
+            {
+                Nombres = "Dr.Alejandro",
+                Apellidos = "Ramirez",
+                Telefonos = "569123456789",
+                Direcciones = "Santiago",
+                Correos = "Guillermo@ejemplo.cl",
+                Rut = "123456789",
+                FechaIngreso = "19-07-2020",
+                Edad = "40",
+                Especialidad = "Limpieza General"
+
+            };
+
+            Odontologo o4 = new Odontologo()
+
+            {
+                Nombres = "Dr.Merardo",
+                Apellidos = "Ramirez",
+                Telefonos = "569123456789",
+                Direcciones = "Santiago",
+                Correos = "Guillermo@ejemplo.cl",
+                Rut = "123456789",
+                FechaIngreso = "19-07-2020",
+                Edad = "40",
+                Especialidad = "Limpieza General"
+
+            };
+
             context.Odontologos.Add(o1);
             context.Odontologos.Add(o2);
+            context.Odontologos.Add(o3);
+            context.Odontologos.Add(o4);
             context.SaveChanges();
 
 
@@ -83,9 +115,37 @@
 
 
             };
+            Tratamiento t3 = new Tratamiento()
+            {
+
+                Nombres = "Protesis",
+                Valor = "150.000",
+                Especialistas = "Cristian Perez",
+                Codigos = "00003",
+                Descripcion = "Trtamiento",
+                Horarios = " Lunes 10:00 A.m ",
+                FechaCreacion = "19-07-2020"
+
+
+            };
+            Tratamiento t4 = new Tratamiento()
+            {
+
+                Nombres = "Limpieza ",
+                Valor = "150.000",
+                Especialistas = "Cristian Perez",
+                Codigos = "00003",
+                Descripcion = "Trtamiento",
+                Horarios = " Lunes 10:00 A.m ",
+                FechaCreacion = "19-07-2020"
+
+
+            };
 
             context.Tratamientos.Add(t1);
             context.Tratamientos.Add(t2);
+            context.Tratamientos.Add(t3);
+            context.Tratamientos.Add(t4);
             context.SaveChanges();
             
             
@@ -117,8 +177,36 @@
 
 
             };
+            Paciente p3 = new Paciente()
+            {
+
+                Nombre = "Florencia",
+                Apellido = "Molina",
+                Rut = "18.588.666-5",
+                Edad = "28",
+                Correo = "Pedro@gmail.com",
+                Direccion = "Alamos 203, Coronel",
+                Telefono = "965855214"
+
+
+            };
+            Paciente p4 = new Paciente()
+            {
+
+                Nombre = "Junior",
+                Apellido = "Molina",
+                Rut = "18.588.666-5",
+                Edad = "28",
+                Correo = "Pedro@gmail.com",
+                Direccion = "Alamos 203, Coronel",
+                Telefono = "965855214"
+
+
+            };
             context.Pacientes.Add(p1);
             context.Pacientes.Add(p2);
+            context.Pacientes.Add(p3);
+            context.Pacientes.Add(p4);
             context.SaveChanges();
 
 
@@ -146,8 +234,34 @@
                 Valor = " 30.000",
                 Detalle = "Limpieza"
             };
+
+            Boleta b3 = new Boleta()
+            {
+                NB = "003",
+                Nombre = "Francisca",
+                Apellido = "Molina",
+                Odontologo = "Dra. Torres",
+                Fecha = "22-07-2020",
+                Fono = "985475575",
+                Valor = "80.000",
+                Detalle = "Endodoncia"
+            };
+            Boleta b4 = new Boleta()
+            {
+                NB = "004",
+                Nombre = "Roberto",
+                Apellido = "Molina",
+                Odontologo = "Dra. Torres",
+                Fecha = "22-07-2020",
+                Fono = "985475575",
+                Valor = "80.000",
+                Detalle = "Endodoncia"
+            };
+
             context.Boletas.Add(b1);
             context.Boletas.Add(b2);
+            context.Boletas.Add(b3);
+            context.Boletas.Add(b4);
             context.SaveChanges();
 
 
@@ -175,8 +289,32 @@
                 Motivo = "Endodoncia",
 
             };
+            Cita c3 = new Cita()
+            {
+                Rut = "99.999.999-9",
+                Nombre = "Daniela",
+                Apellido = "Montes",
+                Fecha = "22-07-2020",
+                Odontologo = "Dr.Torres",
+                Telefono = "412712413",
+                Motivo = "Limpieza",
+
+            };
+            Cita c4 = new Cita()
+            {
+                Rut = "55.555.555-5",
+                Nombre = "andrea",
+                Apellido = "Montes",
+                Fecha = "22-07-2020",
+                Odontologo = "Dr.Torres",
+                Telefono = "412712413",
+                Motivo = "Limpieza",
+
+            };
             context.Citas.Add(c1);
             context.Citas.Add(c2);
+            context.Citas.Add(c3);
+            context.Citas.Add(c4);
             context.SaveChanges();
 
 
@@ -196,8 +334,26 @@
                 Cargo = "Odontologo",
                 Monto = "800.000",
             };
+
+            Remuneracion r3 = new Remuneracion()
+            {
+                Nombre = "Juanita",
+                Apellido = "Torres",
+                Cargo = "Odontologo",
+                Monto = "800.000",
+            };
+
+            Remuneracion r4 = new Remuneracion()
+            {
+                Nombre = "Mireya",
+                Apellido = "Torres",
+                Cargo = "Odontologo",
+                Monto = "800.000",
+            };
             context.Remuneraciones.Add(r1);
             context.Remuneraciones.Add(r2);
+            context.Remuneraciones.Add(r3);
+            context.Remuneraciones.Add(r4);
             context.SaveChanges();
    
         }
