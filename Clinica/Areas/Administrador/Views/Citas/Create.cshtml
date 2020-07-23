@@ -79,63 +79,67 @@
                                                 <div class="form-group">
                                                     <label for="sel1" style="color:#212F3D">Seleccione Especialista :</label>
                                                     <select class="custom-select custom-select-sm form-control form-control-sm" name="Odontologo" id="Odontologo" placeholder="Odontologo">
-
-                                                        <option class="form-control">Dr DANNY</option>
-                                                        <option class="form-control">Dr CLAUDIO</option>
-                                                        <option class="form-control">Dr FABIAN</option>
-
-
-                                                    </select>
-                                                    @Html.ValidationMessageFor(Model => Model.Odontologo, null, new { @class = "text-danger" })
-
-
-
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
-                                                    @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
-                                                </div>
+                                                        @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                        {
+                                                            
+                                                            <option value="@odontologo.Id">@odontologo.Nombres</option>
+                                                        }
+                                                        <!--<option class="form-control">Dr DANNY</option>
+                                                            <option class="form-control">Dr CLAUDIO</option>
+                                                            <option class="form-control">Dr FABIAN</option>-->
 
 
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control form-control-user" value="@Model.Motivo" name="Motivo" placeholder="Motivo">
-                                                    @Html.ValidationMessageFor(Model => Model.Motivo, null, new { @class = "text-danger" })
-                                                </div>
-                                                
-                                                <hr />
-                                                <center>
-                                                    <button type="submit" class="btn btn-primary">Grabar</button>
-                                                </center>
+                                                </select>
+                                                @Html.ValidationMessageFor(Model => Model.Odontologo, null, new { @class = "text-danger" })
 
 
 
-                                            </form>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
+                                                @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" value="@Model.Motivo" name="Motivo" placeholder="Motivo">
+                                                @Html.ValidationMessageFor(Model => Model.Motivo, null, new { @class = "text-danger" })
+                                            </div>
+
+                                            <hr />
+                                            <center>
+                                                <button type="submit" class="btn btn-primary">Grabar</button>
+                                            </center>
 
 
 
-                                        </div>
+                                        </form>
+
+
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
-
-
-               </table>
             </div>
+
+
+           </table>
         </div>
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+                                                        <script src="vendor/jquery/jquery.min.js"></script>
+                                                        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                                                        <!-- Core plugin JavaScript-->
+                                                        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
-    </center>
+                                                        <!-- Custom scripts for all pages-->
+                                                        <script src="js/sb-admin-2.min.js"></script>
+</center>
 </body>
 
 </html>

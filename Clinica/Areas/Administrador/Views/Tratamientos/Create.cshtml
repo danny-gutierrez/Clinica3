@@ -79,9 +79,12 @@
                                                     <label for="sel1" style="color:#212F3D"> Especialista :</label>
                                                 </center>
                                                 <select class="form-control" name="Especialistas" value="@Model.Especialistas">
-                                                    @Html.ValidationMessageFor(Model => Model.Especialistas, null, new { @class = "text-danger" })
-                                                    <option>Claudio Quezada</option>
-                                                    <option>Danny Gutierrez</option>
+                                                  
+                                                    @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                    {
+
+                                                        <option value="@odontologo.Id">@odontologo.Nombres</option>
+                                                    }
 
                                                 </select>
 

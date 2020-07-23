@@ -79,8 +79,11 @@
                                                             </center>
                                                             <select class="form-control" name="Especialistas" value="@Model.Especialistas">
 
-                                                                <option>Claudio Quezada</option>
-                                                                <option>Danny Gutierrez</option>
+                                                                @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                                {
+
+                                                                    <option value="@odontologo.Id">@odontologo.Nombres</option>
+                                                                }
 
                                                             </select>
 

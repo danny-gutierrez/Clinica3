@@ -1,4 +1,5 @@
 ﻿using Clinica.Models;
+using Clinica.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,8 @@ namespace Clinica.Areas.Administrador.Controllers
 {
     public class CitasController : Controller
     {
-        private ClinicaContext _db = null;
+        //private ClinicaContext _db = null;
+        private ClinicaContext _db = new ClinicaContext();
         // GET: Citas
         public ActionResult Index()
         {
@@ -25,21 +27,52 @@ namespace Clinica.Areas.Administrador.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            Cita cita = new Cita();
+                //List<OdontologosViewModels> lst=null;
+                //
+                //{
+                // lst=(from d in _db.Odontologos
+                // select new OdontologosViewModels
+                //   {
+                //    Id = d.Id,
+                //    Nombres = d.Nombres
+                //  }).ToList();
+                //}
+
+                //List<SelectListItem> items = lst.ConvertAll(d =>
+                //{
+                //   return new SelectListItem()
+                //  {
+                //      Text = d.Nombres.ToString(),
+                //    Value = d.Id.ToString(),
+                //  Selected = false
+                //};
+                //});
+
+                //  ViewBag.items = items;
+
+
+                Cita cita = new Cita();
+           
+               List<Odontologo> odontologos = _db.Odontologos.ToList();
+               ViewBag.odontologos = odontologos;
+
             return View(cita);
         }
 
         [HttpPost]
         public ActionResult Create(Cita cita)
+
         {
-            if (ModelState.IsValid)
-            {
+                if (ModelState.IsValid)
+           {
                 //Guardo en base de datos
                 //O mando Request a REST API
-                return RedirectToAction("Index", "Citas", new { id = 1 });
-            }
+              return RedirectToAction("Index", "Citas", new { id = 1 });
+           }
+             List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
 
-            return View(cita);
+            return RedirectToAction("Index", "Citas", new { id = 1 });
         }
         public ActionResult View(int id)
         {
@@ -47,6 +80,8 @@ namespace Clinica.Areas.Administrador.Controllers
             using(_db=new ClinicaContext())
             {
                 c = _db.Citas.Find(id);
+                List<Odontologo> odontologos = _db.Odontologos.ToList();
+                ViewBag.odontologos = odontologos;
             }
             return View(c);
         }
@@ -59,8 +94,14 @@ namespace Clinica.Areas.Administrador.Controllers
             using (_db = new ClinicaContext())
             {
                 c = _db.Citas.Find(id);
+                List<Odontologo> odontologos = _db.Odontologos.ToList();
+                ViewBag.odontologos = odontologos;
             }
+            
+
             return View(c);
+            
+               
         }
 
         [HttpPost]
@@ -70,7 +111,9 @@ namespace Clinica.Areas.Administrador.Controllers
             {
                 return RedirectToAction("View", "Citas", new { id = 1 });
             }
-            return View(cita);
+
+            return RedirectToAction("View", "Citas", new { id = 1 });
+
         }
 
 

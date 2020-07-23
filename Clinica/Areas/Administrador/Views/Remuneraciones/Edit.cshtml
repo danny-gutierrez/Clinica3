@@ -75,10 +75,11 @@
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                                         <label>Cargo</label>
                                                         <select class="form-control" name="Cargo" value="@Model.Cargo">
-                                                            <option>Recepcionista</option>
-                                                            <option>Secretaria</option>
-                                                            <option>Odontologo</option>
-                                                            <option>Otro</option>
+                                                            @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                            {
+
+                                                                <option value="@odontologo.Id">@odontologo.Nombres</option>
+                                                            }
                                                         </select>
                                                         @Html.ValidationMessageFor(Model => Model.Cargo, null, new { @class = "text-danger" })
                                                     </div>

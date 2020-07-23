@@ -9,7 +9,7 @@ namespace Clinica.Areas.Administrador.Controllers
 {
     public class TratamientosController : Controller
     {
-        private ClinicaContext _db = null;
+        private ClinicaContext _db = new ClinicaContext();
         // GET: Pacientes
         public ActionResult Index()
         {
@@ -28,6 +28,8 @@ namespace Clinica.Areas.Administrador.Controllers
 
         {
             Tratamiento tratamiento = new Tratamiento();
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
 
             return View(tratamiento);
         }
@@ -37,11 +39,15 @@ namespace Clinica.Areas.Administrador.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 //guarda en bd
                 return RedirectToAction("Index", "Tratamientos", new { id = 1 });
             }
 
-            return View(tratamiento);
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
+             return RedirectToAction("Index", "Tratamientos", new { id = 1 });
+           
         }
 
 
@@ -66,13 +72,18 @@ namespace Clinica.Areas.Administrador.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-
+         
             Tratamiento t = null;
             using (_db = new ClinicaContext())
             {
                 t = _db.Tratamientos.Find(id);
+                List<Odontologo> odontologos = _db.Odontologos.ToList();
+                ViewBag.odontologos = odontologos;
+
             }
+            
             return View(t);
+           
         }
 
         [HttpPost]
@@ -80,11 +91,17 @@ namespace Clinica.Areas.Administrador.Controllers
         {
             if (ModelState.IsValid)
             {
+               
                 //guarda en bd
                 return RedirectToAction("View", "Tratamientos", new { id = 1 });
-            }
+                
 
-            return View(tratamiento);
+            }
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
+
+            return RedirectToAction("View", "Tratamientos", new { id = 1 });
+
         }
     }
 }

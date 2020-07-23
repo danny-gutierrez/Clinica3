@@ -65,9 +65,11 @@
 
                                                     <select class="custom-select custom-select-sm form-control form-control-sm" name="Cargo" id="Cargo" placeholder="Cargo">
 
-                                                        <option class="form-control">Dr DANNY</option>
-                                                        <option class="form-control">Dr CLAUDIO</option>
-                                                        <option class="form-control">Dr FABIAN</option>
+                                                        @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                        {
+
+                                                            <option value="@odontologo.Id">@odontologo.Nombres</option>
+                                                        }
 
 
                                                     </select>

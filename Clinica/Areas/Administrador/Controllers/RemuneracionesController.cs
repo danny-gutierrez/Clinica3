@@ -10,7 +10,7 @@ namespace Clinica.Areas.Administrador.Controllers
     public class RemuneracionesController : Controller
 
     {
-        private ClinicaContext _db = null;
+        private ClinicaContext _db = new ClinicaContext();
         // GET: Remuneraciones
         public ActionResult Index()
         {
@@ -26,6 +26,8 @@ namespace Clinica.Areas.Administrador.Controllers
         public ActionResult Create()
         {
             Remuneracion remuneracion = new Remuneracion();
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
             return View(remuneracion);     
         }
 
@@ -36,10 +38,12 @@ namespace Clinica.Areas.Administrador.Controllers
             {
                 //Guardo en base de datos
                 //O mando Request a REST API
-                return RedirectToAction("Index", "Remuneraciones");
+                return RedirectToAction("Index", "Remuneraciones", new { id = 1 });
             }
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
 
-            return View(remuneracion);
+            return RedirectToAction("Index", "Remuneraciones", new { id = 1 });
         }
 
 
@@ -60,6 +64,8 @@ namespace Clinica.Areas.Administrador.Controllers
             using (_db = new ClinicaContext())
             {
                 r = _db.Remuneraciones.Find(id);
+                List<Odontologo> odontologos = _db.Odontologos.ToList();
+                ViewBag.odontologos = odontologos;
             }
             return View(r);
         }
@@ -70,8 +76,12 @@ namespace Clinica.Areas.Administrador.Controllers
             if (ModelState.IsValid)
             {
                 return RedirectToAction("View", "Remuneraciones", new { id = 1 });
+               
             }
-            return View(remuneracion);
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
+            return RedirectToAction("View", "Remuneraciones", new { id = 1 });
+
         }
     }
 }
