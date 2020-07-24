@@ -49,55 +49,67 @@
                                                     <h1 class="h4 text-gray-900 mb-4">Editar Cita</h1>
                                                     <hr />
                                             </div>
-                                            <form method="POST" action="@Url.Action("Edit", "Citas")" class="user">
+                                            <form from method="POST" action="@Url.Action("Edit", "Citas")" class="user">
+                                                <div class="form-group row">
 
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Rut</label>
+                                                        <input type="text" class="form-control form-control-user" value="@Model.Rut" name="Rut" placeholder="Rut">
+                                                        @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
+                                                    </div>
+
+
+                                                </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Nombre</label>
                                                         <input type="text" class="form-control form-control-user" value="@Model.Nombre" name="Nombre" placeholder="Nombre">
                                                         @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "text-danger" })
                                                     </div>
 
                                                     <div class="col-sm-6">
+                                                        <label>Apellido</label>
                                                         <input type="text" class="form-control form-control-user" value="@Model.Apellido" name="Apellido" placeholder="Apellido">
                                                         @Html.ValidationMessageFor(Model => Model.Apellido, null, new { @class = "text-danger" })
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
+                                                    <label>Fecha</label>
                                                     <input type="datetime-local" class="form-control form-control-user" value="@Model.Fecha" name="Fecha" placeholder="Fecha y Hora">
                                                     @Html.ValidationMessageFor(Model => Model.Fecha, null, new { @class = "text-danger" })
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label for="sel1" class="form-control form-control-user"> Especialista:</label>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <select class="form-control form-control-user" value="@Model.Odontologo" name="Odontologo" id="Odontologo" placeholder="Odontologo">
 
-                                                            @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
-                                                            {
-
-                                                                <option value="@odontologo.Id">@odontologo.Nombres</option>
-                                                            }
-
-
-                                                        </select>
-                                                        
-                                                    </div>
-                                                </div>
                                                 <div class="form-group">
+                                                    <label>Especialista</label>
+                                                    <select class="form-control form-control-user" value="@Model.Odontologo" name="Odontologo" id="Odontologo" placeholder="Odontologo">
+
+                                                        @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                        {
+
+                                                            <option value="@odontologo.Id">@odontologo.Nombres</option>
+                                                        }
+
+
+                                                    </select>
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Telefono</label>
                                                     <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
                                                     @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
                                                 </div>
                                                 <div class="form-group">
+                                                    <label>Motivo</label>
                                                     <input type="text" class="form-control form-control-user" value="@Model.Motivo" name="Motivo" placeholder="Motivo">
                                                     @Html.ValidationMessageFor(Model => Model.Motivo, null, new { @class = "text-danger" })
                                                 </div>
-                                                <br />
+                                                <hr />
                                                 <center>
                                                     <button type="submit" class="btn btn-primary">Editar</button>
                                                     <a href="@Url.Action("Index", "Citas")"><input type="button" value="Volver" class="btn btn-primary"></a>
                                                 </center>
-                                                </a>
+
 
 
                                             </form>

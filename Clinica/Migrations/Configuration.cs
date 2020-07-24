@@ -19,7 +19,7 @@
             // Odontologos
             Odontologo o1  = new Odontologo() 
             
-            { Nombres = "Dr.Torres",
+            { Nombres = "Dra.Andrea",
             Apellidos="Garcia",
             Telefonos="569123456789",
             Direcciones="Chiguayanate",
@@ -64,7 +64,7 @@
             Odontologo o4 = new Odontologo()
 
             {
-                Nombres = "Dr.Merardo",
+                Nombres = "Dra.Claudia",
                 Apellidos = "Ramirez",
                 Telefonos = "569123456789",
                 Direcciones = "Santiago",
@@ -93,7 +93,7 @@
 
                 Nombres = "Ndodoncia",
                 Valor = "80.000",
-                Especialistas = "JPErez",
+                Especialistas = "Dra.Andrea",
                 Codigos = "00001",
                 Descripcion = "Tratamiento",
             Horarios=" L a M 10:00 - 15:00",
@@ -107,7 +107,7 @@
 
                 Nombres = "Ortodoncia",
                 Valor = "150.000",
-                Especialistas = "Cristian Perez",
+                Especialistas = "Dra.Claudia",
                 Codigos = "00003",
                 Descripcion = "Trtamiento",
                 Horarios = " Lunes 10:00 A.m ",
@@ -120,7 +120,7 @@
 
                 Nombres = "Protesis",
                 Valor = "150.000",
-                Especialistas = "Cristian Perez",
+                Especialistas = "Dr.Alejandro",
                 Codigos = "00003",
                 Descripcion = "Trtamiento",
                 Horarios = " Lunes 10:00 A.m ",
@@ -133,7 +133,7 @@
 
                 Nombres = "Limpieza ",
                 Valor = "150.000",
-                Especialistas = "Cristian Perez",
+                Especialistas = "Dra. Jazmin",
                 Codigos = "00003",
                 Descripcion = "Trtamiento",
                 Horarios = " Lunes 10:00 A.m ",
@@ -217,7 +217,7 @@
                 NB = "001",
                 Nombre = "Pedro",
                 Apellido = "Molina",
-                Odontologo = "Dra. Torres",
+                Odontologo = "Dra.Andrea",
                 Fecha = "22-07-2020",
                 Fono = "985475575",
                 Valor = "80.000",
@@ -240,7 +240,7 @@
                 NB = "003",
                 Nombre = "Francisca",
                 Apellido = "Molina",
-                Odontologo = "Dra. Torres",
+                Odontologo = "Dra.Andrea",
                 Fecha = "22-07-2020",
                 Fono = "985475575",
                 Valor = "80.000",
@@ -251,7 +251,7 @@
                 NB = "004",
                 Nombre = "Roberto",
                 Apellido = "Molina",
-                Odontologo = "Dra. Torres",
+                Odontologo = "Dra.Claudia",
                 Fecha = "22-07-2020",
                 Fono = "985475575",
                 Valor = "80.000",
@@ -273,7 +273,7 @@
                 Nombre = "Daniel",
                 Apellido = "Montes",
                 Fecha = "22-07-2020",
-                Odontologo = "Dr.Torres",
+                Odontologo = "Dra.Claudia",
                 Telefono = "412712413",
                 Motivo = "Limpieza",
         
@@ -295,7 +295,7 @@
                 Nombre = "Daniela",
                 Apellido = "Montes",
                 Fecha = "22-07-2020",
-                Odontologo = "Dr.Torres",
+                Odontologo = "Dr.Andrea",
                 Telefono = "412712413",
                 Motivo = "Limpieza",
 
@@ -306,7 +306,7 @@
                 Nombre = "andrea",
                 Apellido = "Montes",
                 Fecha = "22-07-2020",
-                Odontologo = "Dr.Torres",
+                Odontologo = "Dra.Claudia",
                 Telefono = "412712413",
                 Motivo = "Limpieza",
 
@@ -322,31 +322,31 @@
             //Remuneraciones
             Remuneracion r1 = new Remuneracion()
             {
-                Nombre = "Gabriela",
-                Apellido = "Torres",
+                Nombre = "Andrea",
+                Apellido = "Garcia",
                 Cargo = "Odontologo",
                 Monto = "800.000",
             };
             Remuneracion r2 = new Remuneracion()
             {
                 Nombre = "Jazmin",
-                Apellido = "Briones",
+                Apellido = "Ramirez",
                 Cargo = "Odontologo",
                 Monto = "800.000",
             };
 
             Remuneracion r3 = new Remuneracion()
             {
-                Nombre = "Juanita",
-                Apellido = "Torres",
+                Nombre = "Alejandro",
+                Apellido = "Ramirez",
                 Cargo = "Odontologo",
                 Monto = "800.000",
             };
 
             Remuneracion r4 = new Remuneracion()
             {
-                Nombre = "Mireya",
-                Apellido = "Torres",
+                Nombre = "Claudia",
+                Apellido = "Ramirez",
                 Cargo = "Odontologo",
                 Monto = "800.000",
             };

@@ -83,7 +83,7 @@
                                                         @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
                                                         {
 
-                                                            <option value="@odontologo.Id">@odontologo.Nombres</option>
+                                                        <option value="@odontologo.Id">@odontologo.Nombres @odontologo.Apellidos</option>
                                                         }
 
                                                     </select>
