@@ -73,13 +73,15 @@
                                                     <div class="col-sm-6">
                                                         <select class="form-control form-control-user" value="@Model.Odontologo" name="Odontologo" id="Odontologo" placeholder="Odontologo">
 
-                                                            <option class="form-control form-control-user">Dr DANNY</option>
-                                                            <option class="form-control form-control-user">Dr CLAUDIO</option>
-                                                            <option class="form-control form-control-user">Dr FABIAN</option>
+                                                            @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                            {
+
+                                                                <option value="@odontologo.Id">@odontologo.Nombres</option>
+                                                            }
 
 
                                                         </select>
-                                                        @Html.ValidationMessageFor(Model => Model.Odontologo, null, new { @class = "text-danger" })
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -93,6 +95,7 @@
                                                 <br />
                                                 <center>
                                                     <button type="submit" class="btn btn-primary">Editar</button>
+                                                    <a href="@Url.Action("Index", "Citas")"><input type="button" value="Volver" class="btn btn-primary"></a>
                                                 </center>
                                                 </a>
 

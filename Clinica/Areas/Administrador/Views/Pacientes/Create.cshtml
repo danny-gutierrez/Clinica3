@@ -12,6 +12,7 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Register</title>
+    
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -86,31 +87,31 @@
                                                     </div>
                                                 </div>
 
-                                                   
-                                                    <div class="form-group">
-                                                        <div class="">
-                                                            <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion">
-                                                            @Html.ValidationMessageFor(Model => Model.Direccion, null, new { @class = "text-danger" })
-                                                        </div>
+
+                                                <div class="form-group">
+                                                    <div class="">
+                                                        <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion">
+                                                        @Html.ValidationMessageFor(Model => Model.Direccion, null, new { @class = "text-danger" })
                                                     </div>
+                                                </div>
 
-                                                    <div class=" form-group row">
-                                                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                                            <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
-                                                            @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
-                                                        </div>
+                                                <div class=" form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
+                                                        @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
                                                     </div>
-                                                
+                                                </div>
 
-                                                    <br />
-                                                    <center>
 
-                                                        <button type="submit" class="btn btn-primary">Grabar</button>
-                                                        <a href="@Url.Action("Index", "Pacientes")"><input type="button" value="Volver" class="btn btn-primary"></a>
-                                                    </center>
-                                                   
+                                                <br />
+                                                <center>
 
-                                             </form>
+                                                    <button type="submit" class="btn btn-primary">Grabar</button>
+                                                    <a href="@Url.Action("Index", "Pacientes")"><input type="button" value="Volver" class="btn btn-primary"></a>
+                                                </center>
+
+
+                                            </form>
 
 
 
@@ -123,11 +124,12 @@
                     </div>
                 </div>
                 </table>
-
+                
 
             </div>
         </div>
         <!-- Bootstrap core JavaScript-->
+        <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script>
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

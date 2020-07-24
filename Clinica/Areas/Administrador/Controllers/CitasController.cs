@@ -42,15 +42,15 @@ namespace Clinica.Areas.Administrador.Controllers
         public ActionResult Create(Cita cita)
 
         {
-            List<Odontologo> odontologos = _db.Odontologos.ToList();
-            ViewBag.odontologos = odontologos;
+           
             if (ModelState.IsValid)
            {
                 //Guardo en base de datos
                 //O mando Request a REST API
               return RedirectToAction("Index", "Citas", new { id = 1 });
            }
-
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
             return View(cita);
 
 
@@ -93,8 +93,10 @@ namespace Clinica.Areas.Administrador.Controllers
             {
                 return RedirectToAction("View", "Citas", new { id = 1 });
             }
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
 
-            return RedirectToAction("View", "Citas", new { id = 1 });
+            return View(cita);
 
         }
 

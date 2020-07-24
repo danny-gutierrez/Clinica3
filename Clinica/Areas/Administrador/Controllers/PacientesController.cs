@@ -10,8 +10,8 @@ namespace Clinica.Areas.Administrador.Controllers
     public class PacientesController : Controller
     {
         private ClinicaContext _db = null;
-       
         
+
         public ActionResult Index()
         {
             IEnumerable<Paciente> Pacientes = null;
@@ -23,9 +23,12 @@ namespace Clinica.Areas.Administrador.Controllers
         }
 
         [HttpGet]
+        
         public ActionResult Create()
         {
+            
             Paciente paciente = new Paciente();
+            
             return View(paciente);
         }
 
@@ -34,7 +37,7 @@ namespace Clinica.Areas.Administrador.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "Pacientes", new { id = 1 });
+                return RedirectToAction("Create", "Pacientes", new { id = 1 });
             }
             return View(paciente);
         }
@@ -66,9 +69,10 @@ namespace Clinica.Areas.Administrador.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("View", "Pacientes", new { id = 1 });
+                return RedirectToAction("Edit", "Pacientes", new { id = 1 });
             }
             return View(paciente);
         }
     }
+    
 }

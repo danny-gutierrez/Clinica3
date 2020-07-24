@@ -90,7 +90,7 @@
 
 
                                                     </select>
-                                                    @Html.ValidationMessageFor(Model => Model.Odontologo, null, new { @class = "text-danger" })
+                                                   
                                                 </div>
 
                                                 <div class="form-group">
@@ -106,6 +106,7 @@
                                                 <hr />
                                                 <center>
                                                     <button type="submit" class="btn btn-primary">Editar</button>
+                                                    <a href="@Url.Action("Index", "Citas")"><input type="button" value="Volver" class="btn btn-primary"></a>
                                                 </center>
 
 

@@ -10,12 +10,12 @@ namespace Clinica.Areas.Recepcionista.Controllers
     public class PacientesController : Controller
     {
         private ClinicaContext _db = null;
-       
-        
+
+
         public ActionResult Index()
         {
             IEnumerable<Paciente> Pacientes = null;
-            using (_db =new ClinicaContext())
+            using (_db = new ClinicaContext())
             {
                 Pacientes = _db.Pacientes.ToList();
             }
@@ -23,9 +23,12 @@ namespace Clinica.Areas.Recepcionista.Controllers
         }
 
         [HttpGet]
+
         public ActionResult Create()
         {
+
             Paciente paciente = new Paciente();
+
             return View(paciente);
         }
 
@@ -34,7 +37,7 @@ namespace Clinica.Areas.Recepcionista.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "Pacientes", new { id = 1 });
+                return RedirectToAction("Create", "Pacientes", new { id = 1 });
             }
             return View(paciente);
         }
@@ -42,13 +45,13 @@ namespace Clinica.Areas.Recepcionista.Controllers
         public ActionResult View(int id)
         {
             Paciente p = null;
-            using (_db =new ClinicaContext())
+            using (_db = new ClinicaContext())
             {
                 p = _db.Pacientes.Find(id);
             }
             return View(p);
         }
-       
+
 
         [HttpGet]
         public ActionResult Edit(int id)
@@ -66,7 +69,7 @@ namespace Clinica.Areas.Recepcionista.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("View", "Pacientes", new { id = 1 });
+                return RedirectToAction("Edit", "Pacientes", new { id = 1 });
             }
             return View(paciente);
         }

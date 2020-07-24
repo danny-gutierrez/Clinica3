@@ -42,7 +42,7 @@ namespace Clinica.Areas.Administrador.Controllers
             if (ModelState.IsValid)
             {
                 //guarda en bd
-                return RedirectToAction("Index", "Odontologos", new { id = 1 });
+                return RedirectToAction("Create", "Odontologos", new { id = 1 });
             }
 
             return View(odontologo);
@@ -84,7 +84,7 @@ namespace Clinica.Areas.Administrador.Controllers
             if (ModelState.IsValid)
             {
                 //guarda en bd
-                return RedirectToAction("View", "Odontologos", new { id = 1 });
+                return RedirectToAction("Edit", "Odontologos", new { id = 1 });
             }
 
             return View(odontologo);

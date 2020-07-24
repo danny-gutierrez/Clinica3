@@ -81,7 +81,7 @@
                                                                 <option value="@odontologo.Id">@odontologo.Nombres</option>
                                                             }
                                                         </select>
-                                                        @Html.ValidationMessageFor(Model => Model.Cargo, null, new { @class = "text-danger" })
+                                                       
                                                     </div>
                                                     <div class="col-sm-6 ">
                                                         <label>Monto</label>
@@ -104,6 +104,7 @@
                                                 <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
                                                 <center>
                                                     <button type="submit" class="btn btn-primary">Editar</button>
+                                                    <a href="@Url.Action("Index", "Remuneraciones")"><input type="button" value="Volver" class="btn btn-primary"></a>
                                                 </center>
                                                 </a>
 
