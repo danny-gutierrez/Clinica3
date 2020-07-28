@@ -39,7 +39,9 @@ namespace Clinica.Models
         [StringLength(25, MinimumLength = 5)]
         public String Motivo { get; set; }
 
-       
+
+        public virtual ICollection<PacienteCita> RegistrosPC { get; set; }  // paciente cita
+
     }
 
 }

@@ -57,6 +57,21 @@ namespace Clinica.Areas.Administrador.Controllers
                                     .ToList();
             ViewBag.boletas = boletas;
 
+
+            List<Tratamiento> tratamientos = _db.RegistrosPT
+                                             .Where(r => r.PacienteId == id)
+                                               .Select(r => r.Tratamiento)
+                                               .ToList();
+            ViewBag.tratamientos = tratamientos;
+
+
+            List<Cita> citas = _db.RegistrosPC
+                                             .Where(r => r.PacienteId == id)
+                                               .Select(r => r.Cita)
+                                               .ToList();
+            ViewBag.citas = citas;
+
+
             return View(paciente);
         }
 

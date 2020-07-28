@@ -16,8 +16,12 @@ namespace Clinica.Models
         public DbSet<Remuneracion> Remuneraciones { get; set; }
         public DbSet<Tratamiento> Tratamientos { get; set; }
         public DbSet<BoletaPaciente> Registros { get; set; }
-      
-        
+
+        public DbSet<PacienteTratamiento> RegistrosPT { get; set; }
+
+        public DbSet<PacienteCita> RegistrosPC { get; set; }
+
+
 
 
     }

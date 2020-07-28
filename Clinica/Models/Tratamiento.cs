@@ -46,5 +46,7 @@ namespace Clinica.Models
         [StringLength(25, MinimumLength = 5)]
 
         public String Descripcion { get; set; }
+
+        public virtual ICollection<PacienteTratamiento> RegistrosPT { get; set; }  // paciente tratamiento
     }
 }

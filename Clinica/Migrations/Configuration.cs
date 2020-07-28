@@ -209,6 +209,41 @@
             context.Pacientes.Add(p4);
             context.SaveChanges();
 
+            // Relacion Paciente Tratamiento
+
+            PacienteTratamiento pt1 = new PacienteTratamiento()
+            {
+
+                PacienteId =p1.Id,
+                TratamientoId =t1.Id
+
+
+            };
+
+            PacienteTratamiento pt2 = new PacienteTratamiento()
+            {
+
+                PacienteId = p1.Id,
+                TratamientoId = t2.Id
+
+
+            };
+            PacienteTratamiento pt3 = new PacienteTratamiento()
+            {
+
+                PacienteId = p2.Id,
+                TratamientoId = t2.Id
+
+
+            };
+
+            context.RegistrosPT.Add(pt1);
+            context.RegistrosPT.Add(pt2);
+            context.RegistrosPT.Add(pt3);
+            context.SaveChanges();
+
+
+
 
 
             //Boletas
@@ -338,6 +373,37 @@
             context.SaveChanges();
 
 
+            // Relacion paciente Citas
+
+            PacienteCita pc1 = new PacienteCita()
+            {
+                PacienteId =p1.Id,
+                CitaId=c1.Id
+
+
+            };
+
+            PacienteCita pc2 = new PacienteCita()
+            {
+                PacienteId = p1.Id,
+                CitaId = c2.Id
+
+
+            };
+            PacienteCita pc3 = new PacienteCita()
+            {
+                PacienteId = p2.Id,
+                CitaId = c2.Id
+
+
+            };
+
+            context.RegistrosPC.Add(pc1);
+
+            context.RegistrosPC.Add(pc2);
+
+            context.RegistrosPC.Add(pc3);
+            context.SaveChanges();
 
             //Remuneraciones
             Remuneracion r1 = new Remuneracion()

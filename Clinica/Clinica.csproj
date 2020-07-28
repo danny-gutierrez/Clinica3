@@ -170,6 +170,8 @@
     <Compile Include="Models\Odontologo.cs" />
     <Compile Include="Models\OdontologosViewModels.cs" />
     <Compile Include="Models\Paciente.cs" />
+    <Compile Include="Models\PacienteCita.cs" />
+    <Compile Include="Models\PacienteTratamiento.cs" />
     <Compile Include="Models\Remuneracion.cs" />
     <Compile Include="Models\Tratamiento.cs" />
     <Compile Include="Models\ViewModels\OdontologosViewModels.cs" />
