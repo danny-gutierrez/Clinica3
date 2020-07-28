@@ -264,6 +264,26 @@
             context.Boletas.Add(b4);
             context.SaveChanges();
 
+            // Registro de enfermedad
+            BoletaPaciente bp1 = new BoletaPaciente()
+            {
+                PacienteId = p1.Id,
+                BoletaId = b1.Id,
+            };
+            BoletaPaciente bp2 = new BoletaPaciente()
+            {
+                PacienteId = p1.Id,
+                BoletaId = b2.Id,
+            };
+            BoletaPaciente bp3 = new BoletaPaciente()
+            {
+                PacienteId = p2.Id,
+                BoletaId = b2.Id,
+            };
+            context.Registros.Add(bp1);
+            context.Registros.Add(bp2);
+            context.Registros.Add(bp3);
+            context.SaveChanges();
 
 
             //Citas

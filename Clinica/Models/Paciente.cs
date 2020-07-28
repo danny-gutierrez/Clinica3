@@ -40,6 +40,8 @@ namespace Clinica.Models
         [StringLength(12, MinimumLength = 9)]
         public String Telefono { get; set; }
 
+        public virtual  ICollection<BoletaPaciente>Registros{ get; set; }
+
        
 
     }

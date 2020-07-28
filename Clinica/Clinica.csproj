@@ -164,6 +164,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Boleta.cs" />
+    <Compile Include="Models\BoletaPaciente.cs" />
     <Compile Include="Models\Cita.cs" />
     <Compile Include="Models\ClinicaContext.cs" />
     <Compile Include="Models\Odontologo.cs" />
@@ -1845,6 +1846,9 @@
     <Content Include="Content\vendor\jquery\jquery.min.js" />
     <Content Include="Content\vendor\jquery\jquery.slim.js" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Content\vendor\p1\codigo.js" />
+    <Content Include="Content\vendor\p1\jquery-3.3.1.min.js" />
+    <Content Include="Content\vendor\p1\sweetalert2.all.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

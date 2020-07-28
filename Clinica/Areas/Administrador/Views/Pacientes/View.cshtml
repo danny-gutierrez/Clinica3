@@ -40,78 +40,148 @@
 
                                         <div class="card shadow mb-4">
                                             <div class="card-header py-3">
-
                                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                    <h1 class="h4 text-gray-900 mb-4">Ver Paciente!</h1>
+                                                    <h1 class="h4 text-gray-900 mb-4">Ver Paciente</h1>
                                                     <hr />
-                                            </div>
-                                            <form method="POST" action="@Url.Action("Index", "Pacientes")" class="user">
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Nombre</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Nombre" name="Nombre" placeholder="Nombre" disabled>
-                                                        
-                                                    </div>
+
+                                                    <form method="POST" action="@Url.Action("Index", "Pacientes")" class="user">
+                                                        <div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <label>Nombre</label>
+                                                                    <input type="text" class="form-control form-control-user" value="@Model.Nombre" name="Nombre" placeholder="Nombre" disabled>
+
+                                                                </div>
 
 
-                                                    <div class="col-sm-6">
-                                                        <label>Apellido</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Apellido" name="Apellido" placeholder="Apellido" disabled>
+                                                                <div class="col-sm-6">
+                                                                    <label>Apellido</label>
+                                                                    <input type="text" class="form-control form-control-user" value="@Model.Apellido" name="Apellido" placeholder="Apellido" disabled>
 
-                                                    </div>
+                                                                </div>
 
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Rut</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Rut" name="Rut" placeholder="Rut" disabled>
-
-
-                                                    </div>
-
-                                                    <div class="col-sm-6">
-                                                        <label>Edad</label>
-                                                        <input type="number" class="form-control form-control-user" value="@Model.Edad" name="Edad" placeholder="Edad" disabled>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <label>Rut</label>
+                                                                    <input type="text" class="form-control form-control-user" value="@Model.Rut" name="Rut" placeholder="Rut" disabled>
 
 
-                                                    </div>
-                                                </div>
+                                                                </div>
 
-                                                <div class="form-group">
-                                                    <div class="">
-                                                        <label>Correo</label>
-                                                        <input type="email" class="form-control form-control-user" value="@Model.Correo" name="Correo" placeholder="Correo" disabled>
+                                                                <div class="col-sm-6">
+                                                                    <label>Edad</label>
+                                                                    <input type="number" class="form-control form-control-user" value="@Model.Edad" name="Edad" placeholder="Edad" disabled>
 
 
-                                                    </div>
-                                                </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="">
+                                                                    <label>Correo</label>
+                                                                    <input type="email" class="form-control form-control-user" value="@Model.Correo" name="Correo" placeholder="Correo" disabled>
 
 
-                                                <div class="form-group">
-                                                    <div class="">
-                                                        <label>Direccion</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion" disabled>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class=" form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Telefono</label>
-                                                        <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono" disabled>
-
-                                                    </div>
-                                                </div>
+                                                                </div>
+                                                            </div>
 
 
-                                                <br />
+                                                            <div class="form-group">
+                                                                <div class="">
+                                                                    <label>Direccion</label>
+                                                                    <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion" disabled>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class=" form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <label>Telefono</label>
+                                                                    <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono" disabled>
+
+                                                                </div>
+                                                            </div>
+                                                            <hr />
+                                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                               
+
+                                                                    <h1 class="h4 text-gray-900 mb-4">Boletas del Paciente</h1>
+                                                                    <tr>
+
+                                                                        <th>Numero de Boleta</th>
+                                                                        <th>Odontologo</th>
+                                                                        <th>Valor</th>
+                                                                        <th>Fecha</th>
+
+                                                                    </tr>
+
+
+
+                                                                    @foreach (Clinica.Models.Boleta boleta in ViewBag.boletas)
+                                                                    {
+                                                                        <tr>
+                                                                            <td>@boleta.NB</td>
+                                                                            <td>@boleta.Odontologo</td>
+                                                                            <td>@boleta.Valor</td>
+                                                                            <td>@boleta.Fecha</td>
+
+                                                                        </tr>
+
+                                                                    }
+
+
+
+                                                                </div>
+                                                            </table>
+                                                          
+                                                        </div>
+                                                </table>
+
+
+
+                                                
+
                                                 <center>
                                                     <button type="submit" class="btn btn-primary">Volver</button>
                                                 </center>
+                                                    <br />
+
+                                                </form>
 
 
-                                            </form>
 
+
+
+
+
+
+
+
+
+                                                </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            </div>
+                                                                 
+                                                
 
 
                                         </div>
@@ -122,7 +192,8 @@
 
                     </div>
                 </div>
-                </table>
+
+               
 
 
             </div>

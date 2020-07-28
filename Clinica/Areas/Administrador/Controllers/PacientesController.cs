@@ -9,8 +9,8 @@ namespace Clinica.Areas.Administrador.Controllers
 {
     public class PacientesController : Controller
     {
-        private ClinicaContext _db = null;
-        
+        // private ClinicaContext _db = null;
+        private ClinicaContext _db = new ClinicaContext();
 
         public ActionResult Index()
         {
@@ -39,22 +39,32 @@ namespace Clinica.Areas.Administrador.Controllers
             {
                 return RedirectToAction("Create", "Pacientes", new { id = 1 });
             }
+          
             return View(paciente);
         }
 
         public ActionResult View(int id)
         {
-            Paciente p = null;
-            using (_db =new ClinicaContext())
+            Paciente paciente = _db.Pacientes.Find(id);
+            if (paciente == null)
             {
-                p = _db.Pacientes.Find(id);
-            }
-            return View(p);
-        }
-       
+                return new HttpNotFoundResult();
 
-        [HttpGet]
-        public ActionResult Edit(int id)
+            }
+            List<Boleta> boletas = _db.Registros
+                                    .Where(r => r.PacienteId == id)
+                                    .Select(r => r.Boleta)
+                                    .ToList();
+            ViewBag.boletas = boletas;
+
+            return View(paciente);
+        }
+
+
+
+
+            [HttpGet]
+             public ActionResult Edit(int id)
         {
             Paciente p = null;
             using (_db = new ClinicaContext())
