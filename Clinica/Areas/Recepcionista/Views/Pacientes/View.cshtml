@@ -40,96 +40,187 @@
 
                                         <div class="card shadow mb-4">
                                             <div class="card-header py-3">
-
                                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                     <h1 class="h4 text-gray-900 mb-4">Ver Paciente</h1>
                                                     <hr />
+
+                                                    <form method="POST" action="@Url.Action("Index", "Pacientes")" class="user">
+                                                        <div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <label>Nombre</label>
+                                                                    <input type="text" class="form-control form-control-user" value="@Model.Nombre" name="Nombre" placeholder="Nombre" disabled>
+
+                                                                </div>
+
+
+                                                                <div class="col-sm-6">
+                                                                    <label>Apellido</label>
+                                                                    <input type="text" class="form-control form-control-user" value="@Model.Apellido" name="Apellido" placeholder="Apellido" disabled>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <label>Rut</label>
+                                                                    <input type="text" class="form-control form-control-user" value="@Model.Rut" name="Rut" placeholder="Rut" disabled>
+
+
+                                                                </div>
+
+                                                                <div class="col-sm-6">
+                                                                    <label>Edad</label>
+                                                                    <input type="number" class="form-control form-control-user" value="@Model.Edad" name="Edad" placeholder="Edad" disabled>
+
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="">
+                                                                    <label>Correo</label>
+                                                                    <input type="email" class="form-control form-control-user" value="@Model.Correo" name="Correo" placeholder="Correo" disabled>
+
+
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="form-group">
+                                                                <div class="">
+                                                                    <label>Direccion</label>
+                                                                    <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion" disabled>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class=" form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <label>Telefono</label>
+                                                                    <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono" disabled>
+
+                                                                </div>
+                                                            </div>
+                                                            <hr />
+                                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+
+                                                                <h1 class="h4 text-gray-900 mb-4">Boletas del Paciente</h1>
+                                                                <tr>
+
+                                                                    <th>Numero de Boleta</th>
+                                                                    <th>Odontologo</th>
+                                                                    <th>Valor</th>
+                                                                    <th>Fecha</th>
+
+                                                                </tr>
+
+
+
+                                                                @foreach (Clinica.Models.Boleta boleta in ViewBag.boletas)
+                                                                {
+                                                                    <tr>
+                                                                        <td>@boleta.NB</td>
+                                                                        <td>@boleta.Odontologo</td>
+                                                                        <td>@boleta.Valor</td>
+                                                                        <td>@boleta.Fecha</td>
+
+                                                                    </tr>
+
+                                                                }
+
+
+
+                                                        </div>
+                                                </table>
+                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+
+                                                    <h1 class="h4 text-gray-900 mb-4">Tratamientos del Paciente</h1>
+                                                    <tr>
+                                                        <th>Nombre</th>
+                                                        <th>Doctor</th>
+                                                        <th>Fecha</th>
+
+                                                    </tr>
+
+
+
+                                                    @foreach (Clinica.Models.Tratamiento tratamiento in ViewBag.tratamientos)
+                                                    {
+                                                <tr>
+                                                    <td>@tratamiento.Nombres</td>
+                                                    <td>@tratamiento.Especialistas</td>
+                                                    <td>@tratamiento.FechaCreacion</td>
+
+                                                </tr>
+
+                                                    }
+
+
+
                                             </div>
-                                            <form method="POST" action="@Url.Action("Index", "Pacientes")" class="user">
-                                                <div class="form-group row">
-                                                   
-                                                    
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                     
-                                                            <label class="">Nombre</label>
-
-                                                            <input type="text" class="form-control form-control-user" value="@Model.Nombre" name="Nombre" placeholder="Nombre" disabled>
-                                                      
-                                                    </div>
+                                            </table>
+                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
 
-                                                    <div class="col-sm-6">
-                                                        <label >Apellido</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Apellido" name="Apellido" placeholder="Apellido" disabled>
+                                                <h1 class="h4 text-gray-900 mb-4">Citas del Paciente</h1>
+                                                <tr>
 
-                                                    </div>
+                                                    <th>Motivo</th>
+                                                    <th>Doctor</th>
 
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Rut</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Rut" name="Rut" placeholder="Rut" disabled>
+                                                    <th>Fecha</th>
+
+                                                </tr>
 
 
-                                                    </div>
 
-                                                    <div class="col-sm-6">
-                                                        <label>Edad</label>
-                                                        <input type="number" class="form-control form-control-user" value="@Model.Edad" name="Edad" placeholder="Edad" disabled>
+                                                @foreach (Clinica.Models.Cita cita in ViewBag.citas)
+                                                {
+                                            <tr>
+                                                <td>@cita.Motivo</td>
+                                                <td>@cita.Odontologo</td>
 
+                                                <td>@cita.Fecha</td>
 
-                                                    </div>
-                                                </div>
+                                            </tr>
 
-                                                <div class="form-group">
-                                                    <div class="">
-                                                        <label>Correo</label>
-                                                        <input type="email" class="form-control form-control-user" value="@Model.Correo" name="Correo" placeholder="Correo" disabled>
-
-
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="form-group">
-                                                    <div class="">
-                                                        <label>Direccion</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion" disabled>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class=" form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Telefono</label>
-                                                        <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono" disabled>
-
-                                                    </div>
-                                                </div>
-
-
-                                                <br />
-                                                <center>
-                                                    <button type="submit" class="btn btn-primary">Volver</button>
-                                                </center>
-
-
-                                            </form>
-
-
+                                                }
 
                                         </div>
+                                        </table>
+
                                     </div>
+                                    </table>
+                                    <center>
+                                        <button type="submit" class="btn btn-primary">Volver</button>
+                                    </center>
+                               
+
+                                    </form>
+
+                                    </table>
+
                                 </div>
+
+
+
+
                             </div>
                         </div>
-
                     </div>
                 </div>
-                </table>
-
-
             </div>
+
+        </div>
+        </div>
+
+
+
+
+        </div>
         </div>
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>

@@ -9,9 +9,9 @@ namespace Clinica.Areas.Doctor.Controllers
 {
     public class PacientesController : Controller
     {
-        private ClinicaContext _db = null;
-       
-        
+        // private ClinicaContext _db = null;
+        private ClinicaContext _db = new ClinicaContext();
+
         public ActionResult Index()
         {
             IEnumerable<Paciente> Pacientes = null;
@@ -23,9 +23,12 @@ namespace Clinica.Areas.Doctor.Controllers
         }
 
         [HttpGet]
+        
         public ActionResult Create()
         {
+            
             Paciente paciente = new Paciente();
+            
             return View(paciente);
         }
 
@@ -34,24 +37,49 @@ namespace Clinica.Areas.Doctor.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "Pacientes", new { id = 1 });
+                return RedirectToAction("Create", "Pacientes", new { id = 1 });
             }
+          
             return View(paciente);
         }
 
         public ActionResult View(int id)
         {
-            Paciente p = null;
-            using (_db =new ClinicaContext())
+            Paciente paciente = _db.Pacientes.Find(id);
+            if (paciente == null)
             {
-                p = _db.Pacientes.Find(id);
-            }
-            return View(p);
-        }
-       
+                return new HttpNotFoundResult();
 
-        [HttpGet]
-        public ActionResult Edit(int id)
+            }
+            List<Boleta> boletas = _db.Registros
+                                    .Where(r => r.PacienteId == id)
+                                    .Select(r => r.Boleta)
+                                    .ToList();
+            ViewBag.boletas = boletas;
+
+
+            List<Tratamiento> tratamientos = _db.RegistrosPT
+                                             .Where(r => r.PacienteId == id)
+                                               .Select(r => r.Tratamiento)
+                                               .ToList();
+            ViewBag.tratamientos = tratamientos;
+
+
+            List<Cita> citas = _db.RegistrosPC
+                                             .Where(r => r.PacienteId == id)
+                                               .Select(r => r.Cita)
+                                               .ToList();
+            ViewBag.citas = citas;
+
+
+            return View(paciente);
+        }
+
+
+
+
+            [HttpGet]
+             public ActionResult Edit(int id)
         {
             Paciente p = null;
             using (_db = new ClinicaContext())
@@ -66,9 +94,10 @@ namespace Clinica.Areas.Doctor.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("View", "Pacientes", new { id = 1 });
+                return RedirectToAction("Edit", "Pacientes", new { id = 1 });
             }
             return View(paciente);
         }
     }
+    
 }

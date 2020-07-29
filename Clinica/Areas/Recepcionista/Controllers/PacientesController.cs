@@ -9,13 +9,13 @@ namespace Clinica.Areas.Recepcionista.Controllers
 {
     public class PacientesController : Controller
     {
-        private ClinicaContext _db = null;
-
+        // private ClinicaContext _db = null;
+        private ClinicaContext _db = new ClinicaContext();
 
         public ActionResult Index()
         {
             IEnumerable<Paciente> Pacientes = null;
-            using (_db = new ClinicaContext())
+            using (_db =new ClinicaContext())
             {
                 Pacientes = _db.Pacientes.ToList();
             }
@@ -23,12 +23,12 @@ namespace Clinica.Areas.Recepcionista.Controllers
         }
 
         [HttpGet]
-
+        
         public ActionResult Create()
         {
-
+            
             Paciente paciente = new Paciente();
-
+            
             return View(paciente);
         }
 
@@ -39,22 +39,47 @@ namespace Clinica.Areas.Recepcionista.Controllers
             {
                 return RedirectToAction("Create", "Pacientes", new { id = 1 });
             }
+          
             return View(paciente);
         }
 
         public ActionResult View(int id)
         {
-            Paciente p = null;
-            using (_db = new ClinicaContext())
+            Paciente paciente = _db.Pacientes.Find(id);
+            if (paciente == null)
             {
-                p = _db.Pacientes.Find(id);
+                return new HttpNotFoundResult();
+
             }
-            return View(p);
+            List<Boleta> boletas = _db.Registros
+                                    .Where(r => r.PacienteId == id)
+                                    .Select(r => r.Boleta)
+                                    .ToList();
+            ViewBag.boletas = boletas;
+
+
+            List<Tratamiento> tratamientos = _db.RegistrosPT
+                                             .Where(r => r.PacienteId == id)
+                                               .Select(r => r.Tratamiento)
+                                               .ToList();
+            ViewBag.tratamientos = tratamientos;
+
+
+            List<Cita> citas = _db.RegistrosPC
+                                             .Where(r => r.PacienteId == id)
+                                               .Select(r => r.Cita)
+                                               .ToList();
+            ViewBag.citas = citas;
+
+
+            return View(paciente);
         }
 
 
-        [HttpGet]
-        public ActionResult Edit(int id)
+
+
+            [HttpGet]
+             public ActionResult Edit(int id)
         {
             Paciente p = null;
             using (_db = new ClinicaContext())
@@ -74,4 +99,5 @@ namespace Clinica.Areas.Recepcionista.Controllers
             return View(paciente);
         }
     }
+    
 }
