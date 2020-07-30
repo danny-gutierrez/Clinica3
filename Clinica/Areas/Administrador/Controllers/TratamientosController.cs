@@ -37,7 +37,8 @@ namespace Clinica.Areas.Administrador.Controllers
            
             if (ModelState.IsValid)
             {
-                
+
+
                 //guarda en bd
                 return RedirectToAction("View", "Tratamientos", new { id = 1 });
                 

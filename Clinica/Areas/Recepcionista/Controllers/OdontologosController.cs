@@ -13,6 +13,33 @@ namespace Clinica.Areas.Recepcionista.Controllers
         // GET: Odontologos
         private ClinicaContext _db = new ClinicaContext();
 
+
+        public ActionResult Historial(int id)
+        {
+            Odontologo odontologo = _db.Odontologos.Find(id);
+            if (odontologo == null)
+            {
+                return new HttpNotFoundResult();
+
+            }
+            List<Cita> citas = _db.RegistrosCi
+                              .Where(r => r.OdontologoId == id)
+                              .Select(r => r.Cita)
+                              .ToList();
+            ViewBag.citas = citas;
+
+            List<Remuneracion> remuneracion = _db.RegistrosRe
+                              .Where(r => r.OdontologoId == id)
+                              .Select(r => r.Remuneracion)
+                              .ToList();
+            ViewBag.remuneraciones = remuneracion;
+
+
+            return View(odontologo);
+        }
+
+
+
         public ActionResult Index()
         {
             IEnumerable<Odontologo> Odontologos = null;

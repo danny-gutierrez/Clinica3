@@ -2110,6 +2110,12 @@
     <Content Include="Areas\Doctor\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Doctor\Views\Home\About.cshtml" />
     <Content Include="Areas\Doctor\Views\Home\Contact.cshtml" />
+    <Content Include="Areas\Administrador\Views\Pacientes\Historial.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Pacientes\Historial.cshtml" />
+    <Content Include="Areas\Doctor\Views\Pacientes\Historial.cshtml" />
+    <Content Include="Areas\Administrador\Views\Odontologos\Historial.cshtml" />
+    <Content Include="Areas\Recepcionista\Views\Odontologos\Historial.cshtml" />
+    <Content Include="Areas\Doctor\Views\Odontologos\Historial.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -12,6 +12,42 @@ namespace Clinica.Areas.Recepcionista.Controllers
         // private ClinicaContext _db = null;
         private ClinicaContext _db = new ClinicaContext();
 
+
+        public ActionResult Historial(int id)
+        {
+            Paciente paciente = _db.Pacientes.Find(id);
+            if (paciente == null)
+            {
+                return new HttpNotFoundResult();
+
+            }
+
+
+
+            List<Tratamiento> tratamientos = _db.RegistrosPT
+                                             .Where(r => r.PacienteId == id)
+                                               .Select(r => r.Tratamiento)
+                                               .ToList();
+            ViewBag.tratamientos = tratamientos;
+
+            List<Boleta> boletas = _db.Registros
+                                   .Where(r => r.PacienteId == id)
+                                   .Select(r => r.Boleta)
+                                   .ToList();
+            ViewBag.boletas = boletas;
+
+            List<Cita> citas = _db.RegistrosPC
+                                           .Where(r => r.PacienteId == id)
+                                             .Select(r => r.Cita)
+                                             .ToList();
+            ViewBag.citas = citas;
+
+
+            return View(paciente);
+        }
+
+
+
         public ActionResult Index()
         {
             IEnumerable<Paciente> Pacientes = null;

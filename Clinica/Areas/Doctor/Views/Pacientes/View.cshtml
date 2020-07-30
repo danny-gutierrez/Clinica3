@@ -103,94 +103,35 @@
                                                                 </div>
                                                             </div>
                                                             <hr />
-                                                       
-                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                                                            <center>
+                                                                <button type="submit" class="btn btn-primary">Volver</button>
+                                                                <a href="@Url.Action("Historial", "Pacientes", new { id = Model.Id } )"><input type="button" value="Ver Historial" class="btn btn-primary"></a>
+                                                            </center>
 
 
-                                                    <h1 class="h4 text-gray-900 mb-4">Tratamientos del Paciente</h1>
-                                                    <tr>
-                                                        <th>Nombre</th>
-                                                        <th>Doctor</th>
-                                                        <th>Fecha</th>
+                                                    </form>
 
-                                                    </tr>
-
-
-
-                                                    @foreach (Clinica.Models.Tratamiento tratamiento in ViewBag.tratamientos)
-                                                    {
-                                                <tr>
-                                                    <td>@tratamiento.Nombres</td>
-                                                    <td>@tratamiento.Especialistas</td>
-                                                    <td>@tratamiento.FechaCreacion</td>
-
-                                                </tr>
-
-                                                    }
-
-
+                                                </table>
 
                                             </div>
-                                            </table>
-                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
-
-                                                <h1 class="h4 text-gray-900 mb-4">Citas del Paciente</h1>
-                                                <tr>
-
-                                                    <th>Motivo</th>
-                                                    <th>Doctor</th>
-
-                                                    <th>Fecha</th>
-
-                                                </tr>
 
 
 
-                                                @foreach (Clinica.Models.Cita cita in ViewBag.citas)
-                                                {
-                                            <tr>
-                                                <td>@cita.Motivo</td>
-                                                <td>@cita.Odontologo</td>
-
-                                                <td>@cita.Fecha</td>
-
-                                            </tr>
-
-                                                }
 
                                         </div>
-                                        </table>
-
                                     </div>
-                                    </table>
-                                    <center>
-                                        <button type="submit" class="btn btn-primary">Volver</button>
-                                    </center>
-                               
-
-                                    </form>
-
-                                    </table>
-
                                 </div>
-
-
-
-
                             </div>
                         </div>
+
                     </div>
                 </div>
+
+
+
+
             </div>
-
-        </div>
-        </div>
-
-
-
-
-        </div>
         </div>
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>

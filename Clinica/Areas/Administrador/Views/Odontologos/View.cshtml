@@ -139,43 +139,7 @@
 
                                                 </div>
 
-                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
-                                                    <h1 class="h4 text-gray-900 mb-4">Cita de odontologo</h1>
-                                                    <tr>
-
-                                                        <th>Nombre</th>
-                                                        <th>Fecha</th>
-                                                    </tr>
-
-
-                                                    @foreach (Clinica.Models.Cita cita in ViewBag.citas)
-                                                    {
-                                            <tr>
-                                                <td>@cita.Nombre</td>
-                                                <td>@cita.Fecha</td>
-                                            </tr>}
-                                                </table>
-
-
-
-                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
-                                                    <h1 class="h4 text-gray-900 mb-4">Remuneracion odontologo</h1>
-                                                    <tr>
-
-                                                        <th>Nombre</th>
-                                                        <th>Monto</th>
-                                                    </tr>
-
-
-                                                    @foreach (Clinica.Models.Remuneracion remuneracion in ViewBag.remuneraciones)
-                                                    {
-                                            <tr>
-                                                <td>@remuneracion.Nombre</td>
-                                                <td>@remuneracion.Monto</td>
-                                            </tr>}
-                                                </table>
+                                             
 
 
 
@@ -184,6 +148,7 @@
                                                 <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
                                                 <center>
                                                     <button type="submit" class="btn btn-primary">Volver</button>
+                                                    <a href="@Url.Action("Historial", "Odontologos", new { id = Model.Id } )"><input type="button" value="Ver Historial" class="btn btn-primary"></a>
                                                 </center>
                                                 </a>
 

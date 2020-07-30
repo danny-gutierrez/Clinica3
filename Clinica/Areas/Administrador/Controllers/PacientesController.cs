@@ -12,6 +12,43 @@ namespace Clinica.Areas.Administrador.Controllers
         // private ClinicaContext _db = null;
         private ClinicaContext _db = new ClinicaContext();
 
+
+        public ActionResult Historial(int id)
+        {
+            Paciente paciente = _db.Pacientes.Find(id);
+            if (paciente == null)
+            {
+                return new HttpNotFoundResult();
+
+            }
+
+
+
+            List<Tratamiento> tratamientos = _db.RegistrosPT
+                                             .Where(r => r.PacienteId == id)
+                                               .Select(r => r.Tratamiento)
+                                               .ToList();
+            ViewBag.tratamientos = tratamientos;
+
+            List<Boleta> boletas = _db.Registros
+                                   .Where(r => r.PacienteId == id)
+                                   .Select(r => r.Boleta)
+                                   .ToList();
+            ViewBag.boletas = boletas;
+
+            List<Cita> citas = _db.RegistrosPC
+                                           .Where(r => r.PacienteId == id)
+                                             .Select(r => r.Cita)
+                                             .ToList();
+            ViewBag.citas = citas;
+
+
+            return View(paciente);
+        }
+
+
+
+
         public ActionResult Index()
         {
             IEnumerable<Paciente> Pacientes = null;
@@ -37,7 +74,11 @@ namespace Clinica.Areas.Administrador.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Create", "Pacientes", new { id = 1 });
+                _db.Pacientes.Add(paciente);
+                _db.SaveChanges();
+
+
+                return RedirectToAction("Index", "Pacientes", new { id = 1 });
             }
           
             return View(paciente);
