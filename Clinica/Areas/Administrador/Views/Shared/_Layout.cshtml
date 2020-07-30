@@ -30,12 +30,12 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" >
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href=""> 
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
 
-                
+
                 <i class="fas fa-fw fa-tooth"></i>
                 <div class="sidebar-brand-text mx-4">BioEstheticDent</div>
             </a>
@@ -69,7 +69,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones de Pacientes:</h6>
                         <a class="collapse-item" href="@Url.Action("Index","Pacientes")">Listar</a>
-                       
+
                     </div>
                 </div>
             </li>
@@ -87,7 +87,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones de Tratamientos</h6>
                         <a class="collapse-item" href="@Url.Action("Index","Tratamientos")">Listar</a>
-                        
+
 
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones de Odontologos</h6>
                         <a class="collapse-item" href="@Url.Action("Index","Odontologos")">Listar</a>
-                       
+
                     </div>
                 </div>
             </li>
@@ -117,7 +117,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones de Citas</h6>
                         <a class="collapse-item" href="@Url.Action("Index","Citas")">Listar</a>
-                        
+
 
 
                     </div>
@@ -132,7 +132,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones de Boletas</h6>
                         <a class="collapse-item" href="@Url.Action("Index","Boletas")">Listar</a>
-                        
+
 
                     </div>
                 </div>
@@ -146,18 +146,45 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones de Remuneraciones</h6>
                         <a class="collapse-item" href="@Url.Action("Index","Remuneraciones")">Listar</a>
-                       
+
+
+                    </div>
+                </div>
+            </li>
+
+
+
+          
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities4" aria-expanded="true" aria-controls="collapseUtilities4">
+
+
+                    <hr class="sidebar-divider d-none d-md-block">
+
+                    <div class="sidebar-heading">
+                        Opciones de Conteo
+                    </div>
+                    <br />
+                    <i class="fas fa-fw fa-address-book"></i>
+                    <span>T por Paciente</span>
+
+                </a>
+                <div id="collapseUtilities4" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones de Contador</h6>
+                        <a class="collapse-item" href="@Url.Action("Contador","Pacientes")">Listar</a>
+
 
                     </div>
                 </div>
             </li>
 
             <!-- Divider -->
-            
 
-            
 
-            
+
+
+
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->

@@ -237,9 +237,28 @@
 
             };
 
+            PacienteTratamiento pt4 = new PacienteTratamiento()
+            {
+
+                PacienteId = p3.Id,
+                TratamientoId = t3.Id
+
+
+            };
+
+            PacienteTratamiento pt5 = new PacienteTratamiento()
+            {
+
+                PacienteId = p4.Id,
+                TratamientoId = t3.Id
+
+
+            };
             context.RegistrosPT.Add(pt1);
             context.RegistrosPT.Add(pt2);
             context.RegistrosPT.Add(pt3);
+            context.RegistrosPT.Add(pt4);
+            context.RegistrosPT.Add(pt5);
             context.SaveChanges();
 
 

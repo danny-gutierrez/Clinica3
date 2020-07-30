@@ -1,4 +1,5 @@
 ﻿using Clinica.Models;
+using Clinica.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,27 @@ namespace Clinica.Areas.Administrador.Controllers
 
             return View(paciente);
         }
+
+
+
+        public ActionResult Contador()
+        {
+           List<ContadorPaciente> contador = _db.Pacientes
+                            .Select(p => new ContadorPaciente
+                            {
+                                Paciente = p,
+                                Cantidad = p.RegistrosPT.Count()
+
+
+                            })
+                            .ToList();
+
+
+
+
+            return View(contador);
+        }
+
 
 
 
