@@ -405,6 +405,30 @@
             context.RegistrosPC.Add(pc3);
             context.SaveChanges();
 
+            // Relacion odontologo citas
+            OdontologoCita od1 = new OdontologoCita()
+            {
+                OdontologoId = o1.Id,
+                CitaId = c1.Id
+            };
+
+            OdontologoCita od2 = new OdontologoCita()
+            {
+                OdontologoId = o1.Id,
+                CitaId = c2.Id
+            };
+
+            OdontologoCita od3 = new OdontologoCita()
+            {
+                OdontologoId = o2.Id,
+                CitaId = c2.Id
+            };
+
+            context.RegistrosCi.Add(od1);
+            context.RegistrosCi.Add(od2);
+            context.RegistrosCi.Add(od3);
+            context.SaveChanges();
+
             //Remuneraciones
             Remuneracion r1 = new Remuneracion()
             {
@@ -441,7 +465,16 @@
             context.Remuneraciones.Add(r3);
             context.Remuneraciones.Add(r4);
             context.SaveChanges();
-   
+
+            //Relacion odontologo Remuneraciones
+            OdontologoRemu odr = new OdontologoRemu()
+            {
+                OdontologoId = o1.Id,
+                RemuneracionId = r1.Id
+            };
+            context.RegistrosRe.Add(odr);
+            context.SaveChanges();
+
         }
     }
 }

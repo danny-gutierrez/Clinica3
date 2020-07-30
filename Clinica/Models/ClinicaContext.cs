@@ -21,6 +21,9 @@ namespace Clinica.Models
 
         public DbSet<PacienteCita> RegistrosPC { get; set; }
 
+        public DbSet<OdontologoCita> RegistrosCi { get; set; }
+        public DbSet<OdontologoRemu> RegistrosRe { get; set; }
+
 
 
 

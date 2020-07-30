@@ -59,5 +59,8 @@ namespace Clinica.Models
 
         public String Edad { get; set; }
 
+        public virtual ICollection<OdontologoCita> RegistrosCi { get; set; }
+        public virtual ICollection<OdontologoRemu> RegistrosRe { get; set; }
+
     }
 }

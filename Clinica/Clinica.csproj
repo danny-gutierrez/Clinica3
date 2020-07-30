@@ -168,6 +168,8 @@
     <Compile Include="Models\Cita.cs" />
     <Compile Include="Models\ClinicaContext.cs" />
     <Compile Include="Models\Odontologo.cs" />
+    <Compile Include="Models\OdontologoCita.cs" />
+    <Compile Include="Models\OdontologoRemu.cs" />
     <Compile Include="Models\OdontologosViewModels.cs" />
     <Compile Include="Models\Paciente.cs" />
     <Compile Include="Models\PacienteCita.cs" />
