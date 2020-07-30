@@ -68,6 +68,33 @@ namespace Clinica.Areas.Administrador.Controllers
         }
 
 
+        public ActionResult ContadorPC()
+        {
+            List<ContadorPacienteCita> paciente = _db.Pacientes
+                                            .Select(p => new ContadorPacienteCita
+                                            {
+                                                paciente =p,
+                                                Cantidad=p.RegistrosPC.Count()
+                                                
+
+
+                                            }
+
+                                            ).ToList();
+
+
+
+
+
+
+
+
+
+
+            return View(paciente);
+        }
+
+
 
 
 
