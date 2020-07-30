@@ -9,8 +9,9 @@ namespace Clinica.Areas.Recepcionista.Controllers
 {
     public class OdontologosController : Controller
     {
-        private ClinicaContext _db = null;
+        // private ClinicaContext _db = null;
         // GET: Odontologos
+        private ClinicaContext _db = new ClinicaContext();
 
         public ActionResult Index()
         {
@@ -54,12 +55,26 @@ namespace Clinica.Areas.Recepcionista.Controllers
 
         public ActionResult View(int id)
         {
-            Odontologo o = null;
-            using (_db = new ClinicaContext())
+            Odontologo odontologo = _db.Odontologos.Find(id);
+            if (odontologo == null)
             {
-                o = _db.Odontologos.Find(id);
+                return new HttpNotFoundResult();
+
             }
-            return View(o);
+            List<Cita> citas = _db.RegistrosCi
+                              .Where(r => r.OdontologoId == id)
+                              .Select(r => r.Cita)
+                              .ToList();
+            ViewBag.citas = citas;
+
+            List<Remuneracion> remuneracion = _db.RegistrosRe
+                              .Where(r => r.OdontologoId == id)
+                              .Select(r => r.Remuneracion)
+                              .ToList();
+            ViewBag.remuneraciones = remuneracion;
+
+
+            return View(odontologo);
         }
 
 
