@@ -71,9 +71,16 @@
                                 <td>@c.Apellido</td>
                                 <td>@c.Fecha</td>
 
-                                <td>@c.Odontologo</td>
+                                @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                {
+                                    if (c.IdOdontologo == o.Id)
+                                    {
+                                        <td>@o.Nombres</td>
+                                    }
+
+                                }
                                 <td>@c.Telefono</td>
-                              
+
                                 <td>
                                     <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Citas", new { id = c.Id })">Ver</a>
 

@@ -1,8 +1,6 @@
 ﻿using Clinica.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Clinica.Controllers
@@ -14,7 +12,7 @@ namespace Clinica.Controllers
         public ActionResult Index()
         {
             IEnumerable<Cita> Citas = null;
-            using(_db =new ClinicaContext())
+            using (_db = new ClinicaContext())
             {
                 Citas = _db.Citas.ToList();
 
@@ -44,7 +42,7 @@ namespace Clinica.Controllers
         public ActionResult View(int id)
         {
             Cita c = null;
-            using(_db=new ClinicaContext())
+            using (_db = new ClinicaContext())
             {
                 c = _db.Citas.Find(id);
             }

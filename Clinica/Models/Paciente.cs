@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace Clinica.Models
 {
@@ -16,7 +14,7 @@ namespace Clinica.Models
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
-         public String Apellido { get; set; }
+        public String Apellido { get; set; }
 
         [Required(ErrorMessage = "Debe ingresar el Rut")]
         public String Rut { get; set; }
@@ -33,14 +31,14 @@ namespace Clinica.Models
         public String Correo { get; set; }
 
         [Required]
-         [StringLength(25, MinimumLength = 5)]
+        [StringLength(25, MinimumLength = 5)]
         public String Direccion { get; set; }
 
         [Required]
         [StringLength(12, MinimumLength = 9)]
         public String Telefono { get; set; }
 
-        public virtual  ICollection<BoletaPaciente>Registros{ get; set; }
+        public virtual ICollection<BoletaPaciente> Registros { get; set; }
 
         public virtual ICollection<PacienteTratamiento> RegistrosPT { get; set; }  // paciente tratamiento
         public virtual ICollection<PacienteCita> RegistrosPC { get; set; }  // paciente cita

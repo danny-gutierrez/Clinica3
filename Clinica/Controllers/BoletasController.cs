@@ -1,8 +1,6 @@
 ﻿using Clinica.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Clinica.Controllers
@@ -11,7 +9,7 @@ namespace Clinica.Controllers
     {
         private ClinicaContext _db = null;
         // GET: boletas
-        
+
         public ActionResult Index()
 
         {
@@ -42,7 +40,7 @@ namespace Clinica.Controllers
 
         {
             Boleta b = null;
-            using(_db=new ClinicaContext())
+            using (_db = new ClinicaContext())
             {
                 b = _db.Boletas.Find(id);
             }

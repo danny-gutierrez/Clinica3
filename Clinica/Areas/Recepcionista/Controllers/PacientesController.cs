@@ -1,8 +1,6 @@
 ﻿using Clinica.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Clinica.Areas.Recepcionista.Controllers
@@ -51,7 +49,7 @@ namespace Clinica.Areas.Recepcionista.Controllers
         public ActionResult Index()
         {
             IEnumerable<Paciente> Pacientes = null;
-            using (_db =new ClinicaContext())
+            using (_db = new ClinicaContext())
             {
                 Pacientes = _db.Pacientes.ToList();
             }
@@ -59,12 +57,12 @@ namespace Clinica.Areas.Recepcionista.Controllers
         }
 
         [HttpGet]
-        
+
         public ActionResult Create()
         {
-            
+
             Paciente paciente = new Paciente();
-            
+
             return View(paciente);
         }
 
@@ -75,7 +73,7 @@ namespace Clinica.Areas.Recepcionista.Controllers
             {
                 return RedirectToAction("Create", "Pacientes", new { id = 1 });
             }
-          
+
             return View(paciente);
         }
 
@@ -114,8 +112,8 @@ namespace Clinica.Areas.Recepcionista.Controllers
 
 
 
-            [HttpGet]
-             public ActionResult Edit(int id)
+        [HttpGet]
+        public ActionResult Edit(int id)
         {
             Paciente p = null;
             using (_db = new ClinicaContext())
@@ -135,5 +133,5 @@ namespace Clinica.Areas.Recepcionista.Controllers
             return View(paciente);
         }
     }
-    
+
 }

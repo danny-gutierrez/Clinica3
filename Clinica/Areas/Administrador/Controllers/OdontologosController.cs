@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Clinica.Models;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Clinica.Models;
 
 namespace Clinica.Areas.Administrador.Controllers
 {
@@ -72,6 +71,8 @@ namespace Clinica.Areas.Administrador.Controllers
         {
             if (ModelState.IsValid)
             {
+                _db.Odontologos.Add(odontologo);
+                _db.SaveChanges();
                 //guarda en bd
                 return RedirectToAction("Create", "Odontologos", new { id = 1 });
             }
@@ -92,8 +93,8 @@ namespace Clinica.Areas.Administrador.Controllers
 
             }
             List<Cita> citas = _db.RegistrosCi
-                              .Where(r =>r.OdontologoId == id)
-                              .Select(r =>r.Cita)
+                              .Where(r => r.OdontologoId == id)
+                              .Select(r => r.Cita)
                               .ToList();
             ViewBag.citas = citas;
 
@@ -114,11 +115,12 @@ namespace Clinica.Areas.Administrador.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Odontologo o = null;
-            using (_db = new ClinicaContext())
+            Odontologo o = _db.Odontologos.Find(id);
+                if( o==null)
             {
-                o = _db.Odontologos.Find(id);
+                return new HttpNotFoundResult();
             }
+            
             return View(o);
         }
 
@@ -128,8 +130,10 @@ namespace Clinica.Areas.Administrador.Controllers
 
             if (ModelState.IsValid)
             {
-                //guarda en bd
-                return RedirectToAction("Edit", "Odontologos", new { id = 1 });
+                _db = new ClinicaContext();
+                _db.Entry(odontologo).State = EntityState.Modified;
+                _db.SaveChanges();//guarda en bd
+                return RedirectToAction("View", "Odontologos", new { id = 1 });
             }
 
             return View(odontologo);

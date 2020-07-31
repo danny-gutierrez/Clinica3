@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Clinica.Models
+﻿namespace Clinica.Models
 {
     public class OdontologoCita
     {
@@ -19,6 +14,6 @@ namespace Clinica.Models
 
         public virtual Cita Cita { get; set; }
 
-        
+
     }
 }

@@ -1,8 +1,6 @@
 ﻿using Clinica.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Clinica.Areas.Doctor.Controllers
@@ -49,7 +47,7 @@ namespace Clinica.Areas.Doctor.Controllers
         public ActionResult Index()
         {
             IEnumerable<Paciente> Pacientes = null;
-            using (_db =new ClinicaContext())
+            using (_db = new ClinicaContext())
             {
                 Pacientes = _db.Pacientes.ToList();
             }
@@ -57,12 +55,12 @@ namespace Clinica.Areas.Doctor.Controllers
         }
 
         [HttpGet]
-        
+
         public ActionResult Create()
         {
-            
+
             Paciente paciente = new Paciente();
-            
+
             return View(paciente);
         }
 
@@ -73,7 +71,7 @@ namespace Clinica.Areas.Doctor.Controllers
             {
                 return RedirectToAction("Create", "Pacientes", new { id = 1 });
             }
-          
+
             return View(paciente);
         }
 
@@ -112,8 +110,8 @@ namespace Clinica.Areas.Doctor.Controllers
 
 
 
-            [HttpGet]
-             public ActionResult Edit(int id)
+        [HttpGet]
+        public ActionResult Edit(int id)
         {
             Paciente p = null;
             using (_db = new ClinicaContext())
@@ -133,5 +131,5 @@ namespace Clinica.Areas.Doctor.Controllers
             return View(paciente);
         }
     }
-    
+
 }

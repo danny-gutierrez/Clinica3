@@ -2,9 +2,7 @@
 {
     using Clinica.Models;
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Clinica.Models.ClinicaContext>
     {
@@ -17,23 +15,25 @@
         {
 
             // Odontologos
-            Odontologo o1  = new Odontologo() 
-            
-            { Nombres = "Dra.Andrea",
-            Apellidos="Garcia",
-            Telefonos="569123456789",
-            Direcciones="Chiguayanate",
-            Correos="c@ejemplo.cl",
-            Rut="16037888-5",
-            FechaIngreso="17-07-2020",
-            Edad="30",
-            Especialidad="Endodoncia"
-            
+            Odontologo o1 = new Odontologo()
+
+            {   Id= 1,
+                Nombres = "Dra.Andrea",
+                Apellidos = "Garcia",
+                Telefonos = "569123456789",
+                Direcciones = "Chiguayanate",
+                Correos = "c@ejemplo.cl",
+                Rut = "16037888-5",
+                FechaIngreso = "17-07-2020",
+                Edad = "30",
+                Especialidad = "Endodoncia"
+
             };
 
-            Odontologo o2 =new Odontologo()
+            Odontologo o2 = new Odontologo()
 
             {
+                Id = 2,
                 Nombres = "Dra. Jazmin",
                 Apellidos = "Ramirez",
                 Telefonos = "569123456789",
@@ -49,6 +49,7 @@
             Odontologo o3 = new Odontologo()
 
             {
+                Id = 3,
                 Nombres = "Dr.Alejandro",
                 Apellidos = "Ramirez",
                 Telefonos = "569123456789",
@@ -64,6 +65,7 @@
             Odontologo o4 = new Odontologo()
 
             {
+                Id = 4,
                 Nombres = "Dra.Claudia",
                 Apellidos = "Ramirez",
                 Telefonos = "569123456789",
@@ -93,11 +95,11 @@
 
                 Nombres = "Ndodoncia",
                 Valor = "80.000",
-                Especialistas = "Dra.Andrea",
+                IdOdontologo = 1,
                 Codigos = "00001",
                 Descripcion = "Tratamiento",
-            Horarios=" L a M 10:00 - 15:00",
-            FechaCreacion="17-07-2020"
+                Horarios = " L a M 10:00 - 15:00",
+                FechaCreacion = "17-07-2020"
 
 
             };
@@ -107,7 +109,7 @@
 
                 Nombres = "Ortodoncia",
                 Valor = "150.000",
-                Especialistas = "Dra.Claudia",
+                IdOdontologo = 2,
                 Codigos = "00003",
                 Descripcion = "Trtamiento",
                 Horarios = " Lunes 10:00 A.m ",
@@ -120,7 +122,7 @@
 
                 Nombres = "Protesis",
                 Valor = "150.000",
-                Especialistas = "Dr.Alejandro",
+                IdOdontologo = 3,
                 Codigos = "00003",
                 Descripcion = "Trtamiento",
                 Horarios = " Lunes 10:00 A.m ",
@@ -133,7 +135,7 @@
 
                 Nombres = "Limpieza ",
                 Valor = "150.000",
-                Especialistas = "Dra. Jazmin",
+                IdOdontologo = 4,
                 Codigos = "00003",
                 Descripcion = "Trtamiento",
                 Horarios = " Lunes 10:00 A.m ",
@@ -147,10 +149,10 @@
             context.Tratamientos.Add(t3);
             context.Tratamientos.Add(t4);
             context.SaveChanges();
-            
-            
-            
-             // Pacientes
+
+
+
+            // Pacientes
             Paciente p1 = new Paciente()
             {
 
@@ -214,8 +216,8 @@
             PacienteTratamiento pt1 = new PacienteTratamiento()
             {
 
-                PacienteId =p1.Id,
-                TratamientoId =t1.Id
+                PacienteId = p1.Id,
+                TratamientoId = t1.Id
 
 
             };
@@ -271,8 +273,8 @@
                 NB = "001",
                 Nombre = "Pedro",
                 Apellido = "Molina",
-                Odontologo = "Dra.Andrea",
-                Fecha = "22-07-2020",
+                IdOdontologo = 1,
+                Fecha = DateTime.Today,
                 Fono = "985475575",
                 Valor = "80.000",
                 Detalle = "Endodoncia"
@@ -282,8 +284,8 @@
                 NB = "002",
                 Nombre = "Daniel",
                 Apellido = "Montes",
-                Odontologo = "Dra. Jazmin",
-                Fecha = "22-07-2020",
+                IdOdontologo = 2,
+                Fecha = DateTime.Today,
                 Fono = "925478547",
                 Valor = " 30.000",
                 Detalle = "Limpieza"
@@ -294,8 +296,8 @@
                 NB = "003",
                 Nombre = "Francisca",
                 Apellido = "Molina",
-                Odontologo = "Dra.Andrea",
-                Fecha = "22-07-2020",
+                IdOdontologo = 3,
+                Fecha = DateTime.Today,
                 Fono = "985475575",
                 Valor = "80.000",
                 Detalle = "Endodoncia"
@@ -305,8 +307,8 @@
                 NB = "004",
                 Nombre = "Roberto",
                 Apellido = "Molina",
-                Odontologo = "Dra.Claudia",
-                Fecha = "22-07-2020",
+               IdOdontologo = 4,
+                Fecha = DateTime.Today,
                 Fono = "985475575",
                 Valor = "80.000",
                 Detalle = "Endodoncia"
@@ -347,10 +349,10 @@
                 Nombre = "Daniel",
                 Apellido = "Montes",
                 Fecha = "22-07-2020",
-                Odontologo = "Dra.Claudia",
+                IdOdontologo = 1,
                 Telefono = "412712413",
                 Motivo = "Limpieza",
-        
+
             };
             Cita c2 = new Cita()
             {
@@ -358,7 +360,7 @@
                 Nombre = "peters",
                 Apellido = "parras",
                 Fecha = "22-07-2020",
-                Odontologo = "Dra. Jazmin",
+                IdOdontologo = 2,
                 Telefono = "966585422",
                 Motivo = "Endodoncia",
 
@@ -369,7 +371,7 @@
                 Nombre = "Daniela",
                 Apellido = "Montes",
                 Fecha = "22-07-2020",
-                Odontologo = "Dr.Andrea",
+                IdOdontologo = 3,
                 Telefono = "412712413",
                 Motivo = "Limpieza",
 
@@ -380,7 +382,7 @@
                 Nombre = "andrea",
                 Apellido = "Montes",
                 Fecha = "22-07-2020",
-                Odontologo = "Dra.Claudia",
+                IdOdontologo = 4,
                 Telefono = "412712413",
                 Motivo = "Limpieza",
 
@@ -396,8 +398,8 @@
 
             PacienteCita pc1 = new PacienteCita()
             {
-                PacienteId =p1.Id,
-                CitaId=c1.Id
+                PacienteId = p1.Id,
+                CitaId = c1.Id
 
 
             };

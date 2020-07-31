@@ -81,7 +81,15 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Especialista </label>
-                                                    <input type="text" class="form-control form-control-user" name="Odontologo" value="@Model.Odontologo" placeholder="" disabled>
+                                                    @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                                    {
+                                                        if (Model.IdOdontologo == o.Id)
+                                                        {
+                                                            <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres" disabled>
+                                                        }
+
+                                                    }
+                                                    
 
                                                 </div>
                                                 <div class="form-group">

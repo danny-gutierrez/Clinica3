@@ -1,9 +1,7 @@
 ﻿using Clinica.Models;
-using Clinica.Models.ViewModels;
-using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Clinica.Areas.Administrador.Controllers
@@ -15,25 +13,23 @@ namespace Clinica.Areas.Administrador.Controllers
         // GET: Citas
         public ActionResult Index()
         {
-            IEnumerable<Cita> Citas = null;
-            using(_db =new ClinicaContext())
-            {
-                Citas = _db.Citas.ToList();
+            ClinicaContext _db = new ClinicaContext();
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
 
-            }
-            return View(Citas);
+            return View(_db.Citas.ToList());
         }
 
         [HttpGet]
         public ActionResult Create()
         {
-               
 
 
-                Cita cita = new Cita();
-           
-               List<Odontologo> odontologos = _db.Odontologos.ToList();
-               ViewBag.odontologos = odontologos;
+
+            Cita cita = new Cita();
+
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
 
             return View(cita);
         }
@@ -42,13 +38,14 @@ namespace Clinica.Areas.Administrador.Controllers
         public ActionResult Create(Cita cita)
 
         {
-           
+
             if (ModelState.IsValid)
-           {
-                //Guardo en base de datos
-                //O mando Request a REST API
-              return RedirectToAction("Index", "Citas", new { id = 1 });
-           }
+            {
+                _db.Citas.Add(cita);
+                //boleta.Fecha=DateTime.Today;
+                _db.SaveChanges();
+                return RedirectToAction("Index", "Citas", new { id = 1 });
+            }
             List<Odontologo> odontologos = _db.Odontologos.ToList();
             ViewBag.odontologos = odontologos;
             return View(cita);
@@ -59,7 +56,7 @@ namespace Clinica.Areas.Administrador.Controllers
         public ActionResult View(int id)
         {
             Cita c = null;
-            using(_db=new ClinicaContext())
+            using (_db = new ClinicaContext())
             {
                 c = _db.Citas.Find(id);
                 List<Odontologo> odontologos = _db.Odontologos.ToList();
@@ -72,18 +69,21 @@ namespace Clinica.Areas.Administrador.Controllers
         public ActionResult Edit(int id)
         {
 
-            Cita c = null;
-            using (_db = new ClinicaContext())
+            Cita c = _db.Citas.Find(id);
+            if(c==null)
             {
-                c = _db.Citas.Find(id);
+                return new HttpNotFoundResult();
+            }
+
+            
                 List<Odontologo> odontologos = _db.Odontologos.ToList();
                 ViewBag.odontologos = odontologos;
-            }
-            
+           
+
 
             return View(c);
-            
-               
+
+
         }
 
         [HttpPost]
@@ -91,6 +91,9 @@ namespace Clinica.Areas.Administrador.Controllers
         {
             if (ModelState.IsValid)
             {
+                _db = new ClinicaContext();
+                _db.Entry(cita).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("View", "Citas", new { id = 1 });
             }
             List<Odontologo> odontologos = _db.Odontologos.ToList();

@@ -2,23 +2,23 @@
 
 namespace Clinica.Areas.Administrador
 {
-    public class AdministradorAreaRegistration : AreaRegistration 
+    public class AdministradorAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "Administrador";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
                 "Administrador_default",
                 "Administrador/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional },
-                namespaces: new [] { "Clinica.Areas.Administrador.Controllers" }
+                namespaces: new[] { "Clinica.Areas.Administrador.Controllers" }
             );
         }
     }

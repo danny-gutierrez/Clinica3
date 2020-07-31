@@ -79,7 +79,7 @@
 
                                                     <div class="col-sm-6">
 
-                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Valor Tratamiento"
+                                                        <input type="number" class="form-control form-control-user" placeholder="Ingrese Valor Tratamiento"
                                                                name="Valor" value="@Model.Valor">
                                                         @Html.ValidationMessageFor(Model => Model.Valor, null, new { @class = "text-danger" })
 
@@ -92,7 +92,7 @@
 
                                                         <label for="sel1" style="color:#212F3D"> Especialista :</label>
                                                     </center>
-                                                    <select class="form-control" name="Especialistas" value="@Model.Especialistas">
+                                                    <select class="form-control" name="idOdontologo" value="@Model.Odontologo">
 
                                                         @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
                                                         {

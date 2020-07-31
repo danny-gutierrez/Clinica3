@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace Clinica.Models
 {
@@ -24,8 +22,8 @@ namespace Clinica.Models
 
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
-        public String Especialistas { get; set; }
+        public int IdOdontologo { get; set; }
+        public virtual Odontologo Odontologo { get; set; }
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
@@ -48,5 +46,6 @@ namespace Clinica.Models
         public String Descripcion { get; set; }
 
         public virtual ICollection<PacienteTratamiento> RegistrosPT { get; set; }  // paciente tratamiento
+        public virtual ICollection<Odontologo> Odontologos { get; set; }
     }
 }

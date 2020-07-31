@@ -54,21 +54,29 @@
                         <tbody>
                             @foreach (var b in Model)
                             {
-                                <tr>
-                                    <td>@b.Id</td>
-                                    <td>@b.NB</td>
-                                    <td>@b.Nombre</td>
-                                    <td>@b.Odontologo</td>
-                                    <td>@b.Fono</td>
-                                    <td>@b.Fecha</td>
-                                    <td>@b.Valor</td>
-                                    
+                            <tr>
+                                <td>@b.Id</td>
+                                <td>@b.NB</td>
+                                <td>@b.Nombre</td>
+                                @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                {
+                                    if (b.IdOdontologo == o.Id)
+                                    {
+                                          <td>@o.Nombres</td>
+                                    }
 
-                                    <td>
-                                        <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Boletas", new { id = b.Id })">Ver</a>
-                                        <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Boletas", new { id = b.Id})">Editar</a>
-                                    </td>
-                                </tr>
+                                }
+                                
+                                <td>@b.Fono</td>
+                                <td>@b.Fecha</td>
+                                <td>@b.Valor</td>
+
+
+                                <td>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Boletas", new { id = b.Id })">Ver</a>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Boletas", new { id = b.Id})">Editar</a>
+                                </td>
+                            </tr>
 
                             }
 

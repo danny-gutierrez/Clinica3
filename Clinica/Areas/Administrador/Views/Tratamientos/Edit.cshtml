@@ -77,12 +77,12 @@
 
                                                                 <label for="sel1" style="color:#212F3D"> Especialista :</label>
                                                             </center>
-                                                            <select class="form-control" name="Especialistas" value="@Model.Especialistas">
+                                                            <select class="form-control" name="IdOdontologo" >
 
                                                                 @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
                                                                 {
 
-                                                                <option value="@odontologo.Id">@odontologo.Nombres @odontologo.Apellidos</option>
+                                                                <option value="@odontologo.Id">@odontologo.Nombres </option>
                                                                 }
 
                                                             </select>

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace Clinica.Models
 {
@@ -26,10 +24,11 @@ namespace Clinica.Models
         [StringLength(25, MinimumLength = 5)]
         public String Fecha { get; set; }
 
- 
+
         [Required]
-        [StringLength(25, MinimumLength = 5)]
-        public String Odontologo { get; set; }
+        public int IdOdontologo { get; set; }
+        public virtual Odontologo Odontologo { get; set; }  // cambiar por la relacion
+                                                            // guarda el ID en bd y no el nombre 
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
@@ -41,6 +40,7 @@ namespace Clinica.Models
 
 
         public virtual ICollection<PacienteCita> RegistrosPC { get; set; }  // paciente cita
+        public virtual ICollection<Odontologo> Odontologos { get; set; }
 
     }
 

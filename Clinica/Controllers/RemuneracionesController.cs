@@ -1,8 +1,6 @@
 ﻿using Clinica.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Clinica.Controllers
@@ -26,7 +24,7 @@ namespace Clinica.Controllers
         public ActionResult Create()
         {
             Remuneracion remuneracion = new Remuneracion();
-            return View(remuneracion);     
+            return View(remuneracion);
         }
 
         [HttpPost]

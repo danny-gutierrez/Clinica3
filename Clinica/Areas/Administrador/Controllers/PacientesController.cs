@@ -1,9 +1,8 @@
 ﻿using Clinica.Models;
 using Clinica.Models.ViewModels;
-using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Clinica.Areas.Administrador.Controllers
@@ -51,15 +50,15 @@ namespace Clinica.Areas.Administrador.Controllers
 
         public ActionResult Contador()
         {
-           List<ContadorPaciente> contador = _db.Pacientes
-                            .Select(p => new ContadorPaciente
-                            {
-                                Paciente = p,
-                                Cantidad = p.RegistrosPT.Count()
+            List<ContadorPaciente> contador = _db.Pacientes
+                             .Select(p => new ContadorPaciente
+                             {
+                                 Paciente = p,
+                                 Cantidad = p.RegistrosPT.Count()
 
 
-                            })
-                            .ToList();
+                             })
+                             .ToList();
 
 
 
@@ -73,9 +72,9 @@ namespace Clinica.Areas.Administrador.Controllers
             List<ContadorPacienteCita> paciente = _db.Pacientes
                                             .Select(p => new ContadorPacienteCita
                                             {
-                                                paciente =p,
-                                                Cantidad=p.RegistrosPC.Count()
-                                                
+                                                paciente = p,
+                                                Cantidad = p.RegistrosPC.Count()
+
 
 
                                             }
@@ -101,7 +100,7 @@ namespace Clinica.Areas.Administrador.Controllers
         public ActionResult Index()
         {
             IEnumerable<Paciente> Pacientes = null;
-            using (_db =new ClinicaContext())
+            using (_db = new ClinicaContext())
             {
                 Pacientes = _db.Pacientes.ToList();
             }
@@ -109,12 +108,12 @@ namespace Clinica.Areas.Administrador.Controllers
         }
 
         [HttpGet]
-        
+
         public ActionResult Create()
         {
-            
+
             Paciente paciente = new Paciente();
-            
+
             return View(paciente);
         }
 
@@ -129,7 +128,7 @@ namespace Clinica.Areas.Administrador.Controllers
 
                 return RedirectToAction("Index", "Pacientes", new { id = 1 });
             }
-          
+
             return View(paciente);
         }
 
@@ -168,14 +167,16 @@ namespace Clinica.Areas.Administrador.Controllers
 
 
 
-            [HttpGet]
-             public ActionResult Edit(int id)
+        [HttpGet]
+        public ActionResult Edit(int id)
         {
-            Paciente p = null;
-            using (_db = new ClinicaContext())
+            Paciente p = _db.Pacientes.Find(id);
+            if(p == null)
             {
-                p = _db.Pacientes.Find(id);
+                return new HttpNotFoundResult();
             }
+            using (_db = new ClinicaContext())
+           
             return View(p);
         }
 
@@ -184,10 +185,13 @@ namespace Clinica.Areas.Administrador.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Edit", "Pacientes", new { id = 1 });
+                _db = new ClinicaContext();
+                _db.Entry(paciente).State = EntityState.Modified;
+                _db.SaveChanges();
+                return RedirectToAction("View", "Pacientes", new { id = 1 });
             }
             return View(paciente);
         }
     }
-    
+
 }

@@ -1,8 +1,6 @@
 ﻿using Clinica.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Clinica.Areas.Administrador.Controllers
@@ -28,13 +26,13 @@ namespace Clinica.Areas.Administrador.Controllers
             Remuneracion remuneracion = new Remuneracion();
             List<Odontologo> odontologos = _db.Odontologos.ToList();
             ViewBag.odontologos = odontologos;
-            return View(remuneracion);     
+            return View(remuneracion);
         }
 
         [HttpPost]
         public ActionResult Create(Remuneracion remuneracion)
         {
-           
+
             if (ModelState.IsValid)
             {
                 //Guardo en base de datos
@@ -79,7 +77,7 @@ namespace Clinica.Areas.Administrador.Controllers
             if (ModelState.IsValid)
             {
                 return RedirectToAction("View", "Remuneraciones", new { id = 1 });
-               
+
             }
             List<Odontologo> odontologos = _db.Odontologos.ToList();
             ViewBag.odontologos = odontologos;

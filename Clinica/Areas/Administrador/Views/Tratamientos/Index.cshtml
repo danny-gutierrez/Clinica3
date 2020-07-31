@@ -51,17 +51,24 @@
                         <tbody>
                             @foreach (var t in Model)
                             {
-                                <tr>
-                                    <td>@t.Id</td>
-                                    <td>@t.Nombres</td>
-                                    <td>@t.Valor</td>
-                                    <td>@t.Especialistas</td>
+                            <tr>
+                                <td>@t.Id</td>
+                                <td>@t.Nombres</td>
+                                <td>@t.Valor</td>
+                                @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                {
+                                    if (t.IdOdontologo == o.Id)
+                                    {
+                                        <td>@o.Nombres</td>
+                                    }
 
-                                    <td>
-                                        <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Tratamientos", new { id = t.Id })">Ver</a>
-                                        <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Tratamientos", new { id = t.Id })">Editar</a>
-                                    </td>
-                                </tr>
+                                }
+
+                                <td>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Tratamientos", new { id = t.Id })">Ver</a>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Tratamientos", new { id = t.Id })">Editar</a>
+                                </td>
+                            </tr>
 
                             }
 

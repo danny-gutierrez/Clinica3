@@ -56,7 +56,15 @@
 
                                                     <div class="col-sm-6">
                                                         <label>Odontologo</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@Model.Odontologo" disabled>
+                                                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                                        {
+                                                            if (Model.IdOdontologo == o.Id)
+                                                            {
+                                                                <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres" disabled>
+                                                            }
+
+                                                        }
+
                                                     </div>
 
 
