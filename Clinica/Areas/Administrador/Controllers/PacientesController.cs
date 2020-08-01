@@ -21,7 +21,8 @@ namespace Clinica.Areas.Administrador.Controllers
                 return new HttpNotFoundResult();
 
             }
-
+         
+           
 
 
             List<Tratamiento> tratamientos = _db.RegistrosPT
