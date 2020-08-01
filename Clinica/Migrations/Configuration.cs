@@ -24,7 +24,7 @@
                 Direcciones = "Chiguayanate",
                 Correos = "c@ejemplo.cl",
                 Rut = "16037888-5",
-                FechaIngreso = "17-07-2020",
+                FechaIngreso = DateTime.Now,
                 Edad = "30",
                 Especialidad = "Endodoncia"
 
@@ -40,7 +40,7 @@
                 Direcciones = "Santiago",
                 Correos = "Guillermo@ejemplo.cl",
                 Rut = "123456789",
-                FechaIngreso = "19-07-2020",
+                FechaIngreso = DateTime.Now,
                 Edad = "40",
                 Especialidad = "Limpieza General"
 
@@ -56,7 +56,7 @@
                 Direcciones = "Santiago",
                 Correos = "Guillermo@ejemplo.cl",
                 Rut = "123456789",
-                FechaIngreso = "19-07-2020",
+                FechaIngreso = DateTime.Now,
                 Edad = "40",
                 Especialidad = "Limpieza General"
 
@@ -72,7 +72,7 @@
                 Direcciones = "Santiago",
                 Correos = "Guillermo@ejemplo.cl",
                 Rut = "123456789",
-                FechaIngreso = "19-07-2020",
+                FechaIngreso = DateTime.Now,
                 Edad = "40",
                 Especialidad = "Limpieza General"
 
@@ -98,8 +98,8 @@
                 IdOdontologo = 1,
                 Codigos = "00001",
                 Descripcion = "Tratamiento",
-                Horarios = " L a M 10:00 - 15:00",
-                FechaCreacion = "17-07-2020"
+                Horarios = DateTime.Now,
+                FechaCreacion = DateTime.Now
 
 
             };
@@ -112,8 +112,8 @@
                 IdOdontologo = 2,
                 Codigos = "00003",
                 Descripcion = "Trtamiento",
-                Horarios = " Lunes 10:00 A.m ",
-                FechaCreacion = "19-07-2020"
+                Horarios = DateTime.Now,
+                FechaCreacion = DateTime.Now
 
 
             };
@@ -125,8 +125,8 @@
                 IdOdontologo = 3,
                 Codigos = "00003",
                 Descripcion = "Trtamiento",
-                Horarios = " Lunes 10:00 A.m ",
-                FechaCreacion = "19-07-2020"
+                Horarios = DateTime.Now,
+                FechaCreacion = DateTime.Now
 
 
             };
@@ -138,8 +138,8 @@
                 IdOdontologo = 4,
                 Codigos = "00003",
                 Descripcion = "Trtamiento",
-                Horarios = " Lunes 10:00 A.m ",
-                FechaCreacion = "19-07-2020"
+                Horarios = DateTime.Now,
+                FechaCreacion = DateTime.Now
 
 
             };
@@ -348,7 +348,7 @@
                 Rut = "17.157.414-4",
                 Nombre = "Daniel",
                 Apellido = "Montes",
-                Fecha = "22-07-2020",
+                Fecha = DateTime.Now,
                 IdOdontologo = 1,
                 Telefono = "412712413",
                 Motivo = "Limpieza",
@@ -359,7 +359,7 @@
                 Rut = "12.345.678-1",
                 Nombre = "peters",
                 Apellido = "parras",
-                Fecha = "22-07-2020",
+                Fecha = DateTime.Now,
                 IdOdontologo = 2,
                 Telefono = "966585422",
                 Motivo = "Endodoncia",
@@ -370,7 +370,7 @@
                 Rut = "99.999.999-9",
                 Nombre = "Daniela",
                 Apellido = "Montes",
-                Fecha = "22-07-2020",
+                Fecha = DateTime.Now,
                 IdOdontologo = 3,
                 Telefono = "412712413",
                 Motivo = "Limpieza",
@@ -381,7 +381,7 @@
                 Rut = "55.555.555-5",
                 Nombre = "andrea",
                 Apellido = "Montes",
-                Fecha = "22-07-2020",
+                Fecha = DateTime.Now,
                 IdOdontologo = 4,
                 Telefono = "412712413",
                 Motivo = "Limpieza",
