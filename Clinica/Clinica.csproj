@@ -192,8 +192,12 @@
     <Content Include="Content\js\demo\chart-bar-demo.js" />
     <Content Include="Content\js\demo\chart-pie-demo.js" />
     <Content Include="Content\js\demo\datatables-demo.js" />
+    <Content Include="Content\js\dist\jquery.georegionalizacion-chile_0.9.js" />
+    <Content Include="Content\js\dist\jquery.georegionalizacion-chile_0.9.min.js" />
+    <Content Include="Content\js\jquery.selectric.min.js" />
     <Content Include="Content\js\sb-admin-2.js" />
     <Content Include="Content\js\sb-admin-2.min.js" />
+    <Content Include="Content\js\script.js" />
     <Content Include="Content\maps.jpg" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />

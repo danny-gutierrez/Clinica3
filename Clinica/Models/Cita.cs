@@ -21,8 +21,8 @@ namespace Clinica.Models
         public String Apellido { get; set; }
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
-        public String Fecha { get; set; }
+      
+        public DateTime Fecha { get; set; }
 
 
         [Required]

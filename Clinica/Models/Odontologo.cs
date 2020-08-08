@@ -43,9 +43,9 @@ namespace Clinica.Models
         public String Rut { get; set; }
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+       
 
-        public String FechaIngreso { get; set; }
+        public DateTime FechaIngreso { get; set; }
 
         [Required]
         [StringLength(25, MinimumLength = 5)]

@@ -31,14 +31,14 @@ namespace Clinica.Models
         public String Codigos { get; set; }
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+       
 
-        public String Horarios { get; set; }
+        public DateTime Horarios { get; set; }
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+        
 
-        public String FechaCreacion { get; set; }
+        public DateTime FechaCreacion { get; set; }
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
