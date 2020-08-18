@@ -32,7 +32,7 @@ namespace Clinica.Models
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
-        public String Telefono { get; set; }
+        public int Telefono { get; set; }
 
         [Required]
         [StringLength(25, MinimumLength = 5)]

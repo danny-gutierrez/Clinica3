@@ -24,7 +24,7 @@ namespace Clinica.Models
         [Required]
         [StringLength(25, MinimumLength = 5)]
 
-        public String Telefonos { get; set; }
+        public int Telefonos { get; set; }
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
@@ -55,7 +55,7 @@ namespace Clinica.Models
         [Required]
         [StringLength(2, MinimumLength = 1)]
 
-        public String Edad { get; set; }
+        public int Edad { get; set; }
 
         public virtual ICollection<OdontologoCita> RegistrosCi { get; set; }
         public virtual ICollection<OdontologoRemu> RegistrosRe { get; set; }

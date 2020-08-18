@@ -17,7 +17,7 @@ namespace Clinica.Models
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
-        public String Valor { get; set; }
+        public int Valor { get; set; }
 
 
 
@@ -28,7 +28,7 @@ namespace Clinica.Models
         [Required]
         [StringLength(25, MinimumLength = 5)]
 
-        public String Codigos { get; set; }
+        public int Codigos { get; set; }
 
         [Required]
        

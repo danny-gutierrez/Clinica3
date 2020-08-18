@@ -10,7 +10,7 @@ namespace Clinica.Models
         public int Id { get; set; }
         [Required]
         [StringLength(5, MinimumLength = 1)]
-        public String NB { get; set; }
+        public int NB { get; set; }
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
@@ -33,12 +33,12 @@ namespace Clinica.Models
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
-        public String Fono { get; set; }
+        public int Fono { get; set; }
 
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
-        public String Valor { get; set; }
+        public int Valor { get; set; }
 
         [StringLength(25, MinimumLength = 5)]
         public String Detalle { get; set; }

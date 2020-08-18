@@ -20,7 +20,7 @@ namespace Clinica.Models
         public string Cargo { get; set; }
 
         [Required]
-        public string Monto { get; set; }
+        public int Monto { get; set; }
 
 
     }

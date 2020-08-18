@@ -64,7 +64,7 @@
 
                                                             <div class="col-sm-6">
                                                                 <label>Valor Tratamiento</label>
-                                                                <input type="text" class="form-control form-control-user" placeholder="Ingrese Valor Tratamiento"
+                                                                <input type="number" class="form-control form-control-user" placeholder="Ingrese Valor Tratamiento"
                                                                        name="Valor" value="@Model.Valor">
                                                                 @Html.ValidationMessageFor(Model => Model.Valor, null, new { @class = "text-danger" })
 
@@ -94,7 +94,7 @@
                                                                     <br />
                                                                     <br />
                                                                     <label>Codigo de  Tratamiento</label>
-                                                                    <input type="text" class="form-control form-control-user" placeholder="Ingrese Codigo De Tratamiento"
+                                                                    <input type="number" class="form-control form-control-user" placeholder="Ingrese Codigo De Tratamiento"
                                                                            name="Codigos" value="@Model.Codigos">
                                                                     @Html.ValidationMessageFor(Model => Model.Codigos, null, new { @class = "text-danger" })
 
@@ -123,7 +123,7 @@
                                                                 <div class="col-sm-6">
                                                                     <br /><br />
                                                                     <label>Fecha Creacion</label>
-                                                                    <input type="datetime-local" class="form-control form-control-user" placeholder=""
+                                                                    <input type="date" class="form-control form-control-user" placeholder=""
                                                                            name="FechaCreacion" value="@Model.FechaCreacion">
                                                                     @Html.ValidationMessageFor(Model => Model.FechaCreacion, null, new { @class = "text-danger" })
 

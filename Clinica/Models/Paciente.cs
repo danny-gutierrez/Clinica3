@@ -21,7 +21,7 @@ namespace Clinica.Models
 
         [Required(ErrorMessage = "Ingrese su edad")]
         [Range(1, 100, ErrorMessage = "La edad debe estar entre 1 y 18")]
-        public String Edad { get; set; }
+        public int Edad { get; set; }
 
         [Display(Name = "Correo electrónico")]
         [Required(ErrorMessage = "Este campo es requerido.")]
@@ -47,7 +47,7 @@ namespace Clinica.Models
 
         [Required]
         [StringLength(12, MinimumLength = 9)]
-        public String Telefono { get; set; }
+        public int Telefono { get; set; }
 
         public virtual ICollection<BoletaPaciente> Registros { get; set; }
 

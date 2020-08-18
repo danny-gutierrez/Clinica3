@@ -85,24 +85,24 @@
 
                                                                 </div>
                                                             </div>
-                                                            
-                                                <fieldset>
-                                                    <div class="form-group row">
 
-                                                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                                            <label>Región: </label>
-                                                            <select class="form-control form-control-user" value="@Model.Region" name="Region" id="region" disabled>
-                                                                <option value="@Model.Region">@Model.Region</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <label>Comuna: </label>
-                                                            <select class="form-control form-control-user" value="@Model.Comuna" name="Comuna" id="comuna" disabled>
-                                                                <option value="@Model.Comuna">@Model.Comuna</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
+                                                            <fieldset>
+                                                                <div class="form-group row">
+
+                                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                        <label>Región: </label>
+                                                                        <select class="form-control form-control-user" value="@Model.Region" name="Region" id="region" disabled>
+                                                                            <option value="@Model.Region">@Model.Region</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-sm-6">
+                                                                        <label>Comuna: </label>
+                                                                        <select class="form-control form-control-user" value="@Model.Comuna" name="Comuna" id="comuna" disabled>
+                                                                            <option value="@Model.Comuna">@Model.Comuna</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </fieldset>
 
 
                                                             <div class="form-group">
@@ -113,22 +113,26 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class=" form-group row">
-                                                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                                                    <label>Telefono</label>
-                                                                    <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono" disabled>
+                                                          
+                                                                <div class=" form-group row">
+                                                                    <div class="col-sm-6 mb-3 mb-sm-0">
 
+                                                                        <label>Telefono</label>
+                                                                        <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono" disabled>
+
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <hr />
 
-                                                            <center>
-                                                                <button type="submit" class="btn btn-primary">Volver</button>
-                                                                <a href="@Url.Action("Historial", "Pacientes", new { id = Model.Id } )"><input type="button" value="Ver Historial" class="btn btn-primary"></a>
-                                                            </center>
+                                                              
+                                                                <hr />
+
+                                                                <center>
+                                                                    <button type="submit" class="btn btn-primary">Volver</button>
+                                                                    <a href="@Url.Action("Historial", "Pacientes", new { id = Model.Id } )"><input type="button" value="Ver Historial" class="btn btn-primary"></a>
+                                                                </center>
 
 
-                                                    </form>
+</form>
 
                                                 </table>
 
