@@ -10,27 +10,27 @@ function isNumber(evt) {
   return true;
 }
 
-function checkRut(rut) {
+function checkRut(Rut) {
 
-  if (rut.value.length <= 1) {
+  if (Rut.value.length <= 1) {
     alerta.classList.remove('alert-success', 'alert-danger');
     alerta.classList.add('alert-info');
     mensaje.innerHTML = 'Ingrese un RUT en el siguiente campo de texto para validar si es correcto o no';
   }
 
   // Obtiene el valor ingresado quitando puntos y guión.
-  var valor = clean(rut.value);
+  var valor = clean(Rut.value);
 
   // Divide el valor ingresado en dígito verificador y resto del RUT.
   cuerpo = valor.slice(0, -1);
   dv = valor.slice(-1).toUpperCase();
 
   // Separa con un Guión el cuerpo del dígito verificador.
-  rut.value = format(rut.value);
+  Rut.value = format(Rut.value);
 
   // Si no cumple con el mínimo ej. (n.nnn.nnn)
   if (cuerpo.length < 7) {
-    rut.setCustomValidity("RUT Incompleto");
+    Rut.setCustomValidity("RUT Incompleto");
     alerta.classList.remove('alert-success', 'alert-danger');
     alerta.classList.add('alert-info');
     mensaje.innerHTML = 'Ingresó un RUT muy corto, el RUT debe ser mayor a 7 Dígitos. Ej: x.xxx.xxx-x';
@@ -70,7 +70,7 @@ function checkRut(rut) {
 
     alerta.classList.remove('alert-info', 'alert-success');
     alerta.classList.add('alert-danger');
-    mensaje.innerHTML = 'El RUT ingresado: ' + rut.value + ' Es <strong>INCORRECTO</strong>.';
+    mensaje.innerHTML = 'El RUT ingresado: ' + Rut.value + ' Es <strong>INCORRECTO</strong>.';
 
     return false;
   } else {
@@ -78,25 +78,25 @@ function checkRut(rut) {
 
     alerta.classList.remove('d-none', 'alert-danger');
     alerta.classList.add('alert-success');
-    mensaje.innerHTML = 'El RUT ingresado: ' + rut.value + ' Es <strong>CORRECTO</strong>.';
+    mensaje.innerHTML = 'El RUT ingresado: ' + Rut.value + ' Es <strong>CORRECTO</strong>.';
     return true;
   }
 }
 
-function format (rut) {
+function format (Rut) {
   rut = clean(rut)
 
-  var result = rut.slice(-4, -1) + '-' + rut.substr(rut.length - 1)
-  for (var i = 4; i < rut.length; i += 3) {
-    result = rut.slice(-3 - i, -i) + '.' + result
+  var result = Rut.slice(-4, -1) + '-' + Rut.substr(Rut.length - 1)
+  for (var i = 4; i < Rut.length; i += 3) {
+    result = Rut.slice(-3 - i, -i) + '.' + result
   }
 
   return result
 }
 
-function clean (rut) {
-  return typeof rut === 'string'
-    ? rut.replace(/^0+|[^0-9kK]+/g, '').toUpperCase()
+function clean (Rut) {
+  return typeof Rut === 'string'
+    ? Rut.replace(/^0+|[^0-9kK]+/g, '').toUpperCase()
     : ''
 }
 

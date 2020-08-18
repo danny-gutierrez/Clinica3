@@ -150,15 +150,7 @@
     <Compile Include="Areas\Recepcionista\Controllers\PacientesController.cs" />
     <Compile Include="Areas\Recepcionista\Controllers\TratamientosController.cs" />
     <Compile Include="Areas\Recepcionista\RecepcionistaAreaRegistration.cs" />
-    <Compile Include="Controllers\BoletasController.cs" />
-    <Compile Include="Controllers\ContactoController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\CitasController.cs" />
-    <Compile Include="Controllers\OdontologosController.cs" />
-    <Compile Include="Controllers\RemuneracionesController.cs" />
-    <Compile Include="Controllers\RolesController.cs" />
-    <Compile Include="Controllers\TratamientosController.cs" />
-    <Compile Include="Controllers\PacientesController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2146,35 +2138,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Pacientes\Index.cshtml" />
-    <Content Include="Views\Pacientes\Create.cshtml" />
-    <Content Include="Views\Pacientes\View.cshtml" />
-    <Content Include="Views\Pacientes\Edit.cshtml" />
-    <Content Include="Views\Tratamientos\Create.cshtml" />
-    <Content Include="Views\Tratamientos\Edit.cshtml" />
-    <Content Include="Views\Tratamientos\Index.cshtml" />
-    <Content Include="Views\Tratamientos\View.cshtml" />
-    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Login\About.cshtml" />
+    <Content Include="Views\Login\Contact.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Contacto\Index.cshtml" />
-    <Content Include="Views\Odontologos\Create.cshtml" />
-    <Content Include="Views\Odontologos\Edit.cshtml" />
-    <Content Include="Views\Odontologos\Index.cshtml" />
-    <Content Include="Views\Odontologos\View.cshtml" />
-    <Content Include="Views\Citas\Create.cshtml" />
-    <Content Include="Views\Citas\Edit.cshtml" />
-    <Content Include="Views\Citas\Index.cshtml" />
-    <Content Include="Views\Citas\View.cshtml" />
-    <Content Include="Views\Boletas\Create.cshtml" />
-    <Content Include="Views\Boletas\Edit.cshtml" />
-    <Content Include="Views\Boletas\Index.cshtml" />
-    <Content Include="Views\Boletas\View.cshtml" />
-    <Content Include="Views\Remuneraciones\Create.cshtml" />
-    <Content Include="Views\Remuneraciones\Edit.cshtml" />
-    <Content Include="Views\Remuneraciones\Index.cshtml" />
-    <Content Include="Views\Remuneraciones\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

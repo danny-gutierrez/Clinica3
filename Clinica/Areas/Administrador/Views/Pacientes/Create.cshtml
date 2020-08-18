@@ -101,8 +101,8 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" id="rut" class="form-control form-control-user" value="@Model.Rut" name="Rut" placeholder="Ingrese un RUT"
-                                                               oninput="checkRut(this)">
+                                                        <input type="text" class="form-control form-control-user" name="Rut" placeholder="Ingrese un RUT"
+                                                               onkeypress="checkRut(this)">
                                                         @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
 
                                                     </div>
@@ -164,7 +164,7 @@
                                                 <br />
                                                 <center>
 
-                                                    <button type="submit" class="btn btn-primary">Grabar</button>
+                                                    <button  type="submit" class="btn btn-primary">Grabar</button>
                                                     <a href="@Url.Action("Index", "Pacientes")"><input type="button" value="Volver" class="btn btn-primary"></a>
                                                 </center>
 

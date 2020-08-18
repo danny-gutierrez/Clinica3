@@ -161,7 +161,7 @@
                 Rut = "18.588.666-5",
                 Edad = "28",
                 Correo = "Pedro@gmail.com",
-                Region = "VII",
+                Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Alamos 203, Coronel",
                 Telefono = "965855214"
@@ -176,7 +176,7 @@
                 Rut = "17.545.141-5",
                 Edad = "29",
                 Correo = "Daniel@gmail.com",
-                Region = "VII",
+                Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Boldos 323, Coronel",
                 Telefono = "412712413"
@@ -191,7 +191,7 @@
                 Rut = "18.588.666-5",
                 Edad = "28",
                 Correo = "Pedro@gmail.com",
-                Region = "VII",
+                Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Alamos 203, Coronel",
                 Telefono = "965855214"
@@ -206,7 +206,7 @@
                 Rut = "18.588.666-5",
                 Edad = "28",
                 Correo = "Pedro@gmail.com",
-                Region = "VII",
+                Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Alamos 203, Coronel",
                 Telefono = "965855214"

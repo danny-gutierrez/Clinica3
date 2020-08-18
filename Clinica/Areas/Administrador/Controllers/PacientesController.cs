@@ -83,14 +83,6 @@ namespace Clinica.Areas.Administrador.Controllers
                                             ).ToList();
 
 
-
-
-
-
-
-
-
-
             return View(paciente);
         }
 
