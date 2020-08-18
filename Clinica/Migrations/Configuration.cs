@@ -20,12 +20,12 @@
             {   Id= 1,
                 Nombres = "Dra.Andrea",
                 Apellidos = "Garcia",
-                Telefonos = "569123456789",
+                Telefonos = 569123456789,
                 Direcciones = "Chiguayanate",
                 Correos = "c@ejemplo.cl",
                 Rut = "16037888-5",
                 FechaIngreso = DateTime.Now,
-                Edad = "30",
+                Edad = 30,
                 Especialidad = "Endodoncia"
 
             };
@@ -36,12 +36,12 @@
                 Id = 2,
                 Nombres = "Dra. Jazmin",
                 Apellidos = "Ramirez",
-                Telefonos = "569123456789",
+                Telefonos = 569123456789,
                 Direcciones = "Santiago",
                 Correos = "Guillermo@ejemplo.cl",
                 Rut = "123456789",
                 FechaIngreso = DateTime.Now,
-                Edad = "40",
+                Edad = 40,
                 Especialidad = "Limpieza General"
 
             };
@@ -52,12 +52,12 @@
                 Id = 3,
                 Nombres = "Dr.Alejandro",
                 Apellidos = "Ramirez",
-                Telefonos = "569123456789",
+                Telefonos = 569123456789,
                 Direcciones = "Santiago",
                 Correos = "Guillermo@ejemplo.cl",
                 Rut = "123456789",
                 FechaIngreso = DateTime.Now,
-                Edad = "40",
+                Edad = 40,
                 Especialidad = "Limpieza General"
 
             };
@@ -68,12 +68,12 @@
                 Id = 4,
                 Nombres = "Dra.Claudia",
                 Apellidos = "Ramirez",
-                Telefonos = "569123456789",
+                Telefonos = 569123456789,
                 Direcciones = "Santiago",
                 Correos = "Guillermo@ejemplo.cl",
                 Rut = "123456789",
                 FechaIngreso = DateTime.Now,
-                Edad = "40",
+                Edad = 40,
                 Especialidad = "Limpieza General"
 
             };
@@ -94,9 +94,9 @@
             {
 
                 Nombres = "Ndodoncia",
-                Valor = "80.000",
+                Valor = 80000,
                 IdOdontologo = 1,
-                Codigos = "00001",
+                Codigos = 00001,
                 Descripcion = "Tratamiento",
                 Horarios = DateTime.Now,
                 FechaCreacion = DateTime.Now
@@ -108,9 +108,9 @@
             {
 
                 Nombres = "Ortodoncia",
-                Valor = "150.000",
+                Valor = 150000,
                 IdOdontologo = 2,
-                Codigos = "00003",
+                Codigos = 00003,
                 Descripcion = "Trtamiento",
                 Horarios = DateTime.Now,
                 FechaCreacion = DateTime.Now
@@ -121,9 +121,9 @@
             {
 
                 Nombres = "Protesis",
-                Valor = "150.000",
+                Valor = 50000,
                 IdOdontologo = 3,
-                Codigos = "00003",
+                Codigos = 00003,
                 Descripcion = "Trtamiento",
                 Horarios = DateTime.Now,
                 FechaCreacion = DateTime.Now
@@ -134,9 +134,9 @@
             {
 
                 Nombres = "Limpieza ",
-                Valor = "150.000",
+                Valor = 150000,
                 IdOdontologo = 4,
-                Codigos = "00003",
+                Codigos = 00003,
                 Descripcion = "Trtamiento",
                 Horarios = DateTime.Now,
                 FechaCreacion = DateTime.Now
@@ -159,12 +159,12 @@
                 Nombre = "Pedro",
                 Apellido = "Molina",
                 Rut = "18.588.666-5",
-                Edad = "28",
+                Edad = 28,
                 Correo = "Pedro@gmail.com",
                 Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Alamos 203, Coronel",
-                Telefono = "965855214"
+                Telefono = 965855214
 
 
             };
@@ -174,12 +174,12 @@
                 Nombre = "Daniel",
                 Apellido = "Montes",
                 Rut = "17.545.141-5",
-                Edad = "29",
+                Edad = 29,
                 Correo = "Daniel@gmail.com",
                 Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Boldos 323, Coronel",
-                Telefono = "412712413"
+                Telefono = 412712413
 
 
             };
@@ -189,12 +189,12 @@
                 Nombre = "Florencia",
                 Apellido = "Molina",
                 Rut = "18.588.666-5",
-                Edad = "28",
+                Edad = 28,
                 Correo = "Pedro@gmail.com",
                 Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Alamos 203, Coronel",
-                Telefono = "965855214"
+                Telefono = 965855214
 
 
             };
@@ -204,12 +204,12 @@
                 Nombre = "Junior",
                 Apellido = "Molina",
                 Rut = "18.588.666-5",
-                Edad = "28",
+                Edad = 28,
                 Correo = "Pedro@gmail.com",
                 Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Alamos 203, Coronel",
-                Telefono = "965855214"
+                Telefono = 965855214
 
 
             };
@@ -278,47 +278,47 @@
             //Boletas
             Boleta b1 = new Boleta()
             {
-                NB = "001",
+                NB = 001,
                 Nombre = "Pedro",
                 Apellido = "Molina",
                 IdOdontologo = 1,
                 Fecha = DateTime.Today,
-                Fono = "985475575",
-                Valor = "80.000",
+                Fono = 985475575,
+                Valor = 80000,
                 Detalle = "Endodoncia"
             };
             Boleta b2 = new Boleta()
             {
-                NB = "002",
+                NB = 002,
                 Nombre = "Daniel",
                 Apellido = "Montes",
                 IdOdontologo = 2,
                 Fecha = DateTime.Today,
-                Fono = "925478547",
-                Valor = " 30.000",
+                Fono = 925478547,
+                Valor = 30000,
                 Detalle = "Limpieza"
             };
 
             Boleta b3 = new Boleta()
             {
-                NB = "003",
+                NB = 003,
                 Nombre = "Francisca",
                 Apellido = "Molina",
                 IdOdontologo = 3,
                 Fecha = DateTime.Today,
-                Fono = "985475575",
-                Valor = "80.000",
+                Fono = 985475575,
+                Valor = 80000,
                 Detalle = "Endodoncia"
             };
             Boleta b4 = new Boleta()
             {
-                NB = "004",
+                NB = 004,
                 Nombre = "Roberto",
                 Apellido = "Molina",
                IdOdontologo = 4,
                 Fecha = DateTime.Today,
-                Fono = "985475575",
-                Valor = "80.000",
+                Fono = 985475575,
+                Valor = 80000,
                 Detalle = "Endodoncia"
             };
 
@@ -358,7 +358,7 @@
                 Apellido = "Montes",
                 Fecha = DateTime.Now,
                 IdOdontologo = 1,
-                Telefono = "412712413",
+                Telefono = 412712413,
                 Motivo = "Limpieza",
 
             };
@@ -369,7 +369,7 @@
                 Apellido = "parras",
                 Fecha = DateTime.Now,
                 IdOdontologo = 2,
-                Telefono = "966585422",
+                Telefono = 966585422,
                 Motivo = "Endodoncia",
 
             };
@@ -380,7 +380,7 @@
                 Apellido = "Montes",
                 Fecha = DateTime.Now,
                 IdOdontologo = 3,
-                Telefono = "412712413",
+                Telefono = 412712413,
                 Motivo = "Limpieza",
 
             };
@@ -391,7 +391,7 @@
                 Apellido = "Montes",
                 Fecha = DateTime.Now,
                 IdOdontologo = 4,
-                Telefono = "412712413",
+                Telefono = 412712413,
                 Motivo = "Limpieza",
 
             };
@@ -464,14 +464,14 @@
                 Nombre = "Andrea",
                 Apellido = "Garcia",
                 Cargo = "Odontologo",
-                Monto = "800.000",
+                Monto = 800000,
             };
             Remuneracion r2 = new Remuneracion()
             {
                 Nombre = "Jazmin",
                 Apellido = "Ramirez",
                 Cargo = "Odontologo",
-                Monto = "800.000",
+                Monto = 800000,
             };
 
             Remuneracion r3 = new Remuneracion()
@@ -479,7 +479,7 @@
                 Nombre = "Alejandro",
                 Apellido = "Ramirez",
                 Cargo = "Odontologo",
-                Monto = "800.000",
+                Monto = 800000,
             };
 
             Remuneracion r4 = new Remuneracion()
@@ -487,7 +487,7 @@
                 Nombre = "Claudia",
                 Apellido = "Ramirez",
                 Cargo = "Odontologo",
-                Monto = "800.000",
+                Monto = 800000,
             };
             context.Remuneraciones.Add(r1);
             context.Remuneraciones.Add(r2);

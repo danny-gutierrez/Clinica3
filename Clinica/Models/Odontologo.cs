@@ -22,9 +22,9 @@ namespace Clinica.Models
 
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+       
 
-        public int Telefonos { get; set; }
+        public long Telefonos { get; set; }
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
@@ -38,7 +38,7 @@ namespace Clinica.Models
 
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+     
 
         public String Rut { get; set; }
 
@@ -53,7 +53,7 @@ namespace Clinica.Models
         public String Especialidad { get; set; }
 
         [Required]
-        [StringLength(2, MinimumLength = 1)]
+      
 
         public int Edad { get; set; }
 

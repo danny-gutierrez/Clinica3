@@ -31,7 +31,7 @@ namespace Clinica.Models
                                                             // guarda el ID en bd y no el nombre 
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+     
         public int Telefono { get; set; }
 
         [Required]

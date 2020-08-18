@@ -16,8 +16,8 @@ namespace Clinica.Models
 
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
-        public int Valor { get; set; }
+      
+        public long Valor { get; set; }
 
 
 
@@ -26,7 +26,7 @@ namespace Clinica.Models
         public virtual Odontologo Odontologo { get; set; }
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+      
 
         public int Codigos { get; set; }
 

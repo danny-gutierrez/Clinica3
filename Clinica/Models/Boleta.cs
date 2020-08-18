@@ -9,7 +9,7 @@ namespace Clinica.Models
     {
         public int Id { get; set; }
         [Required]
-        [StringLength(5, MinimumLength = 1)]
+      
         public int NB { get; set; }
 
         [Required]
@@ -32,12 +32,12 @@ namespace Clinica.Models
         public DateTime Fecha { get; set; }
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+       
         public int Fono { get; set; }
 
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+      
         public int Valor { get; set; }
 
         [StringLength(25, MinimumLength = 5)]
