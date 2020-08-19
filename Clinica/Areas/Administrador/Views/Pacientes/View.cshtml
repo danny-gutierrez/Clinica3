@@ -113,23 +113,40 @@
                                                                 </div>
                                                             </div>
 
-                                                          
-                                                                <div class=" form-group row">
-                                                                    <div class="col-sm-6 mb-3 mb-sm-0">
 
-                                                                        <label>Telefono</label>
-                                                                        <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono" disabled>
+                                                            <div class=" form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
 
-                                                                    </div>
+                                                                    <label>Telefono</label>
+                                                                    <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono" disabled>
+
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <label>DIreccion</label>
+                                                                    <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion">
+                                                                    @Html.ValidationMessageFor(Model => Model.Direccion, null, new { @class = "text-danger" })
+
                                                                 </div>
 
-                                                              
-                                                                <hr />
+                                                                <div class="col-sm-6">
+                                                                    <label>Telefono</label>
+                                                                    <input type="number" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
+                                                                    @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
 
-                                                                <center>
-                                                                    <button type="submit" class="btn btn-primary">Volver</button>
-                                                                    <a href="@Url.Action("Historial", "Pacientes", new { id = Model.Id } )"><input type="button" value="Ver Historial" class="btn btn-primary"></a>
-                                                                </center>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <hr />
+
+                                                            <center>
+                                                                <button type="submit" class="btn btn-primary">Volver</button>
+                                                                <a href="@Url.Action("Historial", "Pacientes", new { id = Model.Id } )"><input type="button" value="Ver Historial" class="btn btn-primary"></a>
+                                                            </center>
 
 
 </form>

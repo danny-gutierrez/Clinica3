@@ -87,12 +87,14 @@
                                             <form method="POST" action="@Url.Action("Edit", "Pacientes")" class="user">
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Nombre</label>
                                                         <input type="text" class="form-control form-control-user" onkeypress="return soloLetras(event)" onblur="limpia()" id="miInput" value="@Model.Nombre" name="Nombre" placeholder="Nombre">
                                                         @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "text-danger" })
                                                     </div>
 
 
                                                     <div class="col-sm-6">
+                                                        <label>Apellido</label>
                                                         <input type="text" class="form-control form-control-user" onkeypress="return soloLetras(event)" onblur="limpia()" id="miInput" value="@Model.Apellido" name="Apellido" placeholder="Apellido">
                                                         @Html.ValidationMessageFor(Model => Model.Apellido, null, new { @class = "text-danger" })
                                                     </div>
@@ -100,6 +102,7 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Rut</label>
                                                         <input type="text" id="rut" class="form-control form-control-user" value="@Model.Rut" name="Rut" placeholder="Ingrese un RUT" onkeypress="return isNumber(event)"
                                                                oninput="checkRut(this)" required>
                                                         @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
@@ -107,6 +110,7 @@
                                                     </div>
 
                                                     <div class="col-sm-6">
+                                                        <label>Edad</label>
                                                         <input type="number" class="form-control form-control-user" value="@Model.Edad" name="Edad" placeholder="Edad">
                                                         @Html.ValidationMessageFor(Model => Model.Edad, null, new { @class = "text-danger" })
 
@@ -115,7 +119,7 @@
 
                                                 <div class="form-group">
                                                     <div class="">
-
+                                                        <label>Correo</label>
                                                         <input type="email" class="form-control form-control-user" value="@Model.Correo" name="Correo" placeholder="Correo">
                                                         @Html.ValidationMessageFor(Model => Model.Correo, null, new { @class = "text-danger" })
 
@@ -144,20 +148,24 @@
                                                     </div>
                                                 </fieldset>
 
-                                                <div class="form-group">
-                                                    <div class="">
+                                           
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>DIreccion</label>
                                                         <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion">
                                                         @Html.ValidationMessageFor(Model => Model.Direccion, null, new { @class = "text-danger" })
+
                                                     </div>
-                                                </div>
 
-
-                                                <div class=" form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
+                                                    <div class="col-sm-6">
+                                                        <label>Telefono</label>
+                                                        <input type="number" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
                                                         @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
+
                                                     </div>
                                                 </div>
+
 
 
                                                 <br />
