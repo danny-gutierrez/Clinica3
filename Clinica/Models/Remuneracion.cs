@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Clinica.Models
 {
@@ -21,6 +22,14 @@ namespace Clinica.Models
 
         [Required]
         public int Monto { get; set; }
+
+        public int IdOdontologo { get; set; }
+
+        public virtual Odontologo Odontologo { get; set; }
+
+
+        public virtual ICollection<Odontologo> Odontologos { get; set; }
+
 
 
     }

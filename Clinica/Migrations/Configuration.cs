@@ -471,6 +471,7 @@
             {
                 Nombre = "Andrea",
                 Apellido = "Garcia",
+                IdOdontologo = 1,
                 Cargo = "Odontologo",
                 Monto = 800000,
             };
@@ -478,6 +479,7 @@
             {
                 Nombre = "Jazmin",
                 Apellido = "Ramirez",
+                IdOdontologo = 2,
                 Cargo = "Odontologo",
                 Monto = 800000,
             };
@@ -486,6 +488,7 @@
             {
                 Nombre = "Alejandro",
                 Apellido = "Ramirez",
+                IdOdontologo = 1,
                 Cargo = "Odontologo",
                 Monto = 800000,
             };
@@ -494,6 +497,7 @@
             {
                 Nombre = "Claudia",
                 Apellido = "Ramirez",
+                IdOdontologo = 1,
                 Cargo = "Odontologo",
                 Monto = 800000,
             };

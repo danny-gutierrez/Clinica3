@@ -26,6 +26,10 @@ namespace Clinica.Areas.Administrador.Controllers
             Remuneracion remuneracion = new Remuneracion();
             List<Odontologo> odontologos = _db.Odontologos.ToList();
             ViewBag.odontologos = odontologos;
+
+
+
+
             return View(remuneracion);
         }
 

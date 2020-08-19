@@ -50,37 +50,63 @@
                                                     <hr />
                                             </div>
                                             <form method="POST" action="@Url.Action("Create", "Remuneraciones")" class="user">
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Nombre" name="Nombre" placeholder="Nombre">
-                                                        @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "text-danger" })
-                                                    </div>
+                                               
 
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Apellido" name="Apellido" placeholder="Apellido">
-                                                        @Html.ValidationMessageFor(Model => Model.Apellido, null, new { @class = "text-danger" })
+
+
+                                                    <div class="form-group">
+                                                        <label>Nombre Odontologo</label>
+                                                        <select class="form-control form-control-user" value="@Model.Odontologo" name="idOdontologo" id="IdOdontologo" placeholder="Odontologo">
+
+                                                            @foreach (Clinica.Models.Odontologo odontologos in ViewBag.odontologos)
+                                                            {
+
+                                                            <option value="@odontologos.Id">@odontologos.Nombres @odontologos.Apellidos  </option>
+                                                            }
+
+
+                                                        </select>
+
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-
-                                                    <select class="custom-select custom-select-sm form-control form-control-sm" name="Cargo" id="Cargo" placeholder="Cargo">
-
-                                                        @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
-                                                        {
-
-                                                            <option value="@odontologo.Id">@odontologo.Especialidad</option>
-                                                        }
-
-
-                                                    </select>
                                                     
-                                                </div>
+                                                    
+                                                    
+                                                    
+                                                    
+                                            
+                                        <div class="form-group">
+
+                                            <label>Cargo</label>
+                                            <select class="custom-select custom-select-sm form-control form-control-sm" name="Cargo" id="Cargo" placeholder="Cargo">
+
+
+
+                                                <option>Odontologo</option>
+                                                <option>Recepcionista</option>
+                                                <option>Aseo</option>
+                                            </select>
+                                            @Html.ValidationMessageFor(Model => Model.Cargo, null, new { @class = "text-danger" })
+                                        </div>
                                                 
+                                        <label>Monto</label>
                                                 <div class="form-group">
-                                                    <input type="number" class="form-control form-control-user" value="@Model.Monto" name="Monto" placeholder="Monto">
+                                                    <select class="custom-select custom-select-sm form-control form-control-sm" value="@Model.Monto" name="Monto" placeholder="Monto">
+
+                                                        <option>700000</option>
+                                                        <option>400000</option>
+                                                        <option>320000</option>
+                                                    </select>
+
+
                                                     @Html.ValidationMessageFor(Model => Model.Monto, null, new { @class = "text-danger" })
                                                 </div>
                                                 
+
+
+
+
+
                                                 <br />
                                                 <center>
                                                     <button type="submit" class="btn btn-primary">Grabar</button>
