@@ -54,16 +54,16 @@
                                             <form method="POST" action="@Url.Action("Create", "Odontologos")" class="user">
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                       
 
+                                                        <label>Nombre</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Nombre Odontologo"
-                                                               name="Nombres" value="@Model.Nombres" >
+                                                               name="Nombres" value="@Model.Nombres">
                                                         @Html.ValidationMessageFor(Model => Model.Nombres, null, new { @class = "text-danger" })
                                                     </div>
 
 
                                                     <div class="col-sm-6">
-                                                     
+                                                        <label>Apellido</label>
                                                         <input type="text" class="form-control form-control-user" placeholder=" Apellido Odontologo"
                                                                name="Apellidos" value="@Model.Apellidos">
                                                         @Html.ValidationMessageFor(Model => Model.Apellidos, null, new { @class = "text-danger" })
@@ -73,17 +73,17 @@
 
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        
+                                                        <label>Rut</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Ingrese el Rut"
-                                                               name="Rut" value="@Model.Rut" >
+                                                               name="Rut" value="@Model.Rut">
                                                         @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
                                                     </div>
 
 
                                                     <div class="col-sm-6">
-                                                       
+                                                        <label>Edad</label>
                                                         <input type="number" class="form-control form-control-user" placeholder="Ingrese la Edad"
-                                                               name="Edad" value="@Model.Edad" >
+                                                               name="Edad" value="@Model.Edad">
                                                         @Html.ValidationMessageFor(Model => Model.Edad, null, new { @class = "text-danger" })
                                                     </div>
 
@@ -91,16 +91,16 @@
 
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                       
+                                                        <label>Telefono</label>
                                                         <input type="tel" class="form-control form-control-user" placeholder="Ingrese Telefono"
                                                                name="Telefonos" value="@Model.Telefonos">
                                                         @Html.ValidationMessageFor(Model => Model.Telefonos, null, new { @class = "text-danger" })
                                                     </div>
 
                                                     <div class="col-sm-6">
-                                                        
+                                                        <label>Direccion</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Ingrese Direccion"
-                                                               name="Direcciones" value="@Model.Direcciones" >
+                                                               name="Direcciones" value="@Model.Direcciones">
                                                         @Html.ValidationMessageFor(Model => Model.Direcciones, null, new { @class = "text-danger" })
                                                     </div>
 
@@ -109,30 +109,44 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                      <label>Fecha Creacion</label>
+                                                        <label>Fecha Creacion</label>
                                                         <input type="date" class="form-control form-control-user" placeholder="Fecha de Ingreso"
-                                                               name="FechaIngreso" value="@Model.FechaIngreso" >
+                                                               name="FechaIngreso" value="@Model.FechaIngreso">
                                                         @Html.ValidationMessageFor(Model => Model.FechaIngreso, null, new { @class = "text-danger" })
                                                     </div>
 
 
                                                     <div class="col-sm-6">
-                                                        <label>.</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Especialidad"
-                                                               name="Especialidad" value="@Model.Especialidad" >
+                                                        <label>Especialidad</label>
+
+                                                        <select class="form-control" name="idOdontologo" value="" placeholder="Ingrese Especialidad">
+
+                                                            <option>Endodoncia</option>
+                                                            <option>Rehabilitacion oral - Protesis</option>
+                                                            <option>Cariologia</option>
+                                                            <option>Odontologia Infantil</option>
+                                                            <option>Odontologia General</option>
+
+
+
+                                                        </select>
                                                         @Html.ValidationMessageFor(Model => Model.Especialidad, null, new { @class = "text-danger" })
                                                     </div>
 
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                       
+                                                <div class="form-group">
+                                                    <div class="">
+                                                        <label>Correo</label>
                                                         <input type="email" class="form-control form-control-user" placeholder="Ingrese Correo"
                                                                name="Correos" value="@Model.Correos">
                                                         @Html.ValidationMessageFor(Model => Model.Correos, null, new { @class = "text-danger" })
                                                     </div>
 
                                                 </div>
+
+
+
+
 
                                                 <div class="form-group row">
 
@@ -144,7 +158,7 @@
                                                     <button type="submit" class="btn btn-primary">Grabar</button>
                                                     <a href="@Url.Action("Index", "Odontologos")"><input type="button" value="Volver" class="btn btn-primary"></a>
                                                 </center>
-                                                
+
                                             </form>
 
                                         </div>

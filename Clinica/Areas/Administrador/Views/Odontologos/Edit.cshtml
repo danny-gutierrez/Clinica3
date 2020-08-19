@@ -118,14 +118,24 @@
 
                                                     <div class="col-sm-6">
                                                         <label>Especialidad</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Especialidad"
-                                                               name="Especialidad" value="@Model.Especialidad" >
+
+                                                        <select class="form-control" name="idOdontologo" value="" placeholder="Ingrese Especialidad">
+
+                                                            <option>Endodoncia</option>
+                                                            <option>Rehabilitacion oral - Protesis</option>
+                                                            <option>Cariologia</option>
+                                                            <option>Odontologia Infantil</option>
+                                                            <option>Odontologia General</option>
+
+
+
+                                                        </select>
                                                         @Html.ValidationMessageFor(Model => Model.Especialidad, null, new { @class = "text-danger" })
                                                     </div>
 
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <div class="form-group">
+                                                    <div class="">
                                                         <label>Correo</label>
                                                         <input type="email" class="form-control form-control-user" placeholder="Ingrese Correo"
                                                                name="Correos" value="@Model.Correos" >

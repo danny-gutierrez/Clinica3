@@ -69,17 +69,21 @@
 
 
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Nombre</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="Nombre" value="@Model.Nombre" disabled>
+                                                <div class="form-group ">
+                                                    <div class="">
+                                                        <label>Paciente</label>
+                                                        <input type="text" class="form-control form-control-user" placeholder="Nombre" value="@Model.Nombre   @Model.Apellido" disabled>
                                                     </div>
 
-                                                    <div class="col-sm-6">
-                                                        <label>Apellido</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="Apellido" value="@Model.Apellido" disabled>
-                                                    </div>
+
                                                 </div>
+
+
+                                                <div class="form-group">
+                                                    <label>Tratamiento</label>
+                                                    <input type="text" class="form-control form-control-user" placeholder="Detalle" value="@Model.Detalle" disabled>
+                                                </div>
+
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                                         <label>Fono</label>
@@ -91,15 +95,12 @@
                                                         <input type="datetime" class="form-control form-control-user" placeholder="Fecha" value="@Model.Fecha" disabled>
                                                     </div>
                                                 </div>
-                                              
+
                                                 <div class="form-group">
                                                     <label>Valor</label>
                                                     <input type="number" class="form-control form-control-user" placeholder="Valor" value="@Model.Valor" disabled>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Detalle</label>
-                                                    <input type="text" class="form-control form-control-user" placeholder="Detalle" value="@Model.Detalle" disabled>
-                                                </div>
+                                              
 
 
                                                 <br />

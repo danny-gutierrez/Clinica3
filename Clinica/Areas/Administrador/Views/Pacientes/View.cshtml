@@ -105,36 +105,19 @@
                                                             </fieldset>
 
 
-                                                            <div class="form-group">
-                                                                <div class="">
-                                                                    <label>Direccion</label>
-                                                                    <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion" disabled>
-
-                                                                </div>
-                                                            </div>
-
-
-                                                            <div class=" form-group row">
-                                                                <div class="col-sm-6 mb-3 mb-sm-0">
-
-                                                                    <label>Telefono</label>
-                                                                    <input type="tel" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono" disabled>
-
-                                                                </div>
-                                                            </div>
-
+                                                         
 
                                                             <div class="form-group row">
                                                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                                                     <label>DIreccion</label>
-                                                                    <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion">
+                                                                    <input type="text" class="form-control form-control-user" value="@Model.Direccion" name="Direccion" placeholder="Direccion" disabled>
                                                                     @Html.ValidationMessageFor(Model => Model.Direccion, null, new { @class = "text-danger" })
 
                                                                 </div>
 
                                                                 <div class="col-sm-6">
                                                                     <label>Telefono</label>
-                                                                    <input type="number" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
+                                                                    <input type="number" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono" disabled>
                                                                     @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
 
                                                                 </div>

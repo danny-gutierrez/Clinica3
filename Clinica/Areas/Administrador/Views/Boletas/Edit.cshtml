@@ -61,7 +61,7 @@
 
                                                     <div class="col-sm-6">
                                                         <label>Odontologo</label>
-                                                        <select class="form-control form-control-user"  name="IdOdontologo" id="Odontologo" >
+                                                        <select class="form-control form-control-user" name="IdOdontologo" id="Odontologo">
 
                                                             @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
                                                             {
@@ -71,58 +71,97 @@
 
 
                                                         </select>
-                                                        
+
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Nombre</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Nombre" name="Nombre" placeholder="Nombre">
+
+
+
+
+                                                <div class="form-group">
+                                                    <label>Paciente</label>
+                                                    <select class="form-control form-control-user" value="@Model.Nombre" name="Nombre" id="Paciente" placeholder="Paciente">
+
+                                                        @foreach (Clinica.Models.Paciente paciente in ViewBag.pacientes)
+                                                        {
+
+                                                            <option value="@paciente.Id">@paciente.Nombre  @paciente.Apellido</option>
+                                                        }
+
                                                         @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "text-danger" })
-                                                    </div>
+                                                    </select>
 
-                                                    <div class="col-sm-6">
-                                                        <label>Apellido</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Apellido" name="Apellido" placeholder="Apellido">
-                                                        @Html.ValidationMessageFor(Model => Model.Apellido, null, new { @class = "text-danger" })
-                                                    </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Fono</label>
-                                                        <input type="number" class="form-control form-control-user" value="@Model.Fono" name="Fono" placeholder="Telefono">
-                                                        @Html.ValidationMessageFor(Model => Model.Fono, null, new { @class = "text-danger" })
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label>Fecha</label>
-                                                        <input type="date" class="form-control form-control-user" value="@Model.Fecha" name="Fecha" placeholder="Fecha">
-                                                        @Html.ValidationMessageFor(Model => Model.Fecha, null, new { @class = "text-danger" })
-                                                    </div>
-                                                 </div> 
-                                                    <div class="form-group">
-                                                        <label>Valor</label>
-                                                        <input type="number" class="form-control form-control-user" value="@Model.Valor" name="Valor" placeholder="Valor">
-                                                        @Html.ValidationMessageFor(Model => Model.Valor, null, new { @class = "text-danger" })
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Detalle</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Detalle" name="Detalle" placeholder="Detalle">
-                                                        @Html.ValidationMessageFor(Model => Model.Detalle, null, new { @class = "text-danger" })
-                                                    </div>
-                                                    <br />
-                                                    <center>
-                                                        <button type="submit" class="btn btn-primary">Editar</button>
-                                                        <a href="@Url.Action("Index", "Boletas")"><input type="button" value="Volver" class="btn btn-primary"></a>
-                                                    </center>
-                                                    </a>
+                                        </div>
 
 
-                                              </form>
+                                        <div class="form-group">
+                                            <label>Tratamiento</label>
+                                            <select class="form-control form-control-user" value="@Model.Tratamiento" name="idTratamiento" id="Tratamiento" placeholder="Tratamiento">
+
+                                                @foreach (Clinica.Models.Tratamiento tratamiento in ViewBag.tratamientos)
+                                                {
+
+                                                    <option value="@tratamiento.Id">@tratamiento.Nombres  </option>
+                                                }
 
 
+                                            </select>
 
                                         </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <label>Fono</label>
+                                            <input type="number" class="form-control form-control-user" value="@Model.Fono" name="Fono" placeholder="Telefono">
+                                            @Html.ValidationMessageFor(Model => Model.Fono, null, new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Fecha</label>
+                                            <input type="date" class="form-control form-control-user" value="@Model.Fecha" name="Fecha" placeholder="Fecha">
+                                            @Html.ValidationMessageFor(Model => Model.Fecha, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <label>Valor</label>
+                                            <input type="number" class="form-control form-control-user" value="@Model.Valor" name="valor" placeholder="Valor">
+                                            @Html.ValidationMessageFor(Model => Model.Valor, null, new { @class = "text-danger" })
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label>Detalle</label>
+                                            <input type="text" class="form-control form-control-user" value="@Model.Detalle" name="Detalle" placeholder="Detalle">
+                                            @Html.ValidationMessageFor(Model => Model.Detalle, null, new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+                              
+                                    <center>
+                                        <button type="submit" class="btn btn-primary">Editar</button>
+                                        <a href="@Url.Action("Index", "Boletas")"><input type="button" value="Volver" class="btn btn-primary"></a>
+                                    </center>
+                                    </a>
+
+
+                                    </form>
+
+
+
+                                </div>
                                     </div>
                                 </div>
                             </div>

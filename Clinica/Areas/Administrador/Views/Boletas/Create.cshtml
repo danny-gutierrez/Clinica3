@@ -109,66 +109,71 @@
                                     </div>
 
 
-                                        <div class="form-group row">
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
 
-                                              
-                                            </div>
 
-                                            <div class="col-sm-6">
-
-                                            
-                                            </div>
                                         </div>
+
+                                        <div class="col-sm-6">
+
+
+                                        </div>
+                                    </div>
 
 
                                     <!--  Probando esto  -->
 
 
-                                        <div class="form-group row">
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <label>Telefono</label>
-                                                <input type="number" class="form-control form-control-user" value="@Model.Paciente" name="Fono" placeholder="Telefono">
-                                                @Html.ValidationMessageFor(Model => Model.Fono, null, new { @class = "text-danger" })
-                                            </div>
-
-
-
-
-                                            <div class="col-sm-6">
-                                                <label>Fecha</label>
-                                                <input type="date" class="form-control form-control-user" name="Fecha" placeholder="Fecha">
-                                                @Html.ValidationMessageFor(Model => Model.Fecha, null, new { @class = "text-danger" })
-                                            </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <label>Telefono</label>
+                                            <input type="number" class="form-control form-control-user" value="@Model.Paciente" name="Fono" placeholder="Telefono">
+                                            @Html.ValidationMessageFor(Model => Model.Fono, null, new { @class = "text-danger" })
                                         </div>
-                                        <div class="form-group">
+
+
+
+
+                                        <div class="col-sm-6">
+                                            <label>Fecha</label>
+                                            <input type="date" class="form-control form-control-user" name="Fecha" placeholder="Fecha">
+                                            @Html.ValidationMessageFor(Model => Model.Fecha, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                              
+
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
                                             <label>Valor</label>
-                                            <input type="number" class="form-control form-control-user" value="@Model.Valor" name="Valor" placeholder="Valor">
+                                            <input type="number" class="form-control form-control-user" value="@Model.Valor" name="valor" placeholder="Valor">
                                             @Html.ValidationMessageFor(Model => Model.Valor, null, new { @class = "text-danger" })
 
-
                                         </div>
 
-
-
-                                        <div class="form-group">
+                                        <div class="col-sm-6">
                                             <label>Detalle</label>
                                             <input type="text" class="form-control form-control-user" value="@Model.Detalle" name="Detalle" placeholder="Detalle">
                                             @Html.ValidationMessageFor(Model => Model.Detalle, null, new { @class = "text-danger" })
+
                                         </div>
-                                        <br />
-                                        <center>
-                                            <button type="submit" id="btn2" class="btn btn-primary">Grabar</button>
-                                            <a href="@Url.Action("Index", "Boletas")"><input type="button" value="Volver" class="btn btn-primary"></a>
-                                        </center>
-                                        </a>
-
-
-                                        </form>
-
-
-
                                     </div>
+
+
+                                    <br />
+                                    <center>
+                                        <button type="submit" id="btn2" class="btn btn-primary">Grabar</button>
+                                        <a href="@Url.Action("Index", "Boletas")"><input type="button" value="Volver" class="btn btn-primary"></a>
+                                    </center>
+                                    </a>
+
+
+                                    </form>
+
+
+
+                                </div>
                                     </div>
                                 </div>
                             </div>
