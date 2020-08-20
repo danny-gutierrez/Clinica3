@@ -17,7 +17,7 @@
     <meta name="keywords"
           content="RUT, chileno, rut chileno, validar rut, validar rut en linea, validar rut con javascript" />
 
-
+    <script type="text/javascript" src="~/Content/js/validarut.js"></script>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,13 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+
+
+
+
     <script>
+
+
         function soloLetras(e) {
             key = e.keyCode || e.which;
             tecla = String.fromCharCode(key).toLowerCase();
@@ -84,7 +90,7 @@
                                                     <h1 class="h4 text-gray-900 mb-4">Crear Paciente</h1>
                                                     <hr />
                                             </div>
-                                            <form method="POST" action="@Url.Action("Create", "Pacientes")" class="user">
+                                            <form name="form1" onSubmit="javascript:return Rut(document.form1.rut.value)" method="POST" action="@Url.Action("Create", "Pacientes")" class="user">
 
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -104,10 +110,9 @@
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                                         <label>Rut</label>
-                                                        <input type="text" class="form-control form-control-user" name="Rut" placeholder="Ingrese un RUT"
-                                                               onkeypress="checkRut(this)">
-                                                        @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
+                                                        <input type="text" class="form-control form-control-user" name="rut" placeholder="Ingrese un RUT" value="ingresar rut" />
 
+                                                        
                                                     </div>
 
                                                     <div class="col-sm-6">
@@ -158,7 +163,7 @@
 
 
 
-                                           
+
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                                         <label>DIreccion</label>
@@ -171,6 +176,7 @@
                                                         <label>Telefono</label>
                                                         <input type="number" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
                                                         @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
+                                                      
 
                                                     </div>
                                                 </div>
@@ -229,7 +235,8 @@
 
         <script src="~/Content/vendor/p1/codigo.js"></script>
        
-      
+
+
         <script src="~/Content/js/dist/jquery.georegionalizacion-chile_0.9.min.js"></script>
 
         <script>
