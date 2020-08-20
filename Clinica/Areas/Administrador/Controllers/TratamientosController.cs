@@ -109,7 +109,7 @@ namespace Clinica.Areas.Administrador.Controllers
                 _db.Entry(tratamiento).State = EntityState.Modified;
                 _db.SaveChanges();
 
-                return RedirectToAction("View", "Tratamientos", new { id = 1 });
+                return RedirectToAction("Index", "Tratamientos", new { id = 1 });
 
             }
             List<Odontologo> odontologos = _db.Odontologos.ToList();

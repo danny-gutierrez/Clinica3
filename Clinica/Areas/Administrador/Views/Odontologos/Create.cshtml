@@ -116,24 +116,24 @@
                                                     </div>
 
 
+
                                                     <div class="col-sm-6">
-                                                        <label>Especialidad</label>
+                                                        <label>Tratamiento</label>
+                                                        <select class="form-control form-control-user" value="@Model.Tratamiento" name="idTratamiento" id="Tratamiento" placeholder="Tratamiento">
 
-                                                        <select class="form-control" name="idOdontologo" value="" placeholder="Ingrese Especialidad">
+                                                            @foreach (Clinica.Models.Tratamiento tratamiento in ViewBag.tratamientos)
+                                                            {
 
-                                                            <option>Endodoncia</option>
-                                                            <option>Rehabilitacion oral - Protesis</option>
-                                                            <option>Cariologia</option>
-                                                            <option>Odontologia Infantil</option>
-                                                            <option>Odontologia General</option>
-
+                                                                <option value="@tratamiento.Id">@tratamiento.Nombres  </option>
+                                                            }
 
 
                                                         </select>
-                                                        @Html.ValidationMessageFor(Model => Model.Especialidad, null, new { @class = "text-danger" })
-                                                    </div>
 
+                                                    </div>
                                                 </div>
+
+
                                                 <div class="form-group">
                                                     <div class="">
                                                         <label>Correo</label>

@@ -24,6 +24,7 @@
                 Direcciones = "Chiguayanate",
                 Correos = "c@ejemplo.cl",
                 Rut = "16037888-5",
+                IdTratamiento = 1,
                 FechaIngreso = DateTime.Now,
                 Edad = 30,
                 Especialidad = "Endodoncia"
@@ -40,6 +41,7 @@
                 Direcciones = "Santiago",
                 Correos = "Guillermo@ejemplo.cl",
                 Rut = "123456789",
+                IdTratamiento = 1,
                 FechaIngreso = DateTime.Now,
                 Edad = 40,
                 Especialidad = "Limpieza General"
@@ -56,6 +58,7 @@
                 Direcciones = "Santiago",
                 Correos = "Guillermo@ejemplo.cl",
                 Rut = "123456789",
+                IdTratamiento = 1,
                 FechaIngreso = DateTime.Now,
                 Edad = 40,
                 Especialidad = "Limpieza General"
@@ -72,6 +75,7 @@
                 Direcciones = "Santiago",
                 Correos = "Guillermo@ejemplo.cl",
                 Rut = "123456789",
+                IdTratamiento = 1,
                 FechaIngreso = DateTime.Now,
                 Edad = 40,
                 Especialidad = "Limpieza General"

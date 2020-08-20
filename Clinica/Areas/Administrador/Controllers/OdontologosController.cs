@@ -58,6 +58,8 @@ namespace Clinica.Areas.Administrador.Controllers
         public ActionResult Create()
         {
             Odontologo odontologo = new Odontologo();
+            List<Tratamiento> tratamientos = _db.Tratamientos.ToList();
+            ViewBag.tratamientos = tratamientos;
 
             return View(odontologo);
 
@@ -74,9 +76,12 @@ namespace Clinica.Areas.Administrador.Controllers
                 _db.Odontologos.Add(odontologo);
                 _db.SaveChanges();
                 //guarda en bd
-                return RedirectToAction("Create", "Odontologos", new { id = 1 });
+                return RedirectToAction("Index", "Odontologos", new { id = 1 });
             }
 
+
+            List<Tratamiento> tratamientos = _db.Tratamientos.ToList();
+            ViewBag.tratamientos = tratamientos;
             return View(odontologo);
         }
 
@@ -133,7 +138,7 @@ namespace Clinica.Areas.Administrador.Controllers
                 _db = new ClinicaContext();
                 _db.Entry(odontologo).State = EntityState.Modified;
                 _db.SaveChanges();//guarda en bd
-                return RedirectToAction("View", "Odontologos", new { id = 1 });
+                return RedirectToAction("Index", "Odontologos", new { id = 1 });
             }
 
             return View(odontologo);
