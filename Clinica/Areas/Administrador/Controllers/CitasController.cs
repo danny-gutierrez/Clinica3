@@ -31,6 +31,12 @@ namespace Clinica.Areas.Administrador.Controllers
             List<Odontologo> odontologos = _db.Odontologos.ToList();
             ViewBag.odontologos = odontologos;
 
+            List<Paciente> pacientes = _db.Pacientes.ToList();
+            ViewBag.pacientes = pacientes;
+
+            List<Tratamiento> tratamientos = _db.Tratamientos.ToList();
+            ViewBag.tratamientos = tratamientos;
+
             return View(cita);
         }
 
@@ -48,6 +54,12 @@ namespace Clinica.Areas.Administrador.Controllers
             }
             List<Odontologo> odontologos = _db.Odontologos.ToList();
             ViewBag.odontologos = odontologos;
+
+            List<Paciente> pacientes = _db.Pacientes.ToList();
+            ViewBag.pacientes = pacientes;
+
+            List<Tratamiento> tratamientos = _db.Tratamientos.ToList();
+            ViewBag.tratamientos = tratamientos;
             return View(cita);
 
 

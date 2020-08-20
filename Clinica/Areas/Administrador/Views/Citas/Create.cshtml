@@ -51,97 +51,123 @@
                                             </div>
                                             <form method="POST" action="@Url.Action("Create", "Citas")" class="user">
 
-                                                <div class="form-group row">
 
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Rut" name="Rut" placeholder="Rut">
-                                                        @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
-                                                    </div>
 
-                                                    
-                                                </div>
-                                                <div class="form-group row">
-                                                   
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Nombre" name="Nombre" placeholder="Nombre">
-                                                        @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "text-danger" })
-                                                    </div>
-
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Apellido" name="Apellido" placeholder="Apellido">
-                                                        @Html.ValidationMessageFor(Model => Model.Apellido, null, new { @class = "text-danger" })
-                                                    </div>
-                                                </div>
                                                 <div class="form-group">
-                                                    <label>Horario</label>
-                                                    <input type="datetime-local" class="form-control form-control-user" value="@Model.Fecha" name="Fecha" placeholder="Fecha">
-                                                    @Html.ValidationMessageFor(Model => Model.Fecha, null, new { @class = "text-danger" })
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sel1" style="color:#212F3D">Seleccione Odontologo:</label>
-                                                    <select class="custom-select custom-select-sm form-control form-control-sm" value="@Model.Odontologo" name="idOdontologo" id="Odontologo" placeholder="Odontologo">
-                                                        @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                    <label>Paciente / Rut</label>
+                                                    <select class="form-control form-control-user" value="@Model.Paciente" name="idPaciente" id="Paciente" placeholder="Paciente">
+
+                                                        @foreach (Clinica.Models.Paciente paciente in ViewBag.pacientes)
                                                         {
-                                                            
-                                                            <option value="@odontologo.Id">@odontologo.Nombres</option>
+
+                                                            <option value="@paciente.Id">       @paciente.Nombre  @paciente.Apellido        /       @paciente.Rut</option>
                                                         }
-                                                        <!--<option class="form-control">Dr DANNY</option>
-                                                            <option class="form-control">Dr CLAUDIO</option>
-                                                            <option class="form-control">Dr FABIAN</option>-->
+                                                        @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
+
+                                                    </select>
+
+                                                </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Seleccione Odontologo:</label>
+                                            <select class="form-control form-control-user" value="@Model.Odontologo" name="idOdontologo" id="Odontologo" placeholder="Odontologo">
+                                                @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                {
+
+                                                    <option value="@odontologo.Id">@odontologo.Nombres</option>
+                                                }
 
 
-                                                </select>
-                                              
+
+                                            </select>
 
 
 
+
+
+
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>Seleccione Tratamiento:</label>
+                                            <select class="form-control form-control-user" value="@Model.Tratamiento" name="idTratamiento" id="Tratamiento" placeholder="Tratamiento">
+                                                @foreach (Clinica.Models.Tratamiento tratamiento in ViewBag.tratamientos)
+                                                {
+
+                                                    <option value="@tratamiento.Id">@tratamiento.Nombres</option>
+                                                }
+
+
+
+                                            </select>
+
+
+
+
+
+
+                                        </div>
+
+
+                                        <div class="form-group row">
+
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label>Hora Dental</label>
+                                                <input type="datetime-local" class="form-control form-control-user" value="@Model.Fecha" name="Fecha" placeholder="Fecha">
+                                                @Html.ValidationMessageFor(Model => Model.Fecha, null, new { @class = "text-danger" })
                                             </div>
-                                            <div class="form-group">
+
+
+                                            <div class="col-sm-6">
+                                                <label>Telefono</label>
                                                 <input type="number" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
                                                 @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
                                             </div>
-
-
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" value="@Model.Motivo" name="Motivo" placeholder="Motivo">
-                                                @Html.ValidationMessageFor(Model => Model.Motivo, null, new { @class = "text-danger" })
-                                            </div>
-
-                                            <hr />
-                                            <center>
-                                                <button type="submit" class="btn btn-primary">Grabar</button>
-                                                <a href="@Url.Action("Index", "Citas")"><input type="button" value="Volver" class="btn btn-primary"></a>
-                                            </center>
-
-
-
-                                        </form>
-
-
-
+                                        </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        <input type="text" class="form-control form-control-user" value="@Model.Motivo" name="Motivo" placeholder="Motivo">
+                                        @Html.ValidationMessageFor(Model => Model.Motivo, null, new { @class = "text-danger" })
+                                    </div>
+
+                                    <hr />
+                                    <center>
+                                        <button type="submit" class="btn btn-primary">Grabar</button>
+                                        <a href="@Url.Action("Index", "Citas")"><input type="button" value="Volver" class="btn btn-primary"></a>
+                                    </center>
+
+
+
+                                    </form>
+
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
-
-
-           </table>
         </div>
-    </div>
-    <!-- Bootstrap core JavaScript-->
-                                                        <script src="vendor/jquery/jquery.min.js"></script>
-                                                        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-                                                        <!-- Core plugin JavaScript-->
-                                                        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-                                                        <!-- Custom scripts for all pages-->
-                                                        <script src="js/sb-admin-2.min.js"></script>
-</center>
+        </table>
+        </div>
+        </div>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+    </center>
 </body>
 
 </html>
