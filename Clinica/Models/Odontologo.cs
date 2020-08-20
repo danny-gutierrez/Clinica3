@@ -47,15 +47,19 @@ namespace Clinica.Models
 
         public DateTime FechaIngreso { get; set; }
 
+      
+       
         [Required]
-        [StringLength(25, MinimumLength = 5)]
-
         public String Especialidad { get; set; }
 
         [Required]
       
 
         public int Edad { get; set; }
+
+        public int IdTratamiento { get; set; }
+
+        public virtual Tratamiento Tratamiento { get; set; }
 
         public virtual ICollection<OdontologoCita> RegistrosCi { get; set; }
         public virtual ICollection<OdontologoRemu> RegistrosRe { get; set; }

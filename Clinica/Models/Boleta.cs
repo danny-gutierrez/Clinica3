@@ -56,6 +56,8 @@ namespace Clinica.Models
         public virtual ICollection<Odontologo> Odontologos { get; set; }
 
         public virtual ICollection<Paciente> Pacientes { get; set; }
+
+        public virtual ICollection<Tratamiento> Tratamientos { get; set; }
     }
 }
 

@@ -30,6 +30,17 @@ namespace Clinica.Models
         public virtual Odontologo Odontologo { get; set; }  // cambiar por la relacion
                                                             // guarda el ID en bd y no el nombre 
 
+
+        public int IdPaciente { get; set; }
+        public virtual Paciente Paciente { get; set; }
+
+        public int IdTratamiento { get; set; }
+        public virtual Tratamiento Tratamiento { get; set; }
+
+
+
+
+
         [Required]
      
         public int Telefono { get; set; }
@@ -41,6 +52,10 @@ namespace Clinica.Models
 
         public virtual ICollection<PacienteCita> RegistrosPC { get; set; }  // paciente cita
         public virtual ICollection<Odontologo> Odontologos { get; set; }
+
+        public virtual ICollection<Paciente> Pacientes { get; set; }
+
+        public virtual ICollection<Tratamiento> Tratamientos { get; set; }
 
     }
 
