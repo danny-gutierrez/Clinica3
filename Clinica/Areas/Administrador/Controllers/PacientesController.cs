@@ -181,7 +181,7 @@ namespace Clinica.Areas.Administrador.Controllers
                 _db = new ClinicaContext();
                 _db.Entry(paciente).State = EntityState.Modified;
                 _db.SaveChanges();
-                return RedirectToAction("View", "Pacientes", new { id = 1 });
+                return RedirectToAction("Index", "Pacientes", new { id = 1 });
             }
             return View(paciente);
         }

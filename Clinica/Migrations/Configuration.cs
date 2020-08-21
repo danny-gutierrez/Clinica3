@@ -27,7 +27,7 @@
                 IdTratamiento = 1,
                 FechaIngreso = DateTime.Now,
                 Edad = 30,
-                Especialidad = "Endodoncia"
+              //  Especialidad = "Endodoncia"
 
             };
 
@@ -44,7 +44,7 @@
                 IdTratamiento = 1,
                 FechaIngreso = DateTime.Now,
                 Edad = 40,
-                Especialidad = "Limpieza General"
+          //      Especialidad = "Limpieza General"
 
             };
 
@@ -61,7 +61,7 @@
                 IdTratamiento = 1,
                 FechaIngreso = DateTime.Now,
                 Edad = 40,
-                Especialidad = "Limpieza General"
+            //    Especialidad = "Limpieza General"
 
             };
 
@@ -78,7 +78,7 @@
                 IdTratamiento = 1,
                 FechaIngreso = DateTime.Now,
                 Edad = 40,
-                Especialidad = "Limpieza General"
+         //       Especialidad = "Limpieza General"
 
             };
 

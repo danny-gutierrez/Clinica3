@@ -49,8 +49,8 @@ namespace Clinica.Models
 
       
        
-        [Required]
-        public String Especialidad { get; set; }
+     //   [Required]
+       // public String Especialidad { get; set; }
 
         [Required]
       
