@@ -21,21 +21,21 @@ namespace Clinica.Controllers
             if (username.Equals("danny") && password.Equals("123"))
             {
                 Session["username"] = "username";
-                return View("Success");
+                return RedirectToAction("home1", "Administrador");
             }
             if (username.Equals("recepcion") && password.Equals("123"))
             {
                 Session["username"] = "username";
-                return View("SuccessRecepcion");
+                return RedirectToAction("home2", "Recepcionista");
             }
             if (username.Equals("odontologo") && password.Equals("123"))
             {
                 Session["username"] = "username";
-                return View("SuccessOdontologo");
+                return RedirectToAction("home", "Doctor") ;
             }
             else
             {
-                ViewBag.error = "Invalid Account";
+                ViewBag.error = "Usuario Invalido";
                 return View("Index");
             }
         }
