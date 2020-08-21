@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <center>
+        <img src="~/Content/img/bdent.jpg" width="300" height="150" />
+
+        <h1><strong style="color:#212F3D">BioEsthetic-Dent</strong></h1>
+    </center>
+</head>
+<body>
+
+
+
+
+    <center>
+        <div class="container">
+
+            <!-- Outer Row -->
+            <div class="row justify-content-center">
+
+                <div class="col-xl-10 col-lg-12 col-md-9">
+
+                    <div class="container">
+                        <div class="card-body p-0">
+                            <!-- div centrar  -->
+                            <div class="">
+
+
+                                <div class="col-lg-6 d-none d-lg-block  "></div>
+
+                                <div class="col-lg-7">
+
+                                    <div class="p-5">
+                                        <center>
+                                            <div class="text-center">
+
+                                                <h1 class="h4 text-gray-900 mb-4">Bienvenido</h1>
+
+                                            </div>
+                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                                                @ViewBag.error
+                                                <form class="user" method="post" action="@Url.Action("Login", "Account")">
+                                                    <table border="0" cellpadding="2" cellspacing="2">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control form-control-user" name="username"
+                                                                   placeholder="Ingrese su Usuario...">
+                                                        </div>
+                                                        <br />
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
+                                                        </div>
+                                                        <br />
+
+                                                        <div class="text-center">
+
+
+                                                            <input class="btn btn-primary" type="submit" value="Entrar">
+                                                        </div>
+
+                                                </form>
+                                            </table>
+                                            <br />
+                                            <div class="text-center">
+                                                <a class="small" href="https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Olvidaste tu  Password?</a>
+                                            </div>
+
+
+                                        </center>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </center>
+
+</body>
+</html>
+
