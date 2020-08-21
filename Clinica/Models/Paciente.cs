@@ -21,7 +21,7 @@ namespace Clinica.Models
         public String Rut { get; set; }
 
         [Required(ErrorMessage = "Ingrese su edad")]
-        [Range(18, 100, ErrorMessage = "Debe ser mayor de Edad ")]
+        [Range(1, 100, ErrorMessage = "Debe ser una Edad Real")]
         public int Edad { get; set; }
 
         [Display(Name = "Correo electrónico")]
@@ -45,8 +45,11 @@ namespace Clinica.Models
         public String Direccion { get; set; }
 
 
-        [Required]
-
+        
+        [Required(ErrorMessage = "Por favor, introduzca su número de teléfono")]
+    
+        
+        [Range(100000000, 999999999, ErrorMessage = "Teléfono debe contener 9 dígitos")]
         public int Telefono { get; set; }
         
 
