@@ -8,8 +8,9 @@ namespace Clinica.Models
 
     {
         public int Id { get; set; }
-        [Required]
-      
+        [Required(ErrorMessage = "Ingrese un valor")]
+        [Range(1, 1000000, ErrorMessage = "Ingrese un valor real ")]
+
         public int NB { get; set; }
 
      //   [Required]
@@ -40,13 +41,17 @@ namespace Clinica.Models
        
         public DateTime Fecha { get; set; }
 
-        [Required]
-       
+      
+        [Required(ErrorMessage = "Por favor, introduzca su número de teléfono")]
+
+
+        [Range(100000000, 999999999, ErrorMessage = "Teléfono debe contener 9 dígitos")]
+
         public int Fono { get; set; }
 
 
-        [Required]
-      
+        [Required(ErrorMessage = "Ingrese un valor")]
+        [Range(1, 1000000, ErrorMessage = "Ingrese un valor real ")]
         public int Valor { get; set; }
 
         [StringLength(25, MinimumLength = 5)]
