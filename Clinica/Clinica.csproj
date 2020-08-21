@@ -2144,6 +2144,8 @@
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Contacto\Index.cshtml" />
     <Content Include="Views\Account\Success.cshtml" />
+    <Content Include="Views\Account\SuccessRecepcion.cshtml" />
+    <Content Include="Views\Account\SuccessOdontologo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

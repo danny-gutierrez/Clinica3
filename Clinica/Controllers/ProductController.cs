@@ -23,6 +23,16 @@ namespace Clinica.Controllers
                 Session["username"] = "username";
                 return View("Success");
             }
+            if (username.Equals("recepcion") && password.Equals("123"))
+            {
+                Session["username"] = "username";
+                return View("SuccessRecepcion");
+            }
+            if (username.Equals("odontologo") && password.Equals("123"))
+            {
+                Session["username"] = "username";
+                return View("SuccessOdontologo");
+            }
             else
             {
                 ViewBag.error = "Invalid Account";
