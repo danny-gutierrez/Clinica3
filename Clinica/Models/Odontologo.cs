@@ -10,19 +10,22 @@ namespace Clinica.Models
 
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+        [StringLength(25, MinimumLength = 2)]
         public String Nombres { get; set; }
 
 
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+        [StringLength(25, MinimumLength = 2)]
         public String Apellidos { get; set; }
 
 
 
-        [Required]
-       
+        [Required(ErrorMessage = "Por favor, introduzca su número de teléfono")]
+
+
+        [Range(100000000, 999999999, ErrorMessage = "Teléfono debe contener 9 dígitos")]
+
 
         public long Telefonos { get; set; }
 
@@ -38,13 +41,16 @@ namespace Clinica.Models
         [StringLength(25, MinimumLength = 1)]
         public String Comuna { get; set; }
 
-        [Required]
-        [StringLength(25, MinimumLength = 5)]
-
+        [Display(Name = "Correo electrónico")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*",
+            ErrorMessage = "Dirección de Correo electrónico incorrecta.")]
+        [StringLength(50, ErrorMessage = "Longitud 50 maxima")]
+        [DataType(DataType.EmailAddress)]
         public String Correos { get; set; }
 
-
-        [Required]
+        [Required(ErrorMessage = "Debe ingresar el Rut")]
+       
      
 
         public String Rut { get; set; }
@@ -54,13 +60,14 @@ namespace Clinica.Models
 
         public DateTime FechaIngreso { get; set; }
 
-      
-       
-     //   [Required]
-       // public String Especialidad { get; set; }
 
-        [Required]
-      
+
+        //   [Required]
+        // public String Especialidad { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su edad")]
+        [Range(18, 100, ErrorMessage = "Debe ser mayor de Edad ")]
+
 
         public int Edad { get; set; }
 

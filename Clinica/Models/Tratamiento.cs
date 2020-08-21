@@ -10,13 +10,13 @@ namespace Clinica.Models
 
 
         [Required]
-        [StringLength(25, MinimumLength = 5)]
+        [StringLength(25, MinimumLength = 2)]
         public String Nombres { get; set; }
 
 
+        [Required(ErrorMessage = "Ingrese un valor")]
+        [Range(1, 1000000, ErrorMessage = "Ingrese un valor real ")]
 
-        [Required]
-      
         public long Valor { get; set; }
 
 

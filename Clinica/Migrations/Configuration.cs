@@ -20,7 +20,7 @@
             {   Id= 1,
                 Nombres = "Dra.Andrea",
                 Apellidos = "Garcia",
-                Telefonos = 569123456789,
+                Telefonos = 123456789,
                 Direcciones = "Chiguayanate",
                 Region = "VIII",
                 Comuna = "Lota",
@@ -39,7 +39,7 @@
                 Id = 2,
                 Nombres = "Dra. Jazmin",
                 Apellidos = "Ramirez",
-                Telefonos = 569123456789,
+                Telefonos = 123456789,
                 Direcciones = "Santiago",
                 Region = "VIII",
                 Comuna = "Lota",
@@ -58,7 +58,7 @@
                 Id = 3,
                 Nombres = "Dr.Alejandro",
                 Apellidos = "Ramirez",
-                Telefonos = 569123456789,
+                Telefonos = 123456789,
                 Direcciones = "Santiago",
                 Region = "VIII",
                 Comuna = "Lota",
@@ -77,7 +77,7 @@
                 Id = 4,
                 Nombres = "Dra.Claudia",
                 Apellidos = "Ramirez",
-                Telefonos = 569123456789,
+                Telefonos = 123456789,
                 Direcciones = "Santiago",
                 Region = "VIII",
                 Comuna = "Lota",
@@ -123,7 +123,7 @@
                 Valor = 150000,
                 IdOdontologo = 2,
                 Codigos = 00003,
-                Descripcion = "Trtamiento",
+                Descripcion = "Tratamiento",
                 Horarios = DateTime.Now,
                 FechaCreacion = DateTime.Now
 
@@ -136,7 +136,7 @@
                 Valor = 50000,
                 IdOdontologo = 3,
                 Codigos = 00003,
-                Descripcion = "Trtamiento",
+                Descripcion = "Tratamiento",
                 Horarios = DateTime.Now,
                 FechaCreacion = DateTime.Now
 
@@ -149,7 +149,7 @@
                 Valor = 150000,
                 IdOdontologo = 4,
                 Codigos = 00003,
-                Descripcion = "Trtamiento",
+                Descripcion = "Tratamiento",
                 Horarios = DateTime.Now,
                 FechaCreacion = DateTime.Now
 
