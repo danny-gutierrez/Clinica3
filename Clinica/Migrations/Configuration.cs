@@ -291,8 +291,8 @@
             Boleta b1 = new Boleta()
             {
                 NB = 001,
-                Nombre = "Pedro",
-                Apellido = "Molina",
+                //Nombre = "Pedro",
+                //Apellido = "Molina",
                 IdOdontologo = 1,
                 IdPaciente=1,
                 IdTratamiento=1,
@@ -304,8 +304,8 @@
             Boleta b2 = new Boleta()
             {
                 NB = 002,
-                Nombre = "Daniel",
-                Apellido = "Montes",
+                //Nombre = "Daniel",
+                //Apellido = "Montes",
                 IdOdontologo = 2,
                 IdPaciente = 2,
                 IdTratamiento = 2,
@@ -318,8 +318,8 @@
             Boleta b3 = new Boleta()
             {
                 NB = 003,
-                Nombre = "Francisca",
-                Apellido = "Molina",
+             //   Nombre = "Francisca",
+               // Apellido = "Molina",
                 IdOdontologo = 3,
                 IdPaciente = 2,
                 IdTratamiento = 1,
@@ -331,8 +331,8 @@
             Boleta b4 = new Boleta()
             {
                 NB = 004,
-                Nombre = "Roberto",
-                Apellido = "Molina",
+                //Nombre = "Roberto",
+                //Apellido = "Molina",
                IdOdontologo = 4,
                 IdPaciente = 1,
                 IdTratamiento = 2,

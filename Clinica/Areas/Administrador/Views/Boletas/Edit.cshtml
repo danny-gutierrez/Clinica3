@@ -80,7 +80,7 @@
 
                                                 <div class="form-group">
                                                     <label>Paciente</label>
-                                                    <select class="form-control form-control-user" value="@Model.Nombre" name="Nombre" id="Paciente" placeholder="Paciente">
+                                                    <select class="form-control form-control-user" value="@Model.Paciente" name="idPaciente" id="Paciente" placeholder="Paciente">
 
                                                         @foreach (Clinica.Models.Paciente paciente in ViewBag.pacientes)
                                                         {
@@ -88,12 +88,11 @@
                                                             <option value="@paciente.Id">@paciente.Nombre  @paciente.Apellido</option>
                                                         }
 
-                                                        @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "text-danger" })
+
                                                     </select>
 
                                                 </div>
                                         </div>
-
 
                                         <div class="form-group">
                                             <label>Tratamiento</label>

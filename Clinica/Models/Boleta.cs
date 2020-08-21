@@ -12,13 +12,15 @@ namespace Clinica.Models
       
         public int NB { get; set; }
 
-        [Required]
-        [StringLength(25, MinimumLength = 5)]
-        public String Nombre { get; set; }
+     //   [Required]
+       // [StringLength(25, MinimumLength = 5)]
+        //public String Nombre { get; set; }
 
-        [Required]
-        [StringLength(25, MinimumLength = 5)]
-        public String Apellido { get; set; }
+        //[Required]
+        //[StringLength(25, MinimumLength = 5)]
+        //public String Apellido { get; set; }
+
+
 
         [Required]
         

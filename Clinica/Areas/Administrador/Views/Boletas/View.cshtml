@@ -60,7 +60,7 @@
                                                         {
                                                             if (Model.IdOdontologo == o.Id)
                                                             {
-                                                                <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres" disabled>
+                                                                <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres @o.Apellidos" disabled>
                                                             }
 
                                                         }
@@ -69,47 +69,73 @@
 
 
                                                 </div>
-                                                <div class="form-group ">
-                                                    <div class="">
-                                                        <label>Paciente</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="Nombre" value="@Model.Nombre   @Model.Apellido" disabled>
-                                                    </div>
 
+                                                <div class="form-group">
+                                                    <center>
 
-                                                </div>
+                                                        <label for="sel1" style="color:#212F3D"> Paciente :</label>
+                                                    </center>
+                                                    @foreach (Clinica.Models.Paciente p in ViewBag.pacientes)
+                                                    {
+                                                        if (Model.IdPaciente == p.Id)
+                                                        {
+                                                            <input type="text" class="form-control form-control-user" placeholder="Paciente" value="@p.Nombre @p.Apellido" disabled>
+                                                        }
+
+                                                    }
+
 
 
                                                 <div class="form-group">
-                                                    <label>Tratamiento</label>
-                                                    <input type="text" class="form-control form-control-user" placeholder="Detalle" value="@Model.Detalle" disabled>
-                                                </div>
+                                                    <center>
 
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Fono</label>
-                                                        <input type="number" class="form-control form-control-user" placeholder="Fono" value="@Model.Fono" disabled>
+                                                        <label for="sel1" style="color:#212F3D"> Tratamiento :</label>
+                                                    </center>
+                                                    @foreach (Clinica.Models.Tratamiento t in ViewBag.tratamientos)
+                                                    {
+                                                        if (Model.IdTratamiento == t.Id)
+                                                        {
+                                                            <input type="text" class="form-control form-control-user" placeholder="Tratamiento" value="@t.Nombres " disabled>
+                                                        }
+
+                                                    }
+
+
+
+
+
+
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                                            <label>Fono</label>
+                                                            <input type="number" class="form-control form-control-user" placeholder="Fono" value="@Model.Fono" disabled>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <label>Fecha</label>
+                                                            <input type="datetime" class="form-control form-control-user" placeholder="Fecha" value="@Model.Fecha" disabled>
+                                                        </div>
                                                     </div>
 
-                                                    <div class="col-sm-6">
-                                                        <label>Fecha</label>
-                                                        <input type="datetime" class="form-control form-control-user" placeholder="Fecha" value="@Model.Fecha" disabled>
-                                                    </div>
-                                                </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                                            <label>Valor</label>
+                                                            <input type="number" class="form-control form-control-user" placeholder="Valor" value="@Model.Valor" disabled>
+                                                        </div>
 
-                                                <div class="form-group">
-                                                    <label>Valor</label>
-                                                    <input type="number" class="form-control form-control-user" placeholder="Valor" value="@Model.Valor" disabled>
-                                                </div>
-                                              
+                                                        <div class="col-sm-6">
+                                                           
+                                                                <label>Detalle</label>
+                                                                <input type="text" class="form-control form-control-user" placeholder="Detalle" value="@Model.Detalle" disabled>
+                                                            </div>
+                                                        </div>
+                                                            <br />
+                                                            <center>
+                                                                <button type="submit" class="btn btn-primary">Volver</button>
+                                                            </center>
+                                                            </a>
 
-
-                                                <br />
-                                                <center>
-                                                    <button type="submit" class="btn btn-primary">Volver</button>
-                                                </center>
-                                                </a>
-
-                                            </form>
+</form>
 
 
 

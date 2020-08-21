@@ -41,12 +41,14 @@
                             <tr>
                                 <th>#</th>
                                 <th>N° de Boleta</th>
-                                <th>Nombre</th>
+                                <!-- <th>Nombre</th> -->
                                 <th>Odontologo</th>
-                                <th>Fono</th>
+                                <th>Paciente</th>
+
+                                <!--        <th>Fono</th> -->
                                 <th>Fecha</th>
-                                <th>Valor</th>
-                                
+                                <!--        <th>Valor</th> -->
+
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -60,19 +62,30 @@
                             <tr>
                                 <td>@b.Id</td>
                                 <td>@b.NB</td>
-                                <td>@b.Nombre</td>
+
                                 @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
                                 {
                                     if (b.IdOdontologo == o.Id)
                                     {
-                                          <td>@o.Nombres</td>
+                                        <td>@o.Nombres @o.Apellidos</td>
                                     }
 
                                 }
-                                
-                                <td>@b.Fono</td>
+
+
+                                @foreach (Clinica.Models.Paciente p in ViewBag.pacientes)
+                                {
+                                    if (b.IdPaciente == p.Id)
+                                    {
+                                        <td>@p.Nombre @p.Apellido</td>
+                                    }
+
+                                }
+
+
+                                <!--       <td>@b.Fono</td> -->
                                 <td>@b.Fecha</td>
-                                <td>@b.Valor</td>
+                                <!--      <td>@b.Valor</td> -->
 
 
                                 <td>

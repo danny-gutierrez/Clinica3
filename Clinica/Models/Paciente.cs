@@ -55,8 +55,9 @@ namespace Clinica.Models
         public virtual ICollection<PacienteTratamiento> RegistrosPT { get; set; }  // paciente tratamiento
         public virtual ICollection<PacienteCita> RegistrosPC { get; set; }
 
+        public virtual ICollection<Boleta> boletas { get; set; }
 
-       
+
 
 
     }

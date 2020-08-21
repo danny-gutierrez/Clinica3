@@ -18,6 +18,9 @@ namespace Clinica.Areas.Administrador.Controllers
             List<Odontologo> odontologos = _db.Odontologos.ToList();
             ViewBag.odontologos = odontologos;
 
+            List<Paciente> pacientes = _db.Pacientes.ToList();
+            ViewBag.pacientes = pacientes;
+
             return View(_db.Boletas.ToList());
 
            // IEnumerable<Boleta> Boletas = null;
@@ -75,26 +78,51 @@ namespace Clinica.Areas.Administrador.Controllers
         public ActionResult View(int id)
 
         {
-            Boleta b = null;
+
+            Boleta boleta = null;
             using (_db = new ClinicaContext())
             {
-                b = _db.Boletas.Find(id);
+                boleta = _db.Boletas.Find(id);
                 List<Odontologo> odontologos = _db.Odontologos.ToList();
                 ViewBag.odontologos = odontologos;
+
+                List<Paciente> pacientes = _db.Pacientes.ToList();
+                ViewBag.pacientes = pacientes;
+
+                List<Tratamiento> tratamientos = _db.Tratamientos.ToList();
+                ViewBag.tratamientos = tratamientos;
+
+
             }
-            return View(b);
+            //  Boleta b = null;
+            //using (_db = new ClinicaContext())
+            //{
+            //  b = _db.Boletas.Find(id);
+            //List<Odontologo> odontologos = _db.Odontologos.ToList();
+            //ViewBag.odontologos = odontologos;
+            //}
+            return View(boleta);
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Boleta b = _db.Boletas.Find(id);
-            if (b == null)
+
+           Boleta boleta = _db.Boletas.Find(id);
+            if (boleta == null)
             {
                 return new HttpNotFoundResult();
+
             }
-       
-                List<Odontologo> odontologos = _db.Odontologos.ToList();
+
+
+            //  Boleta b = _db.Boletas.Find(id);
+            //if (b == null)
+            //{
+            //  return new HttpNotFoundResult();
+            //}
+
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
                 ViewBag.odontologos = odontologos;
 
 
@@ -103,7 +131,7 @@ namespace Clinica.Areas.Administrador.Controllers
 
             List<Tratamiento> tratamientos = _db.Tratamientos.ToList();
             ViewBag.tratamientos = tratamientos;
-            return View(b);
+            return View(boleta);
             
         }
 
@@ -116,7 +144,7 @@ namespace Clinica.Areas.Administrador.Controllers
                 _db.Entry(boleta).State = EntityState.Modified;
                 _db.SaveChanges();
 
-                return RedirectToAction("View", "Boletas", new { id = 1 });
+                return RedirectToAction("Index", "Boletas", new { id = 1 });
             }
             List<Odontologo> odontologos = _db.Odontologos.ToList();
             ViewBag.odontologos = odontologos;
