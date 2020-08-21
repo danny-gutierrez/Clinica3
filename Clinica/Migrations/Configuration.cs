@@ -373,11 +373,13 @@
             //Citas
             Cita c1 = new Cita()
             {
-                Rut = "17.157.414-4",
-                Nombre = "Daniel",
-                Apellido = "Montes",
+               // Rut = "17.157.414-4",
+                //Nombre = "Daniel",
+                //Apellido = "Montes",
                 IdPaciente = 1,
                 IdTratamiento = 1,
+
+               
                 Fecha = DateTime.Now,
                 IdOdontologo = 1,
                 Telefono = 412712413,
@@ -386,10 +388,10 @@
             };
             Cita c2 = new Cita()
             {
-                Rut = "12.345.678-1",
-                Nombre = "peters",
-                Apellido = "parras",
-                IdPaciente = 1,
+              //  Rut = "12.345.678-1",
+               // Nombre = "peters",
+                //Apellido = "parras",
+                IdPaciente = 2,
                 IdTratamiento = 1,
                 Fecha = DateTime.Now,
                 IdOdontologo = 2,
@@ -399,10 +401,10 @@
             };
             Cita c3 = new Cita()
             {
-                Rut = "99.999.999-9",
-                Nombre = "Daniela",
-                Apellido = "Montes",
-                IdPaciente = 1,
+             //   Rut = "99.999.999-9",
+               // Nombre = "Daniela",
+                //Apellido = "Montes",
+                IdPaciente = 3,
                 IdTratamiento = 1,
                 Fecha = DateTime.Now,
                 IdOdontologo = 3,
@@ -412,10 +414,10 @@
             };
             Cita c4 = new Cita()
             {
-                Rut = "55.555.555-5",
-                Nombre = "andrea",
-                Apellido = "Montes",
-                IdPaciente = 1,
+             //   Rut = "55.555.555-5",
+               // Nombre = "andrea",
+                //Apellido = "Montes",
+                IdPaciente = 4,
                 IdTratamiento = 1,
                 Fecha = DateTime.Now,
                 IdOdontologo = 4,

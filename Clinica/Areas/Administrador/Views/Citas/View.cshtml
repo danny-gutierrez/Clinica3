@@ -52,75 +52,91 @@
 
 
                                             <form from method="POST" action="@Url.Action("Index", "Citas")" class="user">
-                                                <div class="form-group row">
+                                              
 
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Rut</label>
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Rut" name="Rut" placeholder="" disabled>
-                                                        @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "text-danger" })
-                                                    </div>
+                                                    <div class="form-group">
+                                                        <center>
 
-
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Nombre</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="" disabled
-                                                               name="Nombres" value="@Model.Nombre">
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label>Apellido</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="" disabled
-                                                               name="Apellidos" value="@Model.Apellido">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Fecha</label>
-                                                    <input type="datetime" class="form-control form-control-user" name="Fecha" value="@Model.Fecha" placeholder="" disabled>
-
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Especialista </label>
-                                                    @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
-                                                    {
-                                                        if (Model.IdOdontologo == o.Id)
+                                                            <label for="sel1" style="color:#212F3D"> Paciente :</label>
+                                                        </center>
+                                                        @foreach (Clinica.Models.Paciente p in ViewBag.pacientes)
                                                         {
-                                                            <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres" disabled>
+                                                            if (Model.IdPaciente == p.Id)
+                                                            {
+                                                                <input type="text" class="form-control form-control-user" placeholder="Paciente" value="@p.Nombre @p.Apellido  @p.Rut"  disabled>
+                                                            }
+
                                                         }
 
-                                                    }
-                                                    
+                                                        <div class="form-group">
+                                                            <label>Especialista </label>
+                                                            @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                                            {
+                                                                if (Model.IdOdontologo == o.Id)
+                                                                {
+                                                                    <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres  @o.Apellidos" disabled>
+                                                                }
 
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Telefono</label>
-                                                    <input type="text" class="form-control form-control-user" name="Telefono" value="@Model.Telefono" placeholder="" disabled>
-
-                                                </div>
-
-
-                                                <div class="form-group">
-                                                    <label>Motivo</label>
-                                                    <input type="text" class="form-control form-control-user" name="Motivo" value="@Model.Motivo" placeholder="Dolor de muela" disabled>
-
-                                                </div>
-
-                                                <div class="form-group row">
+                                                            }
 
 
-                                                </div>
-                                                <hr />
-                                                <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
-                                                </a>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <center>
+
+                                                                <label for="sel1" style="color:#212F3D"> Tratamiento :</label>
+                                                            </center>
+                                                            @foreach (Clinica.Models.Tratamiento t in ViewBag.tratamientos)
+                                                            {
+                                                                if (Model.IdTratamiento == t.Id)
+                                                                {
+                                                                    <input type="text" class="form-control form-control-user" placeholder="Tratamiento" value="@t.Nombres " disabled>
+                                                                }
+
+                                                            }
 
 
-                                                
-                                                <center>
-                                                    <button type="submit" class="btn btn-primary">Volver</button>
-                                                </center>
-                                                </a>
+                                                            <div class="form-group row">
 
-                                            </form>
+
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <label>Fecha</label>
+                                                                    <input type="datetime" class="form-control form-control-user" name="Fecha" value="@Model.Fecha" placeholder="" disabled>
+
+                                                                </div>
+
+                                                                <div class="col-sm-6">
+                                                                    <label>Telefono</label>
+                                                                    <input type="text" class="form-control form-control-user" name="Telefono" value="@Model.Telefono" placeholder="" disabled>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                                <div class="form-group">
+                                                                    <label>Observacion</label>
+                                                                    <input type="text" class="form-control form-control-user" name="Motivo" value="@Model.Motivo" placeholder="Dolor de muela" disabled>
+
+                                                                </div>
+
+                                                                <div class="form-group row">
+
+
+                                                                </div>
+                                                                <hr />
+                                                                <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
+                                                                </a>
+
+
+
+                                                                <center>
+                                                                    <button type="submit" class="btn btn-primary">Volver</button>
+                                                                </center>
+                                                                </a>
+
+</form>
 
                                         </div>
                                     </div>

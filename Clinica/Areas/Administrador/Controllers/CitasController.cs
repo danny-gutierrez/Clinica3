@@ -17,6 +17,9 @@ namespace Clinica.Areas.Administrador.Controllers
             List<Odontologo> odontologos = _db.Odontologos.ToList();
             ViewBag.odontologos = odontologos;
 
+            List<Paciente> pacientes = _db.Pacientes.ToList();
+            ViewBag.pacientes = pacientes;
+
             return View(_db.Citas.ToList());
         }
 
@@ -67,22 +70,32 @@ namespace Clinica.Areas.Administrador.Controllers
         }
         public ActionResult View(int id)
         {
-            Cita c = null;
+            Cita cita = null;
             using (_db = new ClinicaContext())
             {
-                c = _db.Citas.Find(id);
+               cita = _db.Citas.Find(id);
                 List<Odontologo> odontologos = _db.Odontologos.ToList();
                 ViewBag.odontologos = odontologos;
+
+
+                List<Paciente> pacientes = _db.Pacientes.ToList();
+                ViewBag.pacientes = pacientes;
+
+                List<Tratamiento> tratamientos = _db.Tratamientos.ToList();
+                ViewBag.tratamientos = tratamientos;
             }
-            return View(c);
+            return View(cita);
         }
+
+
+
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
 
-            Cita c = _db.Citas.Find(id);
-            if(c==null)
+            Cita cita = _db.Citas.Find(id);
+            if(cita==null)
             {
                 return new HttpNotFoundResult();
             }
@@ -90,10 +103,14 @@ namespace Clinica.Areas.Administrador.Controllers
             
                 List<Odontologo> odontologos = _db.Odontologos.ToList();
                 ViewBag.odontologos = odontologos;
-           
+            List<Paciente> pacientes = _db.Pacientes.ToList();
+            ViewBag.pacientes = pacientes;
+
+            List<Tratamiento> tratamientos = _db.Tratamientos.ToList();
+            ViewBag.tratamientos = tratamientos;
 
 
-            return View(c);
+            return View(cita);
 
 
         }
@@ -106,10 +123,16 @@ namespace Clinica.Areas.Administrador.Controllers
                 _db = new ClinicaContext();
                 _db.Entry(cita).State = EntityState.Modified;
                 _db.SaveChanges();
-                return RedirectToAction("View", "Citas", new { id = 1 });
+                return RedirectToAction("Index", "Citas", new { id = 1 });
             }
             List<Odontologo> odontologos = _db.Odontologos.ToList();
             ViewBag.odontologos = odontologos;
+
+            List<Paciente> pacientes = _db.Pacientes.ToList();
+            ViewBag.pacientes = pacientes;
+
+            List<Tratamiento> tratamientos = _db.Tratamientos.ToList();
+            ViewBag.tratamientos = tratamientos;
 
             return View(cita);
 
