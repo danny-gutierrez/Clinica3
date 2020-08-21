@@ -1,5 +1,6 @@
 ﻿using Clinica.Models;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -12,12 +13,19 @@ namespace Clinica.Areas.Administrador.Controllers
         // GET: Remuneraciones
         public ActionResult Index()
         {
-            IEnumerable<Remuneracion> remuneracions = null;
-            using (_db = new ClinicaContext())
-            {
-                remuneracions = _db.Remuneraciones.ToList();
-            }
-            return View(remuneracions);
+
+            ClinicaContext _db = new ClinicaContext();
+
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
+
+
+            //  IEnumerable<Remuneracion> remuneracions = null;
+            //using (_db = new ClinicaContext())
+            //{
+            //  remuneracions = _db.Remuneraciones.ToList();
+            //}
+            return View(_db.Remuneraciones.ToList());
         }
 
         [HttpGet]
@@ -39,6 +47,10 @@ namespace Clinica.Areas.Administrador.Controllers
 
             if (ModelState.IsValid)
             {
+                _db.Remuneraciones.Add(remuneracion);
+
+                _db.SaveChanges();
+
                 //Guardo en base de datos
                 //O mando Request a REST API
                 return RedirectToAction("Index", "Remuneraciones", new { id = 1 });
@@ -54,25 +66,49 @@ namespace Clinica.Areas.Administrador.Controllers
 
         public ActionResult View(int id)
         {
-            Remuneracion r = null;
+            //  Remuneracion r = null;
+            //using (_db = new ClinicaContext())
+            //{
+            //  r = _db.Remuneraciones.Find(id);
+            // }
+
+
+            Remuneracion remuneracion = null;
             using (_db = new ClinicaContext())
             {
-                r = _db.Remuneraciones.Find(id);
+                remuneracion = _db.Remuneraciones.Find(id);
+                List<Odontologo> odontologos = _db.Odontologos.ToList();
+                ViewBag.odontologos = odontologos;
             }
-            return View(r);
+
+
+
+            return View(remuneracion);
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Remuneracion r = null;
-            using (_db = new ClinicaContext())
+
+           Remuneracion remuneracion = _db.Remuneraciones.Find(id);
+            if (remuneracion == null)
             {
-                r = _db.Remuneraciones.Find(id);
-                List<Odontologo> odontologos = _db.Odontologos.ToList();
-                ViewBag.odontologos = odontologos;
+                return new HttpNotFoundResult();
+
             }
-            return View(r);
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
+            return View(remuneracion);
+
+
+            //  Remuneracion r = null;
+            //using (_db = new ClinicaContext())
+            //{
+            //  r = _db.Remuneraciones.Find(id);
+            //List<Odontologo> odontologos = _db.Odontologos.ToList();
+            //ViewBag.odontologos = odontologos;
+            //}
+         
         }
 
         [HttpPost]
@@ -80,7 +116,15 @@ namespace Clinica.Areas.Administrador.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("View", "Remuneraciones", new { id = 1 });
+                _db = new ClinicaContext();
+                _db.Entry(remuneracion).State = EntityState.Modified;
+                _db.SaveChanges();
+
+                return RedirectToAction("Index", "Remuneraciones", new { id = 1 });
+
+
+
+               
 
             }
             List<Odontologo> odontologos = _db.Odontologos.ToList();

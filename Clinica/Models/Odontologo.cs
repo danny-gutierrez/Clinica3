@@ -73,7 +73,9 @@ namespace Clinica.Models
         public virtual ICollection<Boleta>Boletas { get; set; }
         public virtual ICollection<Tratamiento> Tratamientos { get; set; }
         public virtual ICollection<Cita> Citas { get; set; }
-      
+
+        public virtual ICollection<Remuneracion> Remuneraciones { get; set; }
+
 
 
     }

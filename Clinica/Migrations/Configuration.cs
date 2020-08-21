@@ -489,36 +489,38 @@
             //Remuneraciones
             Remuneracion r1 = new Remuneracion()
             {
-                Nombre = "Andrea",
-                Apellido = "Garcia",
+               // Nombre = "Andrea",
+               // Apellido = "Garcia",
+                
+                
                 IdOdontologo = 1,
-                Cargo = "Odontologo",
+             
                 Monto = 800000,
             };
             Remuneracion r2 = new Remuneracion()
             {
-                Nombre = "Jazmin",
-                Apellido = "Ramirez",
+             //   Nombre = "Jazmin",
+               // Apellido = "Ramirez",
                 IdOdontologo = 2,
-                Cargo = "Odontologo",
+            
                 Monto = 800000,
             };
 
             Remuneracion r3 = new Remuneracion()
             {
-                Nombre = "Alejandro",
-                Apellido = "Ramirez",
+             //   Nombre = "Alejandro",
+               // Apellido = "Ramirez",
                 IdOdontologo = 1,
-                Cargo = "Odontologo",
+              
                 Monto = 800000,
             };
 
             Remuneracion r4 = new Remuneracion()
             {
-                Nombre = "Claudia",
-                Apellido = "Ramirez",
+            //    Nombre = "Claudia",
+              //  Apellido = "Ramirez",
                 IdOdontologo = 1,
-                Cargo = "Odontologo",
+             
                 Monto = 800000,
             };
             context.Remuneraciones.Add(r1);

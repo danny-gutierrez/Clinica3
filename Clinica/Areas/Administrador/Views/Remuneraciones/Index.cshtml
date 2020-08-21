@@ -41,9 +41,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Cargo</th>
-                                <th>Monto</th>
+
+                                <!--   <th>Cargo</th> -->
+                                <th>Sueldo</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -54,18 +54,25 @@
                         <tbody>
                             @foreach (var r in Model)
                             {
-                                <tr>
-                                    <td>@r.Id</td>
-                                    <td>@r.Nombre</td>
-                                    <td>@r.Apellido</td>
-                                    <td>@r.Cargo</td>
-                                    <td>@r.Monto</td>
+                            <tr>
+                                <td>@r.Id</td>
+                                @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                {
+                                    if (r.IdOdontologo == o.Id)
+                                    {
+                            <td>@o.Nombres @o.Apellidos</td>
+                                    }
 
-                                    <td>
-                                        <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Remuneraciones", new { id = r.Id })">Ver</a>
-                                        <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Remuneraciones", new { id = r.Id })">Editar</a>
-                                    </td>
-                                </tr>
+                                }
+
+
+                                <td>@r.Monto</td>
+
+                                <td>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Remuneraciones", new { id = r.Id })">Ver</a>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Remuneraciones", new { id = r.Id })">Editar</a>
+                                </td>
+                            </tr>
 
                             }
 

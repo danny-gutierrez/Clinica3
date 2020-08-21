@@ -52,49 +52,49 @@
 
 
                                             <form method="POST" action="@Url.Action("Index", "Remuneraciones")" class="user">
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Nombre</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="" disabled
-                                                               name="Nombres" value="@Model.Nombre">
-
-                                                    </div>
-
-
-                                                    <div class="col-sm-6">
-                                                        <label>Apellido</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="" disabled
-                                                               name="Apellidos" value="@Model.Apellido">
-
-                                                    </div>
-
-                                                </div>
                                                 <div class="form-group">
-                                                    <label>Cargo</label>
-                                                    <input type="text" class="form-control form-control-user" placeholder="" name="Cargo" value="@Model.Cargo" disabled>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Monto</label>
-                                                    <input type="number" class="form-control form-control-user" placeholder="" name="Monto" value="@Model.Monto" disabled>
-                                                </div>
+                                                    <div class="form-group">
+                                                        <center>
+
+                                                            <label for="sel1" style="color:#212F3D"> Especialista :</label>
+                                                        </center>
+                                                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                                        {
+                                                            if (Model.IdOdontologo == o.Id)
+                                                            {
+                                                                <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres @o.Apellidos" disabled>
+                                                            }
+
+                                                        }
+                                                        <!--<div class="form-group">
+            <label>Cargo</label>
+            <input type="text" class="form-control form-control-user" placeholder="" name="Cargo" value="Model.Cargo" disabled>
+        </div>
+            -->
 
 
-                                                <div class="form-group row">
+                                                        <div class="form-group">
+                                                            <label>Sueldo</label>
+                                                            <input type="number" class="form-control form-control-user" placeholder="" name="Monto" value="@Model.Monto" disabled>
+                                                        </div>
 
 
-                                                </div>
-                                                <hr />
-                                                <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
-                                                </a>
+                                                        <div class="form-group row">
+
+
+                                                        </div>
+                                                        <hr />
+                                                        <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
+                                                        </a>
 
 
 
-                                                <br />
-                                                <center>
-                                                    <button type="submit" class="btn btn-primary">Volver</button>
-                                                </center>
-                                                </a>
-                                            </form>
+                                                        <br />
+                                                        <center>
+                                                            <button type="submit" class="btn btn-primary">Volver</button>
+                                                        </center>
+                                                        </a>
+</form>
 
                                         </div>
                                     </div>
