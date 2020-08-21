@@ -30,6 +30,13 @@ namespace Clinica.Models
         [StringLength(25, MinimumLength = 5)]
 
         public String Direcciones { get; set; }
+        [Required]
+        [StringLength(25, MinimumLength = 1)]
+        public String Region { get; set; }
+        [Required]
+
+        [StringLength(25, MinimumLength = 1)]
+        public String Comuna { get; set; }
 
         [Required]
         [StringLength(25, MinimumLength = 5)]
