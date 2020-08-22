@@ -20,9 +20,9 @@ namespace Clinica.Models
 
         public virtual Odontologo Odontologo { get; set; }
 
-
-    //    [Required]
-      //  [StringLength(25, MinimumLength = 5)]
+     
+        //    [Required]
+        //  [StringLength(25, MinimumLength = 5)]
         //public string Cargo { get; set; }
 
         [Required]

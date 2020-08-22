@@ -11,6 +11,24 @@ namespace Clinica.Areas.Administrador.Controllers
     {
         private ClinicaContext _db = new ClinicaContext();
         // GET: Remuneraciones
+
+        public ActionResult Sueldo()
+        {
+
+            ClinicaContext _db = new ClinicaContext();
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
+
+         
+
+            return View(_db.Odontologos.ToList());
+
+
+            // aca la tabla para los sueldos
+
+           
+        }
+
         public ActionResult Index()
         {
 

@@ -2118,6 +2118,7 @@
     <Content Include="Areas\Recepcionista\Views\Tratamientos\Edit.cshtml" />
     <Content Include="Areas\Recepcionista\Views\Tratamientos\Index.cshtml" />
     <Content Include="Areas\Recepcionista\Views\Tratamientos\View.cshtml" />
+    <Content Include="Areas\Administrador\Views\Remuneraciones\Sueldo.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
