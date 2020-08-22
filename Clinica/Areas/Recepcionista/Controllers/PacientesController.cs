@@ -1,5 +1,7 @@
 ﻿using Clinica.Models;
+using Clinica.Models.ViewModels;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -19,7 +21,8 @@ namespace Clinica.Areas.Recepcionista.Controllers
                 return new HttpNotFoundResult();
 
             }
-
+         
+           
 
 
             List<Tratamiento> tratamientos = _db.RegistrosPT
@@ -43,6 +46,47 @@ namespace Clinica.Areas.Recepcionista.Controllers
 
             return View(paciente);
         }
+
+
+
+        public ActionResult Contador()
+        {
+            List<ContadorPaciente> contador = _db.Pacientes
+                             .Select(p => new ContadorPaciente
+                             {
+                                 Paciente = p,
+                                 Cantidad = p.RegistrosPT.Count()
+
+
+                             })
+                             .ToList();
+
+
+
+
+            return View(contador);
+        }
+
+
+        public ActionResult ContadorPC()
+        {
+            List<ContadorPacienteCita> paciente = _db.Pacientes
+                                            .Select(p => new ContadorPacienteCita
+                                            {
+                                                paciente = p,
+                                                Cantidad = p.RegistrosPC.Count()
+
+
+
+                                            }
+
+                                            ).ToList();
+
+
+            return View(paciente);
+        }
+
+
 
 
 
@@ -71,7 +115,11 @@ namespace Clinica.Areas.Recepcionista.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Create", "Pacientes", new { id = 1 });
+                _db.Pacientes.Add(paciente);
+                _db.SaveChanges();
+
+
+                return RedirectToAction("Index", "Pacientes", new { id = 1 });
             }
 
             return View(paciente);
@@ -115,11 +163,13 @@ namespace Clinica.Areas.Recepcionista.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Paciente p = null;
-            using (_db = new ClinicaContext())
+            Paciente p = _db.Pacientes.Find(id);
+            if(p == null)
             {
-                p = _db.Pacientes.Find(id);
+                return new HttpNotFoundResult();
             }
+            using (_db = new ClinicaContext())
+           
             return View(p);
         }
 
@@ -128,7 +178,10 @@ namespace Clinica.Areas.Recepcionista.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Edit", "Pacientes", new { id = 1 });
+                _db = new ClinicaContext();
+                _db.Entry(paciente).State = EntityState.Modified;
+                _db.SaveChanges();
+                return RedirectToAction("Index", "Pacientes", new { id = 1 });
             }
             return View(paciente);
         }

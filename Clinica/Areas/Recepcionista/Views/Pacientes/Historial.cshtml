@@ -63,7 +63,8 @@
                                                                     <tr>
 
                                                                         <th>Numero de Boleta</th>
-                                                                        <th>Odontologo</th>
+                                                                        <!--<th>Odontologo</th>-->
+                                                                     
                                                                         <th>Valor</th>
                                                                         <th>Fecha</th>
 
@@ -73,107 +74,108 @@
 
                                                                     @foreach (Clinica.Models.Boleta boleta in ViewBag.boletas)
                                                                     {
-                                                                        <tr>
-                                                                            <td>@boleta.NB</td>
-                                                                            <td>@boleta.Odontologo</td>
-                                                                            <td>@boleta.Valor</td>
-                                                                            <td>@boleta.Fecha</td>
+                                                                <tr>
+                                                                    <td>@boleta.NB</td>
+                                                                    <!--<t@boleta.IdOdontologo</td>-->
+                                                                        <td>@boleta.Valor</td>
+                                                                        <td>@boleta.Fecha</td>
 
-                                                                        </tr>
+                                                                    </tr>
 
-                                                                    }
-
-
-
-                                                            </div>
-                                                </table>
-                                                <br />  <br />
-                                                <hr />
-                                                <br />
-                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
-
-                                                    <h1 class="h4 text-gray-900 mb-4">Tratamientos del Paciente</h1>
-                                                    <tr>
-                                                        <th>Nombre</th>
-                                                        <th>Doctor</th>
-                                                        <th>Fecha</th>
-
-                                                    </tr>
+                                                                }
 
 
 
-                                                    @foreach (Clinica.Models.Tratamiento tratamiento in ViewBag.tratamientos)
-                                                    {
-                                                        <tr>
-                                                            <td>@tratamiento.Nombres</td>
-                                                            <td>@tratamiento.Especialistas</td>
-                                                            <td>@tratamiento.FechaCreacion</td>
 
-                                                        </tr>
-
-                                                    }
-
-
-
-                                            </div>
+                                                        </div>
                                             </table>
-                                            <br /><br />
+                                            <br />  <br />
                                             <hr />
+                                            <br />
                                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-                                                <br />
 
-                                                <h1 class="h4 text-gray-900 mb-4">Citas del Paciente</h1>
+                                                <h1 class="h4 text-gray-900 mb-4">Tratamientos del Paciente</h1>
                                                 <tr>
-
-                                                    <th>Motivo</th>
-                                                    <th>Doctor</th>
-
+                                                    <th>Nombre</th>
+                                                    <!--<th>Doctor</th>-->
                                                     <th>Fecha</th>
 
                                                 </tr>
 
 
 
-                                                @foreach (Clinica.Models.Cita cita in ViewBag.citas)
+                                                @foreach (Clinica.Models.Tratamiento tratamiento in ViewBag.tratamientos)
                                                 {
-                                                    <tr>
-                                                        <td>@cita.Motivo</td>
-                                                        <td>@cita.Odontologo</td>
+                                            <tr>
+                                                <td>@tratamiento.Nombres</td>
+                                                <!--<td@boleta.IdOdontologo</td>-->
+                                                <td>@tratamiento.FechaCreacion</td>
 
-                                                        <td>@cita.Fecha</td>
-
-                                                    </tr>
+                                            </tr>
 
                                                 }
 
+
+
                                         </div>
                                         </table>
+                                        <br /><br />
+                                        <hr />
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                                            <br />
+
+                                            <h1 class="h4 text-gray-900 mb-4">Citas del Paciente</h1>
+                                            <tr>
+
+                                                <th>Motivo</th>
+
+                                                <!--<th>Doctor</th>-->
+                                                <th>Fecha</th>
+
+                                            </tr>
+
+
+
+                                            @foreach (Clinica.Models.Cita cita in ViewBag.citas)
+                                            {
+                                        <tr>
+                                            <td>@cita.Motivo</td>
+                                            <!--<td@boleta.IdOdontologo</td>-->
+
+                                            <td>@cita.Fecha</td>
+
+                                        </tr>
+
+                                            }
 
                                     </div>
                                     </table>
-                                    <br />
-                                    <center>
-                                        <button type="submit" class="btn btn-primary">Volver</button>
-
-                                    </center>
-                                    <br /><br />
-
-                                    </form>
-
-                                    </table>
 
                                 </div>
+                                </table>
+                                <br />
+                                <center>
+                                    <button type="submit" class="btn btn-primary">Volver</button>
 
+                                </center>
+                                <br /><br />
 
+                                </form>
 
+                                </table>
 
                             </div>
+
+
+
+
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-        </div>
-        </div>
+    </div>
+    </div>

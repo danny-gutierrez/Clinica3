@@ -103,54 +103,84 @@
                                                                name="Direcciones" value="@Model.Direcciones" disabled>
                                                         @Html.ValidationMessageFor(Model => Model.Direcciones, null, new { @class = "text-danger" })
                                                     </div>
-
-
-
                                                 </div>
+                                                    <fieldset>
+                                                        <div class="form-group row">
+
+                                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                <label>Región: </label>
+                                                                <select class="form-control form-control-user" value="@Model.Region" name="Region" id="region" disabled>
+                                                                    <option value="@Model.Region">@Model.Region</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <label>Comuna: </label>
+                                                                <select class="form-control form-control-user" value="@Model.Comuna" name="Comuna" id="comuna" disabled>
+                                                                    <option value="@Model.Comuna">@Model.Comuna</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+
+
+                                                
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                                         <label>Fecha de Ingreso</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="Fecha de Ingreso"
+                                                        <input type="datetime" class="form-control form-control-user" placeholder="Fecha de Ingreso"
                                                                name="FechaIngreso" value="@Model.FechaIngreso" disabled>
                                                         @Html.ValidationMessageFor(Model => Model.FechaIngreso, null, new { @class = "text-danger" })
                                                     </div>
 
 
                                                     <div class="col-sm-6">
-                                                        <label>Especialidad</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Especialidad"
-                                                               name="Especialidad" value="@Model.Especialidad" disabled>
-                                                        @Html.ValidationMessageFor(Model => Model.Especialidad, null, new { @class = "text-danger" })
+                                                        <label>Tratamiento</label>
+                                                        @foreach (Clinica.Models.Tratamiento t in ViewBag.tratamientos)
+                                                        {
+                                                            if (Model.IdTratamiento == t.Id)
+                                                            {
+                                                                <input type="text" class="form-control form-control-user" placeholder="Tratamiento" value="@t.Nombres" disabled>
+                                                            }
+
+                                                        }
+
+
                                                     </div>
 
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <label>Correo</label>
-                                                        <input type="email" class="form-control form-control-user" placeholder="Ingrese Correo"
-                                                               name="Correos" value="@Model.Correos" disabled>
-                                                        @Html.ValidationMessageFor(Model => Model.Correos, null, new { @class = "text-danger" })
+
+
+                                           
+
+
+
+                                                    <div class="form-group">
+                                                        <div class="">
+                                                            <label>Correo</label>
+                                                            <input type="email" class="form-control form-control-user" placeholder="Ingrese Correo"
+                                                                   name="Correos" value="@Model.Correos" disabled>
+                                                            @Html.ValidationMessageFor(Model => Model.Correos, null, new { @class = "text-danger" })
+                                                        </div>
+
                                                     </div>
 
-                                                </div>
-
-                                                <div class="form-group row">
+                                                    <div class="form-group row">
 
 
-                                                </div>
+                                                    </div>
 
 
 
 
 
 
-                                                <hr />
-                                                <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
-                                                <center>
-                                                    <button type="submit" class="btn btn-primary">Volver</button>
-                                                    <a href="@Url.Action("Historial", "Odontologos", new { id = Model.Id } )"><input type="button" value="Ver Historial" class="btn btn-primary"></a>
-                                                </center>
-                                                </a>
+                                                    <hr />
+                                                    <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
+                                                    <center>
+                                                        <button type="submit" class="btn btn-primary">Volver</button>
+                                                        <a href="@Url.Action("Historial", "Odontologos", new { id = Model.Id } )"><input type="button" value="Ver Historial" class="btn btn-primary"></a>
+                                                    </center>
+                                                    </a>
 
 
 

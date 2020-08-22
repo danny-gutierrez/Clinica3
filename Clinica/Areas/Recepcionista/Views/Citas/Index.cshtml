@@ -5,7 +5,7 @@
 
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Listar Citas | Recepcionista</h1>
+        <h1 class="h3 mb-2 text-gray-800">Listar Citas</h1>
         <p class="mb-4"> <a target="_blank" href=""></a>.</p>
 
 
@@ -25,10 +25,13 @@
                             <div class="col-sm-12 col-md-6">
 
                                 <div id="dataTable_filter" class="dataTables_filter">
-                                    <label><input type="search" class="form-control form-control-sm" placeholder="Buscar por rut" aria-controls="dataTable"></label>
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
+                                    <!--<label><input type="search" class="form-control form-control-sm" placeholder="Buscar ..." aria-controls="dataTable"></label>
+         <button class="btn btn-primary" type="button">
+             <i class="fas fa-search fa-sm"></i>
+      </button>-->
+
+                                    <br />
+                                    <br />
 
                                 </div>
                             </div>
@@ -44,14 +47,14 @@
                             <tr>
                                 <th>#</th>
 
-                                <th>Rut</th>
+                               
                                 <th>Nombre</th>
-                                <th>Apellido</th>
+                              
                                 <th>Fecha</th>
 
                                 <th>Odontologo</th>
                                 <th>Telefono</th>
-                                <th>Motivo</th>
+                                
                                 <th>Opciones </th>
 
                             </tr>
@@ -65,15 +68,29 @@
                             {
                             <tr>
                                 <td>@c.Id</td>
-                                <td>@c.Rut</td>
+                                @foreach (Clinica.Models.Paciente p in ViewBag.pacientes)
+                                {
+                                    if (c.IdPaciente == p.Id)
+                                    {
+                                        <td>@p.Nombre @p.Apellido @p.Rut</td>
+                                    }
 
-                                <td>@c.Nombre</td>
-                                <td>@c.Apellido</td>
+                                }
+
+
                                 <td>@c.Fecha</td>
+                                @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                {
+                                    if (c.IdOdontologo == o.Id)
+                                    {
+                                        <td>@o.Nombres @o.Apellidos</td>
+                                    }
 
-                                <td>@c.Odontologo</td>
+                                }
+
+
                                 <td>@c.Telefono</td>
-                                <td>@c.Motivo</td>
+
                                 <td>
                                     <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Citas", new { id = c.Id })">Ver</a>
 

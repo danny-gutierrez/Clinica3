@@ -66,7 +66,7 @@
                                                             <h1 class="h4 text-gray-900 mb-4">Cita de odontologo</h1>
                                                             <tr>
 
-                                                                <th>Nombre</th>
+                                                                <th>Motivo</th>
                                                                 <th>Fecha</th>
                                                             </tr>
 
@@ -74,7 +74,7 @@
                                                             @foreach (Clinica.Models.Cita cita in ViewBag.citas)
                                                             {
                                                                 <tr>
-                                                                    <td>@cita.Nombre</td>
+                                                                    <td>@cita.Motivo</td>
                                                                     <td>@cita.Fecha</td>
                                                                 </tr>
                                                             }
@@ -95,7 +95,7 @@
                                                             @foreach (Clinica.Models.Remuneracion remuneracion in ViewBag.remuneraciones)
                                                             {
                                                                 <tr>
-                                                                    <td>@remuneracion.Nombre</td>
+                                                                    <td>@remuneracion.IdOdontologo</td>
                                                                     <td>@remuneracion.Monto</td>
                                                                 </tr>
                                                             }

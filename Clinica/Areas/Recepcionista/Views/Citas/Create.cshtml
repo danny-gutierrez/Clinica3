@@ -51,71 +51,113 @@
                                             </div>
                                             <form method="POST" action="@Url.Action("Create", "Citas")" class="user">
 
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Nombre" name="Nombre" placeholder="Nombre">
-                                                        @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "text-danger" })
-                                                    </div>
 
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" value="@Model.Apellido" name="Apellido" placeholder="Apellido">
-                                                        @Html.ValidationMessageFor(Model => Model.Apellido, null, new { @class = "text-danger" })
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="datetime-local" class="form-control form-control-user" value="@Model.Fecha" name="Fecha" placeholder="Fecha">
-                                                    @Html.ValidationMessageFor(Model => Model.Fecha, null, new { @class = "text-danger" })
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sel1" style="color:#212F3D">Seleccione Especialista :</label>
-                                                    <select class="custom-select custom-select-sm form-control form-control-sm" name="Odontologo" id="Odontologo" placeholder="Odontologo">
 
-                                                        @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                <div class="form-group">
+                                                    <label>Paciente / Rut</label>
+                                                    <select class="form-control form-control-user" value="@Model.Paciente" name="IdPaciente" id="Paciente" placeholder="Paciente">
+
+                                                        @foreach (Clinica.Models.Paciente paciente in ViewBag.pacientes)
                                                         {
 
-                                                            <option value="@odontologo.Id">@odontologo.Nombres</option>
+                                                            <option value="@paciente.Id">       @paciente.Nombre  @paciente.Apellido        /       @paciente.Rut</option>
+                                                            @Html.ValidationMessageFor(Model => Model.IdPaciente, null, new { @class = "text-danger" })
                                                         }
 
+
                                                     </select>
-                                                    
-
-
 
                                                 </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
-                                                    @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
-                                                </div>
+                                        </div>
 
+                                        <div class="form-group">
+                                            <label>Seleccione Odontologo:</label>
+                                            <select class="form-control form-control-user" value="@Model.Odontologo" name="IdOdontologo" id="Odontologo" placeholder="Odontologo">
+                                                @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                {
 
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control form-control-user" value="@Model.Motivo" name="Motivo" placeholder="Motivo">
-                                                    @Html.ValidationMessageFor(Model => Model.Motivo, null, new { @class = "text-danger" })
-                                                </div>
-                                                <br />
-                                                <center>
-                                                    <button type="submit" class="btn btn-primary">Grabar</button>
-                                                    <a href="@Url.Action("Index", "Citas")"><input type="button" value="Volver" class="btn btn-primary"></a>
-                                                </center>
+                                                    <option value="@odontologo.Id">@odontologo.Nombres @odontologo.Apellidos</option>
+                                                }
 
 
 
-                                            </form>
+                                            </select>
+
+
+
 
 
 
                                         </div>
+
+
+                                        <div class="form-group">
+                                            <label>Seleccione Tratamiento:</label>
+                                            <select class="form-control form-control-user" value="@Model.Tratamiento" name="IdTratamiento" id="Tratamiento" placeholder="Tratamiento">
+                                                @foreach (Clinica.Models.Tratamiento tratamiento in ViewBag.tratamientos)
+                                                {
+
+                                                    <option value="@tratamiento.Id">@tratamiento.Nombres</option>
+                                                }
+
+
+
+                                            </select>
+
+
+
+
+
+
+                                        </div>
+
+
+                                        <div class="form-group row">
+
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label>Hora Dental</label>
+                                                <input type="datetime-local" class="form-control form-control-user" value="@Model.Fecha" name="Fecha" placeholder="Fecha">
+                                                @Html.ValidationMessageFor(Model => Model.Fecha, null, new { @class = "text-danger" })
+                                            </div>
+
+
+                                            <div class="col-sm-6">
+                                                <label>Telefono</label>
+                                                <input type="number" class="form-control form-control-user" value="@Model.Telefono" name="Telefono" placeholder="Telefono">
+                                                @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "text-danger" })
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label>Observacion</label>
+                                        <input type="text" class="form-control form-control-user" value="@Model.Motivo" name="Motivo" placeholder="Breve descripcion">
+                                        @Html.ValidationMessageFor(Model => Model.Motivo, null, new { @class = "text-danger" })
+                                    </div>
+
+                                    <hr />
+                                    <center>
+                                        <button type="submit" class="btn btn-primary">Grabar</button>
+                                        <a href="@Url.Action("Index", "Citas")"><input type="button" value="Volver" class="btn btn-primary"></a>
+                                    </center>
+
+
+
+                                    </form>
+
+
+
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-
-               </table>
             </div>
+        </div>
+
+
+        </table>
+        </div>
         </div>
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>

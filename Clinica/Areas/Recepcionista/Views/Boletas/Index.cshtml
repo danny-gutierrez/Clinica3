@@ -4,7 +4,7 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Listar Boleta | Recepcionista</h1>
+        <h1 class="h3 mb-2 text-gray-800">Listar Boleta</h1>
         <p class="mb-4"> <a target="_blank" href=""></a>.</p>
 
         <!-- DataTales Example -->
@@ -18,16 +18,19 @@
                         <div class="">
                             <a style="float: right;" href="@Url.Action("Create", "Boletas" )" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                 <i class="fas fa-download fa-sm text-white-50">
-                                </i> Crear Boleta 
+                                </i> Crear Boleta
                             </a>
 
                             <div class="col-sm-12 col-md-6">
 
                                 <div id="dataTable_filter" class="dataTables_filter">
-                                    <label><input type="search" class="form-control form-control-sm" placeholder="Buscar....." aria-controls="dataTable"></label>
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
+                                    <!--<label><input type="search" class="form-control form-control-sm" placeholder="Buscar ..." aria-controls="dataTable"></label>
+         <button class="btn btn-primary" type="button">
+             <i class="fas fa-search fa-sm"></i>
+      </button>-->
+
+                                    <br />
+                                    <br />
 
                                 </div>
                             </div>
@@ -38,12 +41,14 @@
                             <tr>
                                 <th>#</th>
                                 <th>N° de Boleta</th>
-                                <th>Nombre</th>
+                                <!-- <th>Nombre</th> -->
                                 <th>Odontologo</th>
-                                <th>Fono</th>
+                                <th>Paciente</th>
+
+                                <!--        <th>Fono</th> -->
                                 <th>Fecha</th>
-                                <th>Valor</th>
-                                
+                                <!--        <th>Valor</th> -->
+
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -54,21 +59,40 @@
                         <tbody>
                             @foreach (var b in Model)
                             {
-                                <tr>
-                                    <td>@b.Id</td>
-                                    <td>@b.NB</td>
-                                    <td>@b.Nombre</td>
-                                    <td>@b.Odontologo</td>
-                                    <td>@b.Fono</td>
-                                    <td>@b.Fecha</td>
-                                    <td>@b.Valor</td>
-                                    
+                            <tr>
+                                <td>@b.Id</td>
+                                <td>@b.NB</td>
 
-                                    <td>
-                                        <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Boletas", new { id = b.Id })">Ver</a>
-                                        
-                                    </td>
-                                </tr>
+                                @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                {
+                                    if (b.IdOdontologo == o.Id)
+                                    {
+                                        <td>@o.Nombres @o.Apellidos</td>
+                                    }
+
+                                }
+
+
+                                @foreach (Clinica.Models.Paciente p in ViewBag.pacientes)
+                                {
+                                    if (b.IdPaciente == p.Id)
+                                    {
+                                        <td>@p.Nombre @p.Apellido</td>
+                                    }
+
+                                }
+
+
+                                <!--       <td>@b.Fono</td> -->
+                                <td>@b.Fecha</td>
+                                <!--      <td>@b.Valor</td> -->
+
+
+                                <td>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Boletas", new { id = b.Id })">Ver</a>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Boletas", new { id = b.Id})">Editar</a>
+                                </td>
+                            </tr>
 
                             }
 

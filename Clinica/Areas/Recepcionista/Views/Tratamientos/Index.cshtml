@@ -4,71 +4,86 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Listar Tratamientos | Recepcionista</h1>
-    <p class="mb-4"> <a target="_blank" href=""></a>.</p>
+        <h1 class="h3 mb-2 text-gray-800">Listar Tratamientos</h1>
+        <p class="mb-4"> <a target="_blank" href=""></a>.</p>
 
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"></h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <div class="">
-                        <div class="col-sm-12 col-md-6">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary"></h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <div class="">
+                            <a style="float: right;" href="@Url.Action("Create", "Tratamientos" )" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                <i class="fas fa-download fa-sm text-white-50">
+                                </i> Crear Tratamiento
+                            </a>
 
-                            <div id="dataTable_filter" class="dataTables_filter">
-                                <label><input type="search" class="form-control form-control-sm" placeholder="Buscar..." aria-controls="dataTable"></label>
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
+                            <div class="col-sm-12 col-md-6">
 
+                                <div id="dataTable_filter" class="dataTables_filter">
+                                    <!--<label><input type="search" class="form-control form-control-sm" placeholder="Buscar ..." aria-controls="dataTable"></label>
+        <button class="btn btn-primary" type="button">
+            <i class="fas fa-search fa-sm"></i>
+     </button>-->
+
+                                    <br />
+                                    <br />
+
+                                </div>
                             </div>
+
+
                         </div>
-                    </div>
-                    <thead>
-                        <tr>
-                            <th width="10">#</th>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombres</th>
+                                <th>Valor</th>
+                                <th>Especialista</th>
 
-
-                            <th width="250"><center>Nombre Tratamiento</center> </th>
-
-
-                            <th width="150"><center>Opciones</center></th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-
-                        <tr>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        @foreach (var t in Model)
-                        {
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var t in Model)
+                            {
                             <tr>
                                 <td>@t.Id</td>
-                                <td><center>@t.Nombres</center></td>
+                                <td>@t.Nombres</td>
+                                <td>@t.Valor</td>
+                                @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                {
+                                    if (t.IdOdontologo == o.Id)
+                                    {
+                                        <td>@o.Nombres @o.Apellidos</td>
+                                    }
 
+                                }
 
                                 <td>
-                                    <center>
-                                        <a href="@Url.Action("View", "Tratamientos", new { id = t.Id })"><center><input type="button" value="Ver" class="btn btn-primary"></center></a>
-                                    </center>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Tratamientos", new { id = t.Id })">Ver</a>
+                                    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Tratamientos", new { id = t.Id })">Editar</a>
                                 </td>
                             </tr>
 
-                        }
+                            }
 
 
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
     <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->

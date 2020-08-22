@@ -50,12 +50,15 @@ namespace Clinica.Areas.Doctor.Controllers
 
         public ActionResult View(int id)
         {
-            Tratamiento t = null;
+            Tratamiento tratamiento = null;
             using (_db = new ClinicaContext())
             {
-                t = _db.Tratamientos.Find(id);
+                tratamiento = _db.Tratamientos.Find(id);
+                List<Odontologo> odontologos = _db.Odontologos.ToList();
+                ViewBag.odontologos = odontologos;
             }
-            return View(t);
+
+            return View(tratamiento);
         }
 
 

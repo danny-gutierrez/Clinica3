@@ -1,5 +1,6 @@
 ﻿using Clinica.Models;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -7,16 +8,16 @@ namespace Clinica.Areas.Recepcionista.Controllers
 {
     public class TratamientosController : Controller
     {
-        private ClinicaContext _db = null;
+        private ClinicaContext _db = new ClinicaContext();
         // GET: Pacientes
         public ActionResult Index()
+
         {
-            IEnumerable<Tratamiento> tratamientos = null;
-            using (_db = new ClinicaContext())
-            {
-                tratamientos = _db.Tratamientos.ToList();
-            }
-            return View(tratamientos);
+            ClinicaContext _db = new ClinicaContext();
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
+
+            return View(_db.Tratamientos.ToList());
         }
 
         //#######################################
@@ -26,6 +27,8 @@ namespace Clinica.Areas.Recepcionista.Controllers
 
         {
             Tratamiento tratamiento = new Tratamiento();
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
 
             return View(tratamiento);
         }
@@ -33,13 +36,29 @@ namespace Clinica.Areas.Recepcionista.Controllers
         [HttpPost]
         public ActionResult Create(Tratamiento tratamiento)
         {
+
+
             if (ModelState.IsValid)
             {
+                _db.Tratamientos.Add(tratamiento);
+               
+                _db.SaveChanges();
+
                 //guarda en bd
                 return RedirectToAction("Index", "Tratamientos", new { id = 1 });
+
+
             }
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
+
 
             return View(tratamiento);
+
+
+
+
+
         }
 
 
@@ -51,13 +70,13 @@ namespace Clinica.Areas.Recepcionista.Controllers
         public ActionResult View(int id)
         {
             Tratamiento tratamiento = null;
-            using (_db = new ClinicaContext())
+            using(_db=new ClinicaContext())
             {
                 tratamiento = _db.Tratamientos.Find(id);
                 List<Odontologo> odontologos = _db.Odontologos.ToList();
                 ViewBag.odontologos = odontologos;
             }
-
+            
             return View(tratamiento);
         }
 
@@ -68,23 +87,33 @@ namespace Clinica.Areas.Recepcionista.Controllers
         public ActionResult Edit(int id)
         {
 
-            Tratamiento t = null;
-            using (_db = new ClinicaContext())
+            Tratamiento tratamiento = _db.Tratamientos.Find(id);
+            if (tratamiento == null)
             {
-                t = _db.Tratamientos.Find(id);
+                return new HttpNotFoundResult();
+
             }
-            return View(t);
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
+            return View(tratamiento);
+
+
         }
 
         [HttpPost]
-        public ActionResult Edit(Tratamiento tratamiento)
+        public ActionResult Edit(int id, Tratamiento tratamiento)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
-                //guarda en bd
-                return RedirectToAction("View", "Tratamientos", new { id = 1 });
-            }
+                _db = new ClinicaContext();
+                _db.Entry(tratamiento).State = EntityState.Modified;
+                _db.SaveChanges();
 
+                return RedirectToAction("Index", "Tratamientos", new { id = 1 });
+
+            }
+            List<Odontologo> odontologos = _db.Odontologos.ToList();
+            ViewBag.odontologos = odontologos;
             return View(tratamiento);
         }
     }

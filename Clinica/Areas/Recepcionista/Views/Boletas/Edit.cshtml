@@ -1,0 +1,188 @@
+﻿@model Clinica.Models.Boleta
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Register</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+
+
+<body class="bg-gradient-primary">
+    <center>
+
+
+        <div class="container">
+
+            <div class="">
+                <div class="">
+                    <!-- Nested Row within Card Body -->
+
+
+                    <div class="row">
+                        <div class="col-lg-5 d-none  bg-light"> </div>
+                        <div class="col-lg-10">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <div class="card-body">
+
+                                        <div class="card shadow mb-4">
+                                            <div class="card-header py-3">
+
+                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                    <h1 class="h4 text-gray-900 mb-4">Editar Boleta!</h1>
+                                                    <hr />
+                                            </div>
+                                            <form from method="POST" action="@Url.Action("Edit", "Boletas")" class="user">
+
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>N° de Boleta</label>
+                                                        <input type="number" class="form-control form-control-user" value="@Model.NB" name="NB" placeholder="N° de Boleta">
+                                                        @Html.ValidationMessageFor(Model => Model.NB, null, new { @class = "text-danger" })
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <label>Odontologo</label>
+                                                        <select class="form-control form-control-user" name="IdOdontologo" id="Odontologo">
+
+                                                            @foreach (Clinica.Models.Odontologo odontologo in ViewBag.odontologos)
+                                                            {
+
+                                                            <option value="@odontologo.Id">@odontologo.Nombres @odontologo.Apellidos</option>
+                                                            }
+
+
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div class="form-group">
+                                                    <label>Paciente</label>
+                                                    <select class="form-control form-control-user" value="@Model.Paciente" name="idPaciente" id="Paciente" placeholder="Paciente">
+
+                                                        @foreach (Clinica.Models.Paciente paciente in ViewBag.pacientes)
+                                                        {
+
+                                                            <option value="@paciente.Id">@paciente.Nombre  @paciente.Apellido</option>
+                                                        }
+
+
+                                                    </select>
+
+                                                </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Tratamiento</label>
+                                            <select class="form-control form-control-user" value="@Model.Tratamiento" name="idTratamiento" id="Tratamiento" placeholder="Tratamiento">
+
+                                                @foreach (Clinica.Models.Tratamiento tratamiento in ViewBag.tratamientos)
+                                                {
+
+                                                    <option value="@tratamiento.Id">@tratamiento.Nombres  </option>
+                                                }
+
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <label>Fono</label>
+                                            <input type="number" class="form-control form-control-user" value="@Model.Fono" name="Fono" placeholder="Telefono">
+                                            @Html.ValidationMessageFor(Model => Model.Fono, null, new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Fecha</label>
+                                            <input type="date" class="form-control form-control-user" value="@Model.Fecha" name="Fecha" placeholder="Fecha">
+                                            @Html.ValidationMessageFor(Model => Model.Fecha, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <label>Valor</label>
+                                            <input type="number" class="form-control form-control-user" value="@Model.Valor" name="valor" placeholder="Valor">
+                                            @Html.ValidationMessageFor(Model => Model.Valor, null, new { @class = "text-danger" })
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label>Detalle</label>
+                                            <input type="text" class="form-control form-control-user" value="@Model.Detalle" name="Detalle" placeholder="Detalle">
+                                            @Html.ValidationMessageFor(Model => Model.Detalle, null, new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+                              
+                                    <center>
+                                        <button type="submit" class="btn btn-primary">Editar</button>
+                                        <a href="@Url.Action("Index", "Boletas")"><input type="button" value="Volver" class="btn btn-primary"></a>
+                                    </center>
+                                    </a>
+
+
+                                    </form>
+
+
+
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                </table>
+
+
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+    </center>
+</body>
+
+</html>

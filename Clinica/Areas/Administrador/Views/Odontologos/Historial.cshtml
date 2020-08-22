@@ -74,7 +74,7 @@
                                                     @foreach (Clinica.Models.Cita cita in ViewBag.citas)
                                                     {
                                             <tr>
-                                                <td>@cita.Nombre</td>
+                                                <td>@cita.IdPaciente</td>
                                                 <td>@cita.Fecha</td>
                                             </tr>}
                                                 </table>
@@ -94,7 +94,7 @@
                                                     @foreach (Clinica.Models.Remuneracion remuneracion in ViewBag.remuneraciones)
                                                     {
                                             <tr>
-                                                <td>@remuneracion.Nombre</td>
+                                                <td>@remuneracion.Odontologo</td>
                                                 <td>@remuneracion.Monto</td>
                                             </tr>}
                                                 </table>

@@ -21,33 +21,33 @@
 
 </head>
 
-
 <body class="bg-gradient-primary">
-    <center>
 
+    <center>
 
         <div class="container">
 
             <div class="">
                 <div class="">
                     <!-- Nested Row within Card Body -->
-
-
                     <div class="row">
-                        <div class="col-lg-5 d-none  bg-light"> </div>
+                        <div class="col-lg-5 d-none "></div>
                         <div class="col-lg-10">
                             <div class="p-5">
                                 <div class="text-center">
+
                                     <div class="card-body">
 
                                         <div class="card shadow mb-4">
                                             <div class="card-header py-3">
 
                                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                    <h1 class="h4 text-gray-900 mb-4">Ver Tratamiento</h1>
+                                                    <h1 class="h4 text-gray-900 mb-4">Ver Tratamientos!</h1>
                                                     <hr />
+
                                             </div>
-                                          
+
+
 
                                             <form method="POST" action="" @Url.Action("Index", "Tratamientos") " class="user">
                                                 <div class="form-group row">
@@ -55,13 +55,13 @@
                                                         <label>Nombre Tratamiento</label>
                                                         <input type="text" class="form-control form-control-user" placeholder="Ingrese Nombre Tratamiento"
                                                                name="Nombres" value="@Model.Nombres" disabled>
-                                                       
+
                                                     </div>
 
 
                                                     <div class="col-sm-6">
                                                         <label>Valor Tratamiento</label>
-                                                        <input type="text" class="form-control form-control-user" placeholder="Ingrese Valor Tratamiento"
+                                                        <input type="number" class="form-control form-control-user" placeholder="Ingrese Valor Tratamiento"
                                                                name="Valor" value="@Model.Valor" disabled>
 
                                                     </div>
@@ -77,7 +77,7 @@
                                                     {
                                                         if (Model.IdOdontologo == o.Id)
                                                         {
-                                                            <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres" disabled>
+                                                            <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres @o.Apellidos" disabled>
                                                         }
 
                                                     }
@@ -89,7 +89,7 @@
                                                             <br />
                                                             <br />
                                                             <label>Codigo de  Tratamiento</label>
-                                                            <input type="text" class="form-control form-control-user" placeholder="Ingrese Codigo De Tratamiento"
+                                                            <input type="number" class="form-control form-control-user" placeholder="Ingrese Codigo De Tratamiento"
                                                                    name="Codigos" value="@Model.Codigos" disabled>
 
                                                         </div>
@@ -107,7 +107,7 @@
                                                             <br /><br />
                                                             <label>Horario</label>
 
-                                                            <input type="text" class="form-control form-control-user" placeholder=""
+                                                            <input type="datetime" class="form-control form-control-user" placeholder=""
                                                                    name="Horarios" value="@Model.Horarios" disabled>
 
                                                         </div>
@@ -115,7 +115,7 @@
                                                         <div class="col-sm-6">
                                                             <br /><br />
                                                             <label>Fecha Creacion</label>
-                                                            <input type="text" class="form-control form-control-user" placeholder=""
+                                                            <input type="datetime" class="form-control form-control-user" placeholder=""
                                                                    name="FechaCreacion" value="@Model.FechaCreacion" disabled>
 
                                                         </div>
@@ -146,10 +146,9 @@
                     </div>
                 </div>
                 </table>
-
-
             </div>
         </div>
+
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

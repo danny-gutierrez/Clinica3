@@ -72,9 +72,16 @@
                                                     <center>
 
                                                         <label for="sel1" style="color:#212F3D"> Especialista :</label>
+                                                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                                                        {
+                                                            if (Model.IdOdontologo == o.Id)
+                                                            {
+                                                                <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres @o.Apellidos" disabled>
+                                                            }
+
+                                                        }
                                                     </center>
-                                                    <select class="form-control" name="Especialistas" value="@Model.Especialistas" disabled>
-                                                        <option>@Model.Especialistas</option>
+                                                   
                                                   
                                                     </select>
 
