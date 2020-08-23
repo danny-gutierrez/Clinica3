@@ -41,9 +41,9 @@
                                     <th>Rut</th>
                                     <th>Edad</th>
                                     <th>Correo</th>
-                                    
-                                   
-                                    <th>Opciones</th>
+
+
+                                    <th>  <center>Opciones </center></th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -63,9 +63,13 @@
                                        
                                         
                                         <td>
-                                            <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Pacientes", new { id = p.Id })">Ver</a>
-                                            <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Pacientes", new { id = p.Id})">Editar</a>
-                                        </td>
+
+                                            <center>
+                                                <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Pacientes", new { id = p.Id })">Ver</a>
+                                                <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Pacientes", new { id = p.Id})">Editar</a>
+
+                                            </center>
+                                                </td>
                                     </tr>
 
                                 }

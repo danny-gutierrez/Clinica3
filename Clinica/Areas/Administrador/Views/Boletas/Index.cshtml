@@ -48,8 +48,9 @@
                                 <!--        <th>Fono</th> -->
                                 <th>Fecha</th>
                                 <!--        <th>Valor</th> -->
-
-                                <th>Opciones</th>
+                              
+                                <th>  <center>Opciones </center></th>
+                               
                             </tr>
                         </thead>
                         <tfoot>
@@ -89,9 +90,12 @@
 
 
                                 <td>
-                                    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Boletas", new { id = b.Id })">Ver</a>
-                                    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Boletas", new { id = b.Id})">Editar</a>
-                                </td>
+                                    <center>
+                                        <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Boletas", new { id = b.Id })">Ver</a>
+                                        <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Boletas", new { id = b.Id})">Editar</a>
+                                    </center>
+                                        </td>
+
                             </tr>
 
                             }

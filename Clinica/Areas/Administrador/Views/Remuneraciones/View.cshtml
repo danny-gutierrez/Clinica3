@@ -25,7 +25,7 @@
 
 
 <body class="bg-gradient-primary">
-    <center>
+  
 
 
         <div class="container">
@@ -35,80 +35,30 @@
                     <!-- Nested Row within Card Body -->
 
 
-                    <div class="row">
-                        <div class="col-lg-5 d-none  bg-light"> </div>
-                        <div class="col-lg-10">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <div class="card-body">
 
-                                        <div class="card shadow mb-4">
-                                            <div class="card-header py-3">
+                   
+                    <div class="col-lg-10">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <div class="card-body">
 
-                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                    <h1 class="h4 text-gray-900 mb-4">Ver Remuneracion</h1>
-                                                    <hr />
-                                            </div>
-
-
-                                            <form method="POST" action="@Url.Action("Index", "Remuneraciones")" class="user">
-                                                <div class="form-group">
-                                                    <div class="form-group">
-                                                        <center>
-
-                                                            <label for="sel1" style="color:#212F3D"> Especialista :</label>
-                                                        </center>
-                                                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
-                                                        {
-                                                            if (Model.IdOdontologo == o.Id)
-                                                            {
-                                                                <input type="text" class="form-control form-control-user" placeholder="Odontologo" value="@o.Nombres @o.Apellidos" disabled>
-                                                            }
-
-                                                        }
-                                                        <!--<div class="form-group">
-            <label>Cargo</label>
-            <input type="text" class="form-control form-control-user" placeholder="" name="Cargo" value="Model.Cargo" disabled>
-        </div>
-            -->
-
-
-                                                        <div class="form-group">
-                                                            <label>Sueldo</label>
-                                                            <input type="number" class="form-control form-control-user" placeholder="" name="Monto" value="@Model.Monto" disabled>
-                                                        </div>
-
-
-                                                        <div class="form-group row">
-
-
-                                                        </div>
-                                                        <hr />
-                                                        <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
-                                                        </a>
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
 
 
 
-                                                        <br />
-                                                        <center>
-                                                            <button type="submit" class="btn btn-primary">Volver</button>
-                                                            <a href="@Url.Action("Sueldo", "Remuneraciones", new { id = Model.Id } )"><input type="button" value="Ver Sueldos" class="btn btn-primary"></a>
-                                                        </center>
-                                                        </a>
-</form>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                           
+                                      
+                                  
+                             
+                           
 
-                    </div>
-                </div>
-                </table>
+                   
+            
 
 
-            </div>
+           
         </div>
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
@@ -119,7 +69,589 @@
 
         <!-- Custom scripts for all pages-->
         <script src="js/sb-admin-2.min.js"></script>
-    </center>
+ 
+
+
+    <div class="container-fluid">
+        <div class="container-fluid">
+
+
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">Listar Remuneraciones</h1>
+            <p class="mb-4"> <a target="_blank" href=""></a>.</p>
+
+        
+
+
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary"></h6>
+
+                
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td><strong>Odontologo : @o.Nombres @o.Apellidos</strong></td>
+                            }
+
+                        }
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+
+
+                            <div class="col-sm-12 col-md-6">
+
+                                <div id="dataTable_filter" class="dataTables_filter">
+                                    <!--<label><input type="search" class="form-control form-control-sm" placeholder="Buscar ..." aria-controls="dataTable"></label>
+                   <button class="btn btn-primary" type="button">
+                       <i class="fas fa-search fa-sm"></i>
+                </button>-->
+
+                                    <br />
+                                    <br />
+
+                                </div>
+                            </div>
+
+
+                    </div>
+
+
+
+
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+
+
+                            <th>Mes</th>
+
+
+
+                            <th>Odontologo</th>
+
+
+                            <th>Monto </th>
+                            <td>Estado</td>
+                            <td>-</td>
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+
+
+
+
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Enero 2020</td>
+
+
+
+
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+
+
+                        <td>800000</td>
+
+                        <td>Pagado</td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Febrero 2020</td>
+
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+
+                        <td>800000</td>
+                        <td>Pagado</td>
+
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Marzo 2020</td>
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+
+                        <td>800000</td>
+                        <td>Pagado</td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Abril 2020</td>
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+
+                        <td>800000</td>
+                        <td>Pagado</td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Mayo 2020</td>
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+                        <td>800000</td>
+                        <td>Pagado</td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Junio 2020</td>
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+                        <td>800000</td>
+                        <td>Pagado</td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Julio 2020</td>
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+
+                        <td>800000</td>
+                        <td>Pagado</td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Agosto 2020</td>
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+
+                        <td>800000</td>
+                        <td>Pagado</td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Septiembre 2020</td>
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+
+                        <td>    -    </td>
+                        <td>    -    </td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Octubre 2020</td>
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+
+                        <td>-</td>
+                        <td>    -    </td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Noviembre 2020</td>
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+
+                        <td>-</td>
+                        <td>    -    </td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody>
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Id</td>
+                            }
+
+                        }
+
+                        <td>Diciembre 2020</td>
+
+
+                        @foreach (Clinica.Models.Odontologo o in ViewBag.odontologos)
+                        {
+                            if (Model.IdOdontologo == o.Id)
+                            {
+
+
+                                <td>@o.Nombres @o.Apellidos</td>
+                            }
+
+                        }
+
+
+                        <td>-</td>
+                        <td>    -    </td>
+
+                        <td>
+                        </td>
+                        </tr>
+
+                    </tbody>
+
+
+
+
+
+                    </table>
+                    <center>
+                        <br />
+                        <a href="@Url.Action("Index", "Remuneraciones")"><input type="button" value="Volver a Remuneraciones" class="btn btn-primary"></a>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+    <!-- Footer -->
+    <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

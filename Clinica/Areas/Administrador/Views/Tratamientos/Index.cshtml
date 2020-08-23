@@ -44,7 +44,7 @@
                                 <th>Valor</th>
                                 <th>Especialista</th>
 
-                                <th>Opciones</th>
+                                <th>  <center>Opciones </center></th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -68,9 +68,12 @@
                                 }
 
                                 <td>
-                                    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Tratamientos", new { id = t.Id })">Ver</a>
-                                    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Tratamientos", new { id = t.Id })">Editar</a>
-                                </td>
+                                    <center>
+                                        <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Tratamientos", new { id = t.Id })">Ver</a>
+                                        <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Tratamientos", new { id = t.Id })">Editar</a>
+
+                                    </center>
+                                        </td>
                             </tr>
 
                             }

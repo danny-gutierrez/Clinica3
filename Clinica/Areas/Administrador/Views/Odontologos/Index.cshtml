@@ -47,7 +47,7 @@
 
                                 <th>Email</th>
 
-                                <th>Opciones</th>
+                                <th>  <center>Opciones </center></th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -67,9 +67,13 @@
 
                                 <td>@o.Correos</td>
                                 <td>
-                                    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Odontologos", new { id = o.Id })">Ver</a>
-                                    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Odontologos", new { id = o.Id})">Editar</a>
-                                </td>
+
+                                    <center>
+                                        <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Odontologos", new { id = o.Id })">Ver</a>
+                                        <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Odontologos", new { id = o.Id})">Editar</a>
+
+                                    </center>
+                                        </td>
                             </tr>
 
                             }

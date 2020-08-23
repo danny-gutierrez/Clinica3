@@ -47,15 +47,15 @@
                             <tr>
                                 <th>#</th>
 
-                               
+
                                 <th>Nombre</th>
-                              
+
                                 <th>Fecha</th>
 
                                 <th>Odontologo</th>
                                 <th>Telefono</th>
-                                
-                                <th>Opciones </th>
+
+                                <th>  <center>Opciones </center></th>
 
                             </tr>
                         </thead>
@@ -91,11 +91,12 @@
 
                                 <td>@c.Telefono</td>
 
-                                <td>
-                                    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Citas", new { id = c.Id })">Ver</a>
+                                <td><center>
+    <a type="submit" class="btn btn-primary" href="@Url.Action("View", "Citas", new { id = c.Id })">Ver</a>
 
-                                    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Citas", new { id = c.Id })">Editar</a>
-                                </td>
+    <a type="submit" class="btn btn-primary" href="@Url.Action("Edit", "Citas", new { id = c.Id })">Editar</a>
+</center>
+                                    </td>
                             </tr>
                             }
 
