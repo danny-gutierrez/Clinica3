@@ -154,15 +154,20 @@
 
 
 
-                                                    <div class="form-group">
-                                                        <div class="">
-                                                            <label>Correo</label>
-                                                            <input type="email" class="form-control form-control-user" placeholder="Ingrese Correo"
-                                                                   name="Correos" value="@Model.Correos" disabled>
-                                                            @Html.ValidationMessageFor(Model => Model.Correos, null, new { @class = "text-danger" })
-                                                        </div>
-
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Correo</label>
+                                                        <input type="email" class="form-control form-control-user" placeholder="Ingrese Correo"
+                                                               name="Correos" value="@Model.Correos" disabled>
+                                                        @Html.ValidationMessageFor(Model => Model.Correos, null, new { @class = "text-danger" })
                                                     </div>
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Sueldo</label>
+                                                        <input type="number" class="form-control form-control-user" placeholder="$$"
+                                                               name="Sueldo" value="@Model.Sueldo" disabled>
+                                                        @Html.ValidationMessageFor(Model => Model.Sueldo, null, new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
 
                                                     <div class="form-group row">
 
@@ -178,7 +183,7 @@
                                                     <!--  <a href="" class="btn btn-primary btn-user btn-block"> -->
                                                     <center>
                                                         <button type="submit" class="btn btn-primary">Volver</button>
-                                                        <a href="@Url.Action("Historial", "Odontologos", new { id = Model.Id } )"><input type="button" value="Ver Historial" class="btn btn-primary"></a>
+                                                        <!--      <a href="Url.Action("Historial", "Odontologos", new { id = Model.Id } )"><input type="button" value="Ver Historial" class="btn btn-primary"></a>-->
                                                     </center>
                                                     </a>
 

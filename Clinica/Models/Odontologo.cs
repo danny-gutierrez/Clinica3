@@ -71,6 +71,9 @@ namespace Clinica.Models
 
         public int Edad { get; set; }
 
+       [Required]
+        public int Sueldo { get; set; }
+
         public int IdTratamiento { get; set; }
 
         public virtual Tratamiento Tratamiento { get; set; }
