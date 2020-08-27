@@ -56,8 +56,7 @@ namespace Clinica.Models
         public String Rut { get; set; }
 
         [Required]
-       
-
+        [DataType(DataType.DateTime)]
         public DateTime FechaIngreso { get; set; }
 
 

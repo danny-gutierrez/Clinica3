@@ -68,4 +68,9 @@ $("#btn2").click(function () {
         text: '¡Perfecto!',
     });
 });	
+$(function () {
+    $('#datetimepicker').datetimepicker();
+});
+
+
 

@@ -44,8 +44,11 @@ namespace Clinica.Models
 
 
 
-        [Required]
-     
+        [Required(ErrorMessage = "Por favor, introduzca su número de teléfono")]
+
+
+        [Range(100000000, 999999999, ErrorMessage = "Teléfono debe contener 9 dígitos")]
+
         public int Telefono { get; set; }
 
         [Required]
