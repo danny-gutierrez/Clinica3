@@ -46,7 +46,7 @@
 
 
                                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                    <h1 class="h4 text-gray-900 mb-4">Editar Tratamientos!</h1>
+                                                    <h1 class="h4 text-gray-900 mb-4">Editar Tratamientos</h1>
                                                     <hr />
 
 
@@ -123,7 +123,7 @@
                                                                 <div class="col-sm-6">
                                                                     <br /><br />
                                                                     <label>Fecha Creacion</label>
-                                                                    <input type="date" class="form-control form-control-user" placeholder=""
+                                                                    <input type="date" min="2020-08-28" class="form-control form-control-user" placeholder=""
                                                                            name="FechaCreacion" value="@Model.FechaCreacion">
                                                                     @Html.ValidationMessageFor(Model => Model.FechaCreacion, null, new { @class = "text-danger" })
 

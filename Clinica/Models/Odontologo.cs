@@ -70,7 +70,9 @@ namespace Clinica.Models
 
         public int Edad { get; set; }
 
-       [Required]
+        [Required(ErrorMessage = "Ingrese un Sueldo")]
+        [Range(1, 1000000, ErrorMessage = "Ingrese un Sueldo")]
+
         public int Sueldo { get; set; }
 
         public int IdTratamiento { get; set; }
