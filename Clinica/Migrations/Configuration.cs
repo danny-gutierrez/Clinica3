@@ -18,10 +18,10 @@
             Odontologo o1 = new Odontologo()
 
             {   Id= 1,
-                Nombres = "Dra.Andrea",
-                Apellidos = "Garcia",
+                Nombres = "Dra.Pamela",
+                Apellidos = "Cea",
                 Telefonos = 123456789,
-                Direcciones = "Chiguayanate",
+                Direcciones = "Chiguayante",
                 Region = "VIII",
                 Comuna = "Lota",
                 Correos = "c@ejemplo.cl",
@@ -39,12 +39,12 @@
             {
                 Id = 2,
                 Nombres = "Dra. Jazmin",
-                Apellidos = "Ramirez",
+                Apellidos = "Briones",
                 Telefonos = 123456789,
-                Direcciones = "Santiago",
+                Direcciones = "Concepcion",
                 Region = "VIII",
                 Comuna = "Lota",
-                Correos = "Guillermo@ejemplo.cl",
+                Correos = "Jazmin@ejemplo.cl",
                 Sueldo = 800000,
                 Rut = "123456789",
                 IdTratamiento = 1,
@@ -58,8 +58,8 @@
 
             {
                 Id = 3,
-                Nombres = "Dr.Alejandro",
-                Apellidos = "Ramirez",
+                Nombres = "Dr.Maria",
+                Apellidos = "Urrutia",
                 Telefonos = 123456789,
                 Direcciones = "Santiago",
                 Region = "VIII",
@@ -78,8 +78,8 @@
 
             {
                 Id = 4,
-                Nombres = "Dra.Claudia",
-                Apellidos = "Ramirez",
+                Nombres = "Dra.Carolina",
+                Apellidos = "Norambuena",
                 Telefonos = 123456789,
                 Direcciones = "Santiago",
                 Region = "VIII",
@@ -109,7 +109,7 @@
             Tratamiento t1 = new Tratamiento()
             {
 
-                Nombres = "Ndodoncia",
+                Nombres = "Endodoncia",
                 Valor = 80000,
                 IdOdontologo = 1,
                 Codigos = 00001,
@@ -172,11 +172,11 @@
             Paciente p1 = new Paciente()
             {
 
-                Nombre = "Pedro",
-                Apellido = "Molina",
+                Nombre = "Danny",
+                Apellido = "Gutierrez",
                 Rut = "18.588.666-5",
                 Edad = 28,
-                Correo = "Pedro@gmail.com",
+                Correo = "Danny@gmail.com",
                 Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Alamos 203, Coronel",
@@ -187,11 +187,11 @@
             Paciente p2 = new Paciente()
             {
 
-                Nombre = "Daniel",
-                Apellido = "Montes",
+                Nombre = "Claudio",
+                Apellido = "Quezada",
                 Rut = "17.545.141-5",
                 Edad = 29,
-                Correo = "Daniel@gmail.com",
+                Correo = "Claudio@gmail.com",
                 Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Boldos 323, Coronel",
@@ -202,11 +202,11 @@
             Paciente p3 = new Paciente()
             {
 
-                Nombre = "Florencia",
-                Apellido = "Molina",
+                Nombre = "Fabian",
+                Apellido = "Zenteno",
                 Rut = "18.588.666-5",
                 Edad = 28,
-                Correo = "Pedro@gmail.com",
+                Correo = "Fabian@gmail.com",
                 Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Alamos 203, Coronel",
@@ -217,11 +217,11 @@
             Paciente p4 = new Paciente()
             {
 
-                Nombre = "Junior",
-                Apellido = "Molina",
+                Nombre = "Juanito",
+                Apellido = "Perez",
                 Rut = "18.588.666-5",
                 Edad = 28,
-                Correo = "Pedro@gmail.com",
+                Correo = "Juanito@gmail.com",
                 Region = "VIII",
                 Comuna = "Lota",
                 Direccion = "Alamos 203, Coronel",
@@ -516,7 +516,7 @@
             {
              //   Nombre = "Alejandro",
                // Apellido = "Ramirez",
-                IdOdontologo = 1,
+                IdOdontologo = 3,
               
                 Monto = 800000,
             };
@@ -525,7 +525,7 @@
             {
             //    Nombre = "Claudia",
               //  Apellido = "Ramirez",
-                IdOdontologo = 1,
+                IdOdontologo = 4,
              
                 Monto = 800000,
             };
