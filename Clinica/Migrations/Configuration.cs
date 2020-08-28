@@ -18,10 +18,10 @@
             Odontologo o1 = new Odontologo()
 
             {   Id= 1,
-                Nombres = "Dra.Andrea",
-                Apellidos = "Garcia",
+                Nombres = "Dra.Pamela",
+                Apellidos = "Cea",
                 Telefonos = 123456789,
-                Direcciones = "Chiguayanate",
+                Direcciones = "Chiguayante",
                 Region = "VIII",
                 Comuna = "Lota",
                 Correos = "c@ejemplo.cl",
@@ -39,12 +39,12 @@
             {
                 Id = 2,
                 Nombres = "Dra. Jazmin",
-                Apellidos = "Ramirez",
+                Apellidos = "Briones",
                 Telefonos = 123456789,
-                Direcciones = "Santiago",
+                Direcciones = "Concepcion",
                 Region = "VIII",
                 Comuna = "Lota",
-                Correos = "Guillermo@ejemplo.cl",
+                Correos = "Jazmin@ejemplo.cl",
                 Sueldo = 800000,
                 Rut = "123456789",
                 IdTratamiento = 1,
@@ -58,8 +58,8 @@
 
             {
                 Id = 3,
-                Nombres = "Dr.Alejandro",
-                Apellidos = "Ramirez",
+                Nombres = "Dr.Maria",
+                Apellidos = "Urrutia",
                 Telefonos = 123456789,
                 Direcciones = "Santiago",
                 Region = "VIII",
@@ -78,8 +78,8 @@
 
             {
                 Id = 4,
-                Nombres = "Dra.Claudia",
-                Apellidos = "Ramirez",
+                Nombres = "Dra.Carolina",
+                Apellidos = "Norambuena",
                 Telefonos = 123456789,
                 Direcciones = "Santiago",
                 Region = "VIII",
@@ -516,7 +516,7 @@
             {
              //   Nombre = "Alejandro",
                // Apellido = "Ramirez",
-                IdOdontologo = 1,
+                IdOdontologo = 3,
               
                 Monto = 800000,
             };
@@ -525,7 +525,7 @@
             {
             //    Nombre = "Claudia",
               //  Apellido = "Ramirez",
-                IdOdontologo = 1,
+                IdOdontologo = 4,
              
                 Monto = 800000,
             };

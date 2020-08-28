@@ -46,7 +46,7 @@
                                             <div class="card-header py-3">
 
                                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                    <h1 class="h4 text-gray-900 mb-4">Crear Remuneracion</h1>
+                                                    <h1 class="h4 text-gray-900 mb-4">Agregar a Lista</h1>
                                                     <hr />
                                             </div>
                                             <form method="POST" action="@Url.Action("Create", "Remuneraciones")" class="user">
@@ -77,31 +77,31 @@
 
                                         <!--      <div class="form-group">
 
-              <label>Cargo</label>
-              <select class="custom-select custom-select-sm form-control form-control-sm" name="Cargo" id="Cargo" placeholder="Cargo">
+          <label>Cargo</label>
+          <select class="custom-select custom-select-sm form-control form-control-sm" name="Cargo" id="Cargo" placeholder="Cargo">
 
 
 
-                  <option>Odontologo</option>
+              <option>Odontologo</option>
 
+          </select>
+          Html.ValidationMessageFor(Model => Model.Cargo, null, new { class = "text-danger" })
+      </div>
+    -->
+                                        <!--      <label>Sueldo</label>
+          <div class="form-group">
+              <select class="custom-select custom-select-sm form-control form-control-sm" value="Model.Monto" name="Monto" placeholder="Monto">
+
+                  <option>700000</option>
+                  <option>400000</option>
+                  <option>320000</option>
               </select>
-              Html.ValidationMessageFor(Model => Model.Cargo, null, new { class = "text-danger" })
+
+
+              Html.ValidationMessageFor(Model => Model.Monto, null, new { class = "text-danger" })
           </div>
+
         -->
-                                        <label>Sueldo</label>
-                                        <div class="form-group">
-                                            <select class="custom-select custom-select-sm form-control form-control-sm" value="@Model.Monto" name="Monto" placeholder="Monto">
-
-                                                <option>700000</option>
-                                                <option>400000</option>
-                                                <option>320000</option>
-                                            </select>
-
-
-                                            @Html.ValidationMessageFor(Model => Model.Monto, null, new { @class = "text-danger" })
-                                        </div>
-
-
 
 
 
